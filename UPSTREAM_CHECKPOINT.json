@@ -1,5 +1,5 @@
 {
-  "upstreamCommit": "0dec1508d086b82b561998571a928cd8b21c372b",
+  "upstreamCommit": "dcd37c138586877c805bdb7b49f7c84c047b89bb",
   "stablePhase16Commit": "bcee0483ae5c072e49307dada2bee479a830ef99",
   "historyPolicy": "Allowlisted source snapshot. Full phase history and local acceptance evidence stay on the owner workstation.",
   "workingTreeMayIncludeUncommittedChanges": true,
@@ -25,6 +25,11 @@
       "file": ".gitignore",
       "bytes": 783,
       "sha256": "3b59343de74e221da00ff877ffa314a86752cbb2e37ed6d002efcb35b1633aaf"
+    },
+    {
+      "file": ".prettierignore",
+      "bytes": 112,
+      "sha256": "ded42df4232a08ebc8360d90307515994c780a3997fc9f74a5a86b2a34f95060"
     },
     {
       "file": ".prettierrc.json",
@@ -133,8 +138,8 @@
     },
     {
       "file": "docs/distribution/RELEASE_NOTES.md",
-      "bytes": 3076,
-      "sha256": "f96478e8f2ce877feed69f4a036955f595f6cc349f1ff623c54a259d98c66e27"
+      "bytes": 3149,
+      "sha256": "8c77e487cda175747a2ef967b03a2c3b317257a34a68af279c202b9ce1d2ebc0"
     },
     {
       "file": "docs/distribution/REPOSITORY_README.md",
@@ -458,8 +463,8 @@
     },
     {
       "file": "scripts/distribution/export-source.py",
-      "bytes": 4353,
-      "sha256": "cefa8c644427441311ed08e5b9e7b195a4940248108329bc7306417715aeae01"
+      "bytes": 4372,
+      "sha256": "9d11d9013607960df271a5e9c24b65265a6bced13d3c43a902392fe54494b79b"
     },
     {
       "file": "scripts/distribution/package-evidence.py",
