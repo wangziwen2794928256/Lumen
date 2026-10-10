@@ -1,5 +1,5 @@
 {
-  "upstreamCommit": "dcd37c138586877c805bdb7b49f7c84c047b89bb",
+  "upstreamCommit": "5c4e0abd232a5c55510e518679587195b2c38ce3",
   "stablePhase16Commit": "bcee0483ae5c072e49307dada2bee479a830ef99",
   "historyPolicy": "Allowlisted source snapshot. Full phase history and local acceptance evidence stay on the owner workstation.",
   "workingTreeMayIncludeUncommittedChanges": true,
@@ -198,8 +198,8 @@
     },
     {
       "file": "docs/en/MUSIC.md",
-      "bytes": 1930,
-      "sha256": "272ad83be2ab6e5ecf03e4f7ef19ba17d1688169bd75c387e97ba5741b007100"
+      "bytes": 1993,
+      "sha256": "bc86dca802f164b30123d770bb8b7a0742a52b32fa72540d4737acf877cdab47"
     },
     {
       "file": "docs/en/PERMISSION_MODEL.md",
@@ -273,8 +273,8 @@
     },
     {
       "file": "docs/en/VAULT.md",
-      "bytes": 1043,
-      "sha256": "6f27edb26e765afe925c5c2b3df49368b262382f90a1f78b9a01fbd1f909ed55"
+      "bytes": 1109,
+      "sha256": "b553b6767e6d50326e034d21b8d2a3a58b0987d3486b202897ee18cfc3276d57"
     },
     {
       "file": "docs/zh-CN/ARCHITECTURE.md",
@@ -328,8 +328,8 @@
     },
     {
       "file": "docs/zh-CN/MUSIC.md",
-      "bytes": 1490,
-      "sha256": "8fbf493a6b26aeeaa4801b027bc3d64b3f64900f5b795e6cae9d2acbf568973b"
+      "bytes": 1482,
+      "sha256": "269c84370873e473289ac1c41bb435c676424b2c9ee36955687cb51ee944d067"
     },
     {
       "file": "docs/zh-CN/PERMISSION_MODEL.md",
@@ -403,8 +403,8 @@
     },
     {
       "file": "docs/zh-CN/VAULT.md",
-      "bytes": 1055,
-      "sha256": "1c0e7685900d3b253264ed06181a1c374432f61bd28aea3c49e7013805711c54"
+      "bytes": 1110,
+      "sha256": "c21d8cfad9aa011d1d4fedbdb71027d8088e8f84886ddddfd97a05f6308b47f6"
     },
     {
       "file": "eslint.config.js",

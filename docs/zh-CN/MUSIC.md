@@ -6,6 +6,6 @@ Windows媒体监听默认关闭，权限只针对一个精确应用ID；Kernel�
 
 只累计播放位置实际推进的保守观察时间；暂停、跳转和离线不增加时长。阈值5–600秒，达到后每episode只计一次，并每5秒更新时长。已知广告标题排除；API没有统一广告标志，不能可靠识别未标记广告。末尾不足更新间隔可能少计，不重建启动前或多播放器同时历史。
 
-Song/Artist/Album云不与日记分词混合。日期范围总计全量，记录最新100条、云最多500组/显示50项。009 migration只增列和表；数据private，不向正式库注入fixture。详见[数据契约](../data/MUSIC.md)、[决策](../decisions/ADR-010-media.md)、[English](../en/MUSIC.md)。
+Song/Artist/Album云不与日记分词混合。日期范围总计全量，记录最新100条、云最多500组/显示50项。009 migration只增列和表；数据private，不向正式库注入fixture。详见[数据契约](../data/MUSIC.md)、[平台支持](INSTALLATION.md)、[English](../en/MUSIC.md)。
 
 模块切换保留应用壳、局部加载提示、悬停/键盘焦点预载代码，短透明度过渡遵循reduced-motion。Today与设置表单明确间距，不通过常驻隐藏页面改变自动保存/监听语义。
