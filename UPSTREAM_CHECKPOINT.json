@@ -1,5 +1,5 @@
 {
-  "upstreamCommit": "5d321d5dffaaa1b1ac74ac8a72e30c249a324bc4",
+  "upstreamCommit": "50cdee5cbc009fa13b4c582f1fd47dcc0c4b2fec",
   "stablePhase16Commit": "bcee0483ae5c072e49307dada2bee479a830ef99",
   "historyPolicy": "Allowlisted source snapshot. Full phase history and local acceptance evidence stay on the owner workstation.",
   "workingTreeMayIncludeUncommittedChanges": true,
@@ -13,13 +13,13 @@
     },
     {
       "file": ".github/workflows/native-build.yml",
-      "bytes": 3729,
-      "sha256": "43fee292c72fe754a22d0222a54b5b87e199bde49878caa66bb1dec494ba2008"
+      "bytes": 4001,
+      "sha256": "ac2d1b5961e38b9181d4c24a70e7df47d825170976558968b9c37c2e86c160c8"
     },
     {
       "file": ".github/workflows/verify-packages.yml",
-      "bytes": 1247,
-      "sha256": "6f59b1fe22ba66c0feeb769a8c34b55d511c0d6d82656dd7424e43caabfd33bb"
+      "bytes": 1431,
+      "sha256": "9f755f7baf26f7974b976bfa567eaed7dbf0f9d41223128a70ce25af0b5b7441"
     },
     {
       "file": ".gitignore",
@@ -1228,8 +1228,8 @@
     },
     {
       "file": "src-tauri/tauri.experimental.conf.json",
-      "bytes": 258,
-      "sha256": "c88e5a138180a7bc23ba16a514d99ad5e3a1aa49e00306735743d605d1c9f425"
+      "bytes": 392,
+      "sha256": "bba438974dac35305059db852b4b829895a550f21f3522692c47c78b1ba2ed15"
     },
     {
       "file": "src-tauri/tauri.release.conf.json",

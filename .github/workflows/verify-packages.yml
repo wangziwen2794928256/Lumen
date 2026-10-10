@@ -3,8 +3,12 @@ on:
   workflow_dispatch:
     inputs:
       build_run_id:
-        description: Successful native package workflow run ID
+        description: macOS native package workflow run ID
         required: true
+        type: string
+      linux_run_id:
+        description: Linux package workflow run ID (blank uses build_run_id)
+        required: false
         type: string
 permissions:
   contents: read
@@ -26,7 +30,7 @@ jobs:
       - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
         with:
           github-token: ${{ github.token }}
-          run-id: ${{ inputs.build_run_id }}
+          run-id: ${{ runner.os == 'Linux' && inputs.linux_run_id || inputs.build_run_id }}
           pattern: ${{ matrix.pattern }}
           path: downloaded
       - name: Validate native image and executable structure
