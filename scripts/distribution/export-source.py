@@ -23,16 +23,18 @@ files = ['.gitattributes', '.gitignore', '.prettierrc.json', 'LICENSE', 'SECURIT
          'playwright.config.ts', 'pnpm-lock.yaml', 'pnpm-workspace.yaml', 'rust-toolchain.toml',
          'tsconfig.json', 'vite.config.ts', 'src-tauri/build.rs', 'src-tauri/Cargo.toml',
          'src-tauri/Cargo.lock', 'src-tauri/tauri.conf.json', 'src-tauri/tauri.release.conf.json',
-         'src-tauri/tauri.experimental.conf.json', 'scripts/check-contracts.mjs', 'scripts/environment.ps1']
+         'src-tauri/tauri.experimental.conf.json', 'scripts/check-contracts.mjs', 'scripts/environment.ps1',
+         'scripts/preview-website.mjs', 'scripts/install-desktop-shortcut.ps1']
 for directory in dirs:
     p = root / directory
-    if p.exists(): files.extend(str(f.relative_to(root)).replace('\\', '/') for f in p.rglob('*') if f.is_file())
+    if p.exists(): files.extend(str(f.relative_to(root)).replace('\\', '/') for f in p.rglob('*')
+                               if f.is_file() and '__pycache__' not in f.parts)
 blocked = re.compile(r'(?:gh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{40,}|-----BEGIN (?:RSA |OPENSSH |EC )?PRIVATE KEY-----|sk-proj-[A-Za-z0-9_-]{40,})')
 manifest = []
 for relative in sorted(set(files)):
     p = root / relative
     if not p.exists(): continue
-    if not p.resolve().is_relative_to(root) or p.is_symlink() or p.suffix.lower() in ['.db', '.sqlite', '.sqlite3', '.log', '.pptx'] or '.env' in p.name:
+    if not p.resolve().is_relative_to(root) or p.is_symlink() or p.suffix.lower() in ['.db', '.sqlite', '.sqlite3', '.log', '.pptx', '.pyc'] or '.env' in p.name:
         raise SystemExit('Forbidden publication file: ' + relative)
     data = p.read_bytes()
     if len(data) > 25 * 1024 * 1024: raise SystemExit('Oversized publication file: ' + relative)

@@ -1,14 +1,14 @@
 # REPRODUCE_LUMEN
 
-从checkpoint/15-release取候选版确定源码与锁文件；git archive源码不含个人数据。运行scripts/verify/phase16.ps1生成phase16-gates.json与按门禁日志，E2E覆盖三尺寸，浏览器fixture明确区别原生。
+本地 Phase16 checkpoint bcee0483ae5c072e49307dada2bee479a830ef99 对应 Windows 候选。GitHub 是另一个起点的白名单源码历史，通过 publication commit 和 UPSTREAM_CHECKPOINT.json 追溯，不应查找本地专用 checkpoint。按 BUILD_MANIFEST.json/SHA256SUMS 核对源码和包，再执行 BUILD_FROM_SOURCE、TESTING 中命令。本地原验收脚本/报告不全部上传；浏览器 fixture 区别于原生。
 
-性能大数据仅TempDir自动生成，Phase9复现命令和短正文限制保留在INSIGHTS.md；本阶段不训练、不下载模型。UTC记录与本地日期按数据契约处理，不把机器时区隐藏。
+性能大数据仅在 TempDir 自动生成，不使用生产 AppData。十年基准在 Phase16 独立运行，不自动算作所有 Phase17 runner 已运行。本阶段不训练、不下载模型；UTC/本地日期和时区见技术手册。
 
 发布包提供完整commit/tag、SHA256清单、优化安装包/便携程序与证据。可复现指源码/依赖/命令/fixture可追溯；当前不是跨机器位级相同二进制承诺，编译器/SDK/linker时间戳等还未固定。
 
 本文件对应英文版本：[REPRODUCE_LUMEN](../en/REPRODUCE_LUMEN.md)。
 
-Phase16证据：最终报告/checkpoint记录准确提交；scripts/verify/phase16.ps1与scripts/release/build-windows.ps1定义当前复现命令。参考发行使用opt-level2/codegen1，编译器失败日志保留；SHA256验证交付文件身份，不宣称跨机器逐字节一致。
+原生 CI 保留工具版本、构建提交、日志和 BUILD.json；verify-packages.yml 接收分别的 macOS/Linux run ID，要求完整镜像/包/处理器架构覆盖。scripts/distribution/assemble-delivery.py 根据已下载核验的 receipt 和 publication checkout 汇总源码、双语文档、CI 证据 ZIP 与 manifest/checksums，普通源码构建不依赖它。参考配置 opt2/codegen1。CI artifact 保留30天，发行/本地副本长期交付；SHA256 验证文件身份，不宣称跨机器逐字节一致。
 
 
 ## Phase17 发行更新

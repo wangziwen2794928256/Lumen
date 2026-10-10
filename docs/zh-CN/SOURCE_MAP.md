@@ -15,3 +15,5 @@ Phase13: database/backup.rs and backup_schedule.rs own complete snapshots/retent
 Phase14：kernel/desktop.rs、commands/desktop.rs、features/desktop 与设置分组；官方托盘、单实例、窗口状态、自启动和通知适配。见 DESKTOP.md。
 
 Phase15–16: skills/*/SKILL.md; scripts/verify/phase15-skills.ps1, phase16.ps1, phase16-installer.ps1; scripts/release/build-windows.ps1 and package.ps1; rust-toolchain.toml; database/backup_schedule.rs resolves redirected AppData backup roots.
+
+Phase17：.github/workflows 管理原生构建/静态包验收；scripts/distribution 管理源码白名单/blob 核验、vendor provenance、构建 receipt 和交付汇总；src-tauri/vendor/glib 为最小上游回补。docs/distribution 保存发行策略/结果；双语技术手册是当前维护入口。上文历史 execution/testing/reports 和 verify 脚本保留本地，不全部上传；GitHub 是白名单源码快照，不是私人阶段完整历史。

@@ -1,10 +1,10 @@
 # TESTING
 
-Run scripts/verify/phase16.ps1 for lint, format, typecheck, unit, build, rust-fmt, Rust tests including migrations, clippy and the full E2E suite. UI gates cover three sizes, light/dark themes, drag/keyboard ordering, enabled/hidden/pinned, reload and form spacing. Phase16 evidence records 35 frontend tests, 72 Rust tests and 60 E2E cases; the ignored ten-year benchmark is executed separately.
+Run the explicit commands in BUILD_FROM_SOURCE.md for lint/format/typecheck/unit/build/Rust formatting/tests including migrations/contracts. Windows also runs `cargo clippy --manifest-path src-tauri/Cargo.toml --locked --all-targets -- -D warnings`. For Chromium E2E, install `pnpm exec playwright install --with-deps chromium`, set LUMEN_E2E_BROWSER=chromium and run pnpm test:e2e; Windows defaults to Edge. UI gates cover three sizes, light/dark themes, drag/keyboard ordering, enabled/hidden/pinned, reload and form spacing. Phase17 Windows has35 frontend/72 Rust/60 Edge E2E PASS. macOS library tests have71 pass and1 ignored; Linux adds a separate glib integration regression in debug/release. Counts/results come from actual logs. Original verify scripts remain local-only.
 
 Negative Kernel tests cover required-module enforcement, unknown/duplicate IDs, stale revisions, disabled IPC, unsupported API versions, forbidden SQL/files/network/native permissions, closed runtime, invalid paths/proposals, capacity overflow and append-only observations. Existing migration rollback and Windows message cleanup tests remain.
 
-Native operations and production upgrade have separate evidence. Compare pre-upgrade columns/rows by SHA256 without storing bodies. macOS/Linux builds, full Wasm isolation and AI invocation are deferred/NOT RUN, never PASS.
+verify-packages.yml checks read-only DMG mount/Bundle/Mach-O on macOS and deb/AppImage metadata/extraction/ELF on Linux, requiring complete packages and exact hashes. Extraction does not establish native launch or installation. macOS/Linux deferred adapters currently produce dead-code warnings; Windows Clippy PASS does not imply those platforms passed -D warnings. Native window, lock/sleep, tray/notification/autostart, attachment and install/upgrade/uninstall acceptance stay separate. Compare production columns/rows by SHA256 without private bodies. Full Wasm isolation, actual AI, macOS/Linux native launch/install/signing/notarization are NOT RUN. Session events/Today/focus are unsupported there.
 
 Matching Chinese document：[TESTING](../zh-CN/TESTING.md)。
 

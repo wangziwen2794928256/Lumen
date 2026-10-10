@@ -29,6 +29,6 @@ cargo test --manifest-path src-tauri/Cargo.toml --locked
 pnpm tauri build --config src-tauri/tauri.experimental.conf.json --bundles app,dmg -- --locked
 ```
 
-The last command is for macOS. Linux: replace `app,dmg` with `deb,appimage`. Windows: use `scripts/release/build-windows.ps1`. CI uses native GitHub-hosted runners and is started manually in Actions → Native experimental packages. Artifacts expire after 30 days; keep a checksum-verified local copy.
+The last command is for macOS. Linux: replace `app,dmg` with `deb,appimage`. Windows: use `pnpm tauri build --config src-tauri/tauri.release.conf.json --bundles nsis -- --locked`. Read [complete prerequisites and build conditions](docs/en/BUILD_FROM_SOURCE.md). CI uses native GitHub-hosted runners and is started manually in Actions → Native experimental packages. Artifacts expire after30days; keep a checksum-verified local copy. [Build/verification results](docs/distribution/BUILD_RESULTS.md) · [Release candidate](https://github.com/wangziwen2794928256/Lumen/releases/tag/v0.1.0-distribution-rc1).
 
 Production data lives under Tauri AppData and is never included here. This repository begins with an allowlisted source snapshot; `UPSTREAM_CHECKPOINT.json` records local upstream provenance. Historical local screenshots, machine logs and private acceptance records are intentionally excluded. This preserves the owner's original phase history without uploading personal records.

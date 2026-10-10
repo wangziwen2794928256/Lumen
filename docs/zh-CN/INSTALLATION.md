@@ -3,9 +3,9 @@
 | 平台 | 文件 | 当前支持级别 |
 | --- | --- | --- |
 | Windows x64 | Lumen_0.1.0_x64-setup.exe / Lumen.exe | Phase16 本机验收通过的未签名候选 |
-| macOS Apple Silicon | aarch64 DMG / app | 实验目标；以实际 CI 结果为准 |
-| macOS Intel | x86_64 DMG / app | 实验目标；以实际 CI 结果为准 |
-| Linux x64 | deb / AppImage | 实验目标；以实际 CI 结果为准 |
+| macOS Apple Silicon | aarch64 DMG / app | 实验包；原生构建与静态包校验 PASS |
+| macOS Intel | x86_64 DMG / app | 实验包；原生构建与静态包校验 PASS |
+| Linux x64 | deb / AppImage | 实验包；原生构建与静态包校验 PASS |
 
 GitHub 仓库：https://github.com/wangziwen2794928256/Lumen 。当前为私有发行准备仓库，需要账号访问。Actions 中手动运行 Native experimental packages，下载与目标架构一致的 artifact。每个成功产物目录带 BUILD.json 和 SHA256SUMS；保存文件后核对 SHA256。Artifact 保留 30 天，最终交付另有本地副本。
 
@@ -16,3 +16,5 @@ macOS 最低实验构建配置为 14.0；Apple Silicon 与 Intel 包不能混淆
 macOS/Linux 尚无锁屏/睡眠监听与部分平台打开能力，Today/focus 原生命令可能返回 NATIVE_HOOK_UNAVAILABLE。不要将这些实验包用于唯一生产数据；优先独立 OS 用户与测试记录。编译通过不等于完整跨平台验收。详细行为见 [技术手册](TECHNICAL_HANDBOOK.md)。
 
 校验示例：PowerShell `Get-FileHash ./安装包 -Algorithm SHA256`；macOS `shasum -a 256 文件`；Linux `sha256sum -c SHA256SUMS`。只有与可信交付 manifest 一致的文件才用于测试。
+
+[发行候选](https://github.com/wangziwen2794928256/Lumen/releases/tag/v0.1.0-distribution-rc1) 提供 Windows、两种 Mac、Linux 两种包、PPT、源码/双语文档/CI证据 ZIP 与 manifest/checksums。原生构建和包结构验收见 [BUILD_RESULTS](../distribution/BUILD_RESULTS.md)，完整功能缺口仍按上文处理。

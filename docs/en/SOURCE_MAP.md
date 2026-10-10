@@ -15,3 +15,5 @@ Phase13: database/backup.rs and backup_schedule.rs own complete snapshots/retent
 Phase14: kernel/desktop.rs, commands/desktop.rs, features/desktop and settings groups; official tray/single-instance/window-state/autostart/notification adapters. See DESKTOP.md.
 
 Phase15–16: skills/*/SKILL.md; scripts/verify/phase15-skills.ps1, phase16.ps1, phase16-installer.ps1; scripts/release/build-windows.ps1 and package.ps1; rust-toolchain.toml; database/backup_schedule.rs resolves redirected AppData backup roots.
+
+Phase17: .github/workflows owns native build/static package acceptance; scripts/distribution owns source allowlisting/blob validation, vendor provenance, package receipts and delivery assembly; src-tauri/vendor/glib contains the scoped upstream backport. docs/distribution contains publication/build/release records; the bilingual handbook is the current maintainer entry. Historical execution/testing/reports and verify scripts above remain local-only. GitHub publishes the allowlisted source snapshot, not original private phase history.

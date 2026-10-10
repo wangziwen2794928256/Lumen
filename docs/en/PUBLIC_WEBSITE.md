@@ -26,10 +26,10 @@ The live preview binds only 127.0.0.1 on an ephemeral port and serves only five 
 
 Explicit registration writes `HKCU\Software\Classes\lumen` pointing at the current executable. Moving the executable requires registering again. Exact accepted forms: `lumen://today`, `lumen://calendar`, `lumen://journal/YYYY-MM-DD`, `lumen://artifact/canonical-lowercase-UUID`, `lumen://journey/canonical-lowercase-UUID`. Query/fragment/percent encoding/traversal/other schemes are rejected. Routes select local pages; they do not expose their content to the website or grant file access. Artifact opens the live local editor, Journal filters its date, Journey highlights the matching local card. Module disable guards remain effective.
 
-Windows protocol launching starts an application instance; forwarding to an already-open instance is deferred. macOS/Linux registration/browser adapters remain explicit unsupported boundaries. Browser permission prompts are controlled by the browser; no bypass. Exported contact links are user authored and unverified.
+Windows protocol launching reaches the Kernel single-instance callback, which validates the route and asynchronously restores/focuses the existing window before navigation (Phase14). macOS/Linux registration/browser adapters remain explicit unsupported boundaries. Browser permission prompts are controlled by the browser; no bypass. Exported contact links are user authored and unverified.
 
 ## Reproduction
 
-Run `scripts/verify/phase12.ps1` in PowerShell. It includes all earlier E2E cases, three viewport sizes, light/dark screenshots, migration/backup/rollback tests, private sentinels and detached website tests. Use the isolated QA build for synthetic native tests. Schema remains 10, migrations 001–010 are unchanged.
+Run the explicit commands in BUILD_FROM_SOURCE.md and TESTING.md. The current60-case E2E suite includes detached website/private sentinel coverage at three viewport sizes, plus migration/backup/rollback Rust tests. Original Phase12 verification/native reports remain local-only. Use isolated QA for synthetic native tests; schema10 and migrations001–010 are unchanged.
 
 Windows Shell may append a single root slash to authority-only links: `lumen://today/` and `lumen://calendar/` are also accepted. Double slashes and all other additional paths remain rejected. Windows 系统可能给无参数入口补一个末尾斜杠；仅 Today、Calendar 兼容这一形式。

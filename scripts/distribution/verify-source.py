@@ -13,5 +13,7 @@ names = set(git('ls-tree', '-r', '--name-only', 'HEAD').decode().splitlines())
 allowed = {f['file'] for f in manifest['files']} | {'README.md', 'UPSTREAM_CHECKPOINT.json'}
 if names != allowed:
     raise SystemExit('Publication tree does not match allowlist')
+if git('show', 'HEAD:README.md') != git('show', 'HEAD:docs/distribution/REPOSITORY_README.md'):
+    raise SystemExit('Root README differs from verified publication template')
 print(json.dumps({'result': 'PASS', 'commit': git('rev-parse', 'HEAD').decode().strip(),
     'verifiedSourceBlobs': len(manifest['files']), 'productionDataIncluded': False}))

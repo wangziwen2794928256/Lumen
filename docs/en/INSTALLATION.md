@@ -16,3 +16,5 @@ The experimental macOS build minimum is 14.0. Choose Apple Silicon or Intel corr
 macOS/Linux session-event monitoring and several open/deep-link adapters remain unavailable. Today/focus native commands can return NATIVE_HOOK_UNAVAILABLE. Use an isolated OS user and test records; never put the only production data at risk. See the [handbook](TECHNICAL_HANDBOOK.md).
 
 Verify files with PowerShell Get-FileHash -Algorithm SHA256, macOS shasum -a 256, or Linux sha256sum -c SHA256SUMS against the trusted delivery manifest.
+
+Both macOS DMGs and Linux deb/AppImage have now passed actual native build and static package/architecture/SHA256 checks. The [private distribution candidate](https://github.com/wangziwen2794928256/Lumen/releases/tag/v0.1.0-distribution-rc1) includes these packages, original Windows binaries, PPT, source/documents/CI-evidence archives and manifest/checksums. See [BUILD_RESULTS](../distribution/BUILD_RESULTS.md); native runtime and integration limitations above remain unchanged.

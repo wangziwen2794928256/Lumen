@@ -52,6 +52,8 @@ jobs:
         shell: bash
         run: |
           set -o pipefail
+          python3 scripts/distribution/check-docs.py | tee evidence/doc-links.json
+          pnpm format:check 2>&1 | tee evidence/format.txt
           pnpm lint 2>&1 | tee evidence/lint.txt
           pnpm typecheck 2>&1 | tee evidence/typecheck.txt
           pnpm test 2>&1 | tee evidence/unit.txt

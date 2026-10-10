@@ -26,10 +26,10 @@ Journal/Mood/Quick Capture、音乐历史、原始 Focus 和私人笔记在1.0�
 
 手动注册 HKCU 当前用户的 lumen 协议，指向当前 exe；移动 exe 后需要重新注册。仅接受 lumen://today、lumen://calendar、lumen://journal/YYYY-MM-DD、lumen://artifact/规范小写UUID、lumen://journey/规范小写UUID。拒绝 query/fragment/百分号编码/遍历和其他协议，不授予文件读取或向网站返回本地内容。作品打开本地有效记录编辑器，日记筛选日期，Journey 高亮相应本地卡片；禁用模块仍受 guard 保护。
 
-Windows 协议会启动一个应用实例，复用已打开实例的转发机制延后。macOS/Linux 注册/浏览器 adapter 暂未实现；不绕过浏览器协议提示。联系外链由用户提供，不验证目标真实性。
+Windows 协议启动后由 Kernel 单实例回调校验路由，异步恢复/聚焦已有窗口再导航（Phase14）。macOS/Linux 注册/浏览器 adapter 暂未实现；不绕过浏览器协议提示。联系外链由用户提供，不验证目标真实性。
 
 ## 复现
 
-运行 scripts/verify/phase12.ps1，涵盖既有E2E、三尺寸、深浅色、迁移备份回滚、私有哨兵、脱离数据库网站。原生合成测试只使用隔离 QA。schema 仍为10，001–010 migration 不变。
+按 BUILD_FROM_SOURCE、TESTING 中显式命令运行；当前60项 E2E 包含三尺寸、网站脱离数据库与私有哨兵，Rust 覆盖迁移备份回滚。原 Phase12 验收脚本/原生报告保留本地。原生合成测试只使用隔离 QA；schema10、001–010 migration 不变。
 
 Windows Shell may append a single root slash to authority-only links: `lumen://today/` and `lumen://calendar/` are also accepted. Double slashes and all other additional paths remain rejected. Windows 系统可能给无参数入口补一个末尾斜杠；仅 Today、Calendar 兼容这一形式。
