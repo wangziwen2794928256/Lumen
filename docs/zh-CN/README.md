@@ -1,6 +1,10 @@
 # Lumen technical documentation / 技术文档
 
-Phase16 · 发布候选0.1.0 · Module API1.0 · 默认中文，英文对应同一契约。最终验收：[Phase16报告](../reports/PHASE_16_REPORT.md)。
+Phase17 发行扩展 · 候选0.1.0 · Module API1.0。Windows 历史验收保留本机；macOS/Linux 为实验目标。
+
+- [完整技术手册](TECHNICAL_HANDBOOK.md)
+- [安装与支持范围](INSTALLATION.md)
+- [模块扩展指南](MODULE_EXTENSION_GUIDE.md)
 
 - [ARCHITECTURE](ARCHITECTURE.md)
 - [SOURCE_MAP](SOURCE_MAP.md)

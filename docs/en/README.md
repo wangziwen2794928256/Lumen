@@ -1,6 +1,10 @@
 # Lumen technical documentation / 技术文档
 
-Phase16 · release candidate0.1.0 · Module API1.0 · English documents match the Chinese contracts. Final acceptance: [Phase16 report](../reports/PHASE_16_REPORT.md).
+Phase17 distribution extension · candidate 0.1.0 · Module API1.0. Windows baseline acceptance remains local; macOS/Linux are experimental.
+
+- [Technical handbook](TECHNICAL_HANDBOOK.md)
+- [Installation and support](INSTALLATION.md)
+- [Module extension guide](MODULE_EXTENSION_GUIDE.md)
 
 - [ARCHITECTURE](ARCHITECTURE.md)
 - [SOURCE_MAP](SOURCE_MAP.md)

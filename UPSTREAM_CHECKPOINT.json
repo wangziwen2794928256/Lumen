@@ -1,8 +1,9 @@
 {
-  "upstreamCommit": "bcee0483ae5c072e49307dada2bee479a830ef99",
+  "upstreamCommit": "e1b6b79b6bf63d038a818e8cd8e04ab8fde98c81",
   "stablePhase16Commit": "bcee0483ae5c072e49307dada2bee479a830ef99",
   "historyPolicy": "Allowlisted source snapshot. Full phase history and local acceptance evidence stay on the owner workstation.",
   "workingTreeMayIncludeUncommittedChanges": true,
+  "hashEncoding": "Git blob LF for text; binary bytes unchanged",
   "productionDataIncluded": false,
   "files": [
     {
@@ -12,13 +13,13 @@
     },
     {
       "file": ".github/workflows/native-build.yml",
-      "bytes": 3825,
-      "sha256": "4c38b4af2480ddbfbad655701eafa5137f01bc6cc9a053a0cb9e1794fa4f2d1b"
+      "bytes": 3729,
+      "sha256": "43fee292c72fe754a22d0222a54b5b87e199bde49878caa66bb1dec494ba2008"
     },
     {
       "file": ".gitignore",
-      "bytes": 757,
-      "sha256": "68d1f2b7400bd2f2bfb8897eaa27e59b11913039cb87833316ab24487c264f06"
+      "bytes": 783,
+      "sha256": "3b59343de74e221da00ff877ffa314a86752cbb2e37ed6d002efcb35b1633aaf"
     },
     {
       "file": ".prettierrc.json",
@@ -116,6 +117,16 @@
       "sha256": "e12214a89c5bea1adf6632be410ee3801018d85f68bc006589e73a39b520cbb9"
     },
     {
+      "file": "docs/distribution/PUBLICATION.md",
+      "bytes": 2234,
+      "sha256": "61180b45d7c013b7ac3616016784fd0cc34eec4bb2c595d80c54d54e859b6b34"
+    },
+    {
+      "file": "docs/distribution/RELEASE_NOTES.md",
+      "bytes": 2117,
+      "sha256": "8d0996a921950827702835fc9fb837c984619cda9e81131ccdefa0b05dfb72ac"
+    },
+    {
       "file": "docs/distribution/REPOSITORY_README.md",
       "bytes": 2143,
       "sha256": "f942d060e0546308e932be92dc90502907620fc259dbbf69bde3f952395fd0dd"
@@ -132,8 +143,8 @@
     },
     {
       "file": "docs/en/BUILD_FROM_SOURCE.md",
-      "bytes": 1630,
-      "sha256": "a4b04471724026be974a73b41232e81db209dc7e2b0ec01cf2e57ca3318a9b15"
+      "bytes": 2208,
+      "sha256": "0ca37a7600ef5af52e9bd55e6f829eaa6f40e39b023676167828864cbd43ac25"
     },
     {
       "file": "docs/en/CONTRIBUTING.md",
@@ -142,23 +153,28 @@
     },
     {
       "file": "docs/en/CROSS_PLATFORM.md",
-      "bytes": 835,
-      "sha256": "810470b6a54ecc28005c96584c8843fb0949e8f29161b7ff5a8014294e118b32"
+      "bytes": 1413,
+      "sha256": "9711aef04022e210596b83bb109b5c8d381f42818ca3e99a41b0366b89f16b8f"
     },
     {
       "file": "docs/en/DATABASE.md",
-      "bytes": 1526,
-      "sha256": "633f9f5c21418a1eb596dfb23aaf2d8015b83a6445dd4364d5c2dff966ccc7db"
+      "bytes": 1525,
+      "sha256": "bff9b73ec9f7ca8e102a13e00b0ac845aa03deae4020e3580928231b0ab28fe0"
     },
     {
       "file": "docs/en/DESKTOP.md",
-      "bytes": 3156,
-      "sha256": "8a48d159111d496d8d27abc06210cc7687f130c73573725e6d69eecd6e100a1e"
+      "bytes": 3155,
+      "sha256": "352ec3575d752990a9d2d843e88782de9ac941dc57a23603093066d3c2d16601"
     },
     {
       "file": "docs/en/INSTALLATION.md",
       "bytes": 1919,
       "sha256": "cfe147f9499a9848341462925c11c3b05f4f61968431d751ad06ad3c21548283"
+    },
+    {
+      "file": "docs/en/MODULE_EXTENSION_GUIDE.md",
+      "bytes": 3189,
+      "sha256": "5b662334c7fe808b8623a22655ec4ff8e023d67988506775245e6ed1c77e3103"
     },
     {
       "file": "docs/en/MODULE_SYSTEM.md",
@@ -202,23 +218,23 @@
     },
     {
       "file": "docs/en/README.md",
-      "bytes": 942,
-      "sha256": "57be1e93488494641a7b5e2effdcbaced99169970eb3872fb5db2c3d26927726"
+      "bytes": 1060,
+      "sha256": "8e2187db0122db5b481f60be701256e91649e54dfcb175f5a213c18b8d8350dd"
     },
     {
       "file": "docs/en/RELEASE.md",
-      "bytes": 1749,
-      "sha256": "1a081a60c46a7b55f855034aa0056ab161796a1224a40d52a6f9b8c5ecb33716"
+      "bytes": 2327,
+      "sha256": "50d64dd7ec11a65d09cd9639976e20de3b53c0801f9666fea4924b6d7efc66f9"
     },
     {
       "file": "docs/en/REPRODUCE_LUMEN.md",
-      "bytes": 1172,
-      "sha256": "2c695ed05ae7345dd2f8c81a215098f969a507e0005254331d44b125e3bfa5e4"
+      "bytes": 1750,
+      "sha256": "4ef8a6394cfca52cbeeb7fb531a60333df9940493f6a0def7a29b777408e6431"
     },
     {
       "file": "docs/en/SOURCE_MAP.md",
-      "bytes": 1658,
-      "sha256": "7670ebace4c3efffa8577fdefb6edd7ed7bcc25e7275acbf9f957bcd286f4671"
+      "bytes": 1656,
+      "sha256": "53ec12fb6720b20b21cb203c00a746f317a0d65a19cd900d4b14b51089b57446"
     },
     {
       "file": "docs/en/TECHNICAL_HANDBOOK.md",
@@ -227,8 +243,8 @@
     },
     {
       "file": "docs/en/TESTING.md",
-      "bytes": 1041,
-      "sha256": "8471e60ff8d1b3d1631ba47a7d0c83c1a523f2a980dac4b8d62b525d4dd2211b"
+      "bytes": 1619,
+      "sha256": "aec074236e247c327fe396f3ab7ecec792ca9ba0babf80cf232bcb20b53ced38"
     },
     {
       "file": "docs/en/THEME_SDK.md",
@@ -257,8 +273,8 @@
     },
     {
       "file": "docs/zh-CN/BUILD_FROM_SOURCE.md",
-      "bytes": 1424,
-      "sha256": "63bab59b7f61969b5510c481e87562a6a69f5f57d85605e9fdfbf8de0b3cb0d7"
+      "bytes": 1905,
+      "sha256": "1de251af664aa55d9bfb3cc16630d261732e440080e143decafa0f27dc482388"
     },
     {
       "file": "docs/zh-CN/CONTRIBUTING.md",
@@ -267,23 +283,28 @@
     },
     {
       "file": "docs/zh-CN/CROSS_PLATFORM.md",
-      "bytes": 840,
-      "sha256": "4895df909a4d889635a06dc3f39fd84c3f644aa9d9a84cb5f6dc6ce68f4ef7ba"
+      "bytes": 1321,
+      "sha256": "4efafad0a700578f83c5b0ddc584c4d693806e15b290579cf9ff335a5d7c3325"
     },
     {
       "file": "docs/zh-CN/DATABASE.md",
-      "bytes": 1405,
-      "sha256": "3aa42aab0807d57737448e3ff76c72af2cd5e8cf8a65016f988aea581f34270b"
+      "bytes": 1404,
+      "sha256": "c03644f2c1fe2e71168e31ef6a2c1712767adbd5c3e880675ca41453297cd0fb"
     },
     {
       "file": "docs/zh-CN/DESKTOP.md",
-      "bytes": 2462,
-      "sha256": "6dae1b2d99bc97b553bfcbad34bea5f63a9eda25fe2421f4c14da959874ab3f9"
+      "bytes": 2461,
+      "sha256": "2a8736458ac9ad8e3f9d301205ba6663fe30bbc2f0cf0e3fbeec03edca705d94"
     },
     {
       "file": "docs/zh-CN/INSTALLATION.md",
       "bytes": 2116,
       "sha256": "aedf13366270083692ef1f31514d8a8ac8a5da79161d30e54df16ec3795d0a6f"
+    },
+    {
+      "file": "docs/zh-CN/MODULE_EXTENSION_GUIDE.md",
+      "bytes": 3156,
+      "sha256": "ffb2ab2fd475d23771cff5934a56902030f2db30c1b6f6cd9de9da0b11a01f6e"
     },
     {
       "file": "docs/zh-CN/MODULE_SYSTEM.md",
@@ -327,23 +348,23 @@
     },
     {
       "file": "docs/zh-CN/README.md",
-      "bytes": 916,
-      "sha256": "12f36b13039d302051cc40ba37ac3bcc9b11b92d43d18c7c0a94f4b40c3de56b"
+      "bytes": 1019,
+      "sha256": "c122b828c0b630f8aa893440ed5fe0ac34894e9fbb313cce3a10d5954fda327b"
     },
     {
       "file": "docs/zh-CN/RELEASE.md",
-      "bytes": 1567,
-      "sha256": "3074481d0a147d41b19735017e9919b56a0fa8d3aa01d4ce0daa65548fb78c22"
+      "bytes": 2048,
+      "sha256": "71c5e8debcabff0424bc6e4172fde22be82582d2b45b96193fe3141dbf50c722"
     },
     {
       "file": "docs/zh-CN/REPRODUCE_LUMEN.md",
-      "bytes": 1080,
-      "sha256": "c00bc92061e1bb2c67ec578d5d7e690a18f36bb126514a3441d92ac21a1661e7"
+      "bytes": 1561,
+      "sha256": "d88f2c54d600318dd059491a71446b944f4439760d403cdcf53ddc9026293b96"
     },
     {
       "file": "docs/zh-CN/SOURCE_MAP.md",
-      "bytes": 1671,
-      "sha256": "894163a77df2867b92e76ecb154ca97b16c35ca87deebfe9fbacbb80e04c5efd"
+      "bytes": 1669,
+      "sha256": "742c5c634042c84d49cd505a3879e3e6d275687f88c3a39ed5fc1a5269246879"
     },
     {
       "file": "docs/zh-CN/TECHNICAL_HANDBOOK.md",
@@ -352,8 +373,8 @@
     },
     {
       "file": "docs/zh-CN/TESTING.md",
-      "bytes": 935,
-      "sha256": "2e0e94bfb5d02fa74195a266de09ce883fedc96d14dcaae642f704e9cd820a55"
+      "bytes": 1416,
+      "sha256": "23aeaa934dccf7684ab06be5d25561f16006c1d3fad50daf76c43dc74c14526f"
     },
     {
       "file": "docs/zh-CN/THEME_SDK.md",
@@ -387,8 +408,8 @@
     },
     {
       "file": "playwright.config.ts",
-      "bytes": 792,
-      "sha256": "9111ffb557827bf5f5c3527553baa3c03fcf6e4a3d12da0c31db456f3dc0921d"
+      "bytes": 771,
+      "sha256": "8086f09231f9be674b3c014634744992b50c624e2b901390ac35630b6bbba1ff"
     },
     {
       "file": "pnpm-lock.yaml",
@@ -417,13 +438,23 @@
     },
     {
       "file": "scripts/distribution/export-source.py",
-      "bytes": 3500,
-      "sha256": "31b5bb12a375572d1239fce5829ef2ae81ca254966a873254735331d93b58fc6"
+      "bytes": 4201,
+      "sha256": "754f7e2fe9821beab008331658ed186c9aab2eab0be9bc4fff4c758aa520804d"
     },
     {
       "file": "scripts/distribution/package-evidence.py",
-      "bytes": 929,
-      "sha256": "b878c9c58822147cca09fc9822c4374751e8edc6927712345adced822a4277ee"
+      "bytes": 914,
+      "sha256": "3618e0e54101a3611b0098456640f99ecb541cfb8bd151a2656282c47179b490"
+    },
+    {
+      "file": "scripts/distribution/verify-source.py",
+      "bytes": 973,
+      "sha256": "8f7999ff2363e1472481d244d096dd2dfc3b2b641418fa117f9093886457e806"
+    },
+    {
+      "file": "scripts/distribution/verify-vendor.py",
+      "bytes": 1897,
+      "sha256": "e22bc1323c99c75f1dd686b374d8de80677866e924858a95911282336aa32cc7"
     },
     {
       "file": "scripts/environment.ps1",
@@ -441,14 +472,29 @@
       "sha256": "42151b63a1781ad618870e7adf9a3145daef61934d39eb428ea6ec264371b94f"
     },
     {
+      "file": "skills/desktop-app-explorer/SKILL.md",
+      "bytes": 2231,
+      "sha256": "12d622613373810b83c9eda7285202322c6ca8a75b3d47c6a7eb6011eaf0431e"
+    },
+    {
+      "file": "skills/official-app-installer/SKILL.md",
+      "bytes": 2835,
+      "sha256": "8cae002b1749b5c32431017180c0e579caa1e718aa3a8af1201a038c521de1ab"
+    },
+    {
+      "file": "skills/official-app-installer/scripts/inspect-installer.ps1",
+      "bytes": 1437,
+      "sha256": "97b9017c1493ad0beda09fc311db59207a5b63fcc2bc9c1b0450cc9e5d0fa180"
+    },
+    {
       "file": "src-tauri/Cargo.lock",
       "bytes": 142330,
       "sha256": "f2a2be562ead7b63fd327086918f35f7c6607a44205fe79227e1814b178fe9b0"
     },
     {
       "file": "src-tauri/Cargo.toml",
-      "bytes": 1961,
-      "sha256": "13d22c40711bec6c56a7bb4c0147817378df6d1903565ca18c5622cd7375d458"
+      "bytes": 1905,
+      "sha256": "9c886c0f7dd5a1bd299641bc808ea44ed8316b65a2fcbdcf3c6a943efd8fcd81"
     },
     {
       "file": "src-tauri/build.rs",
@@ -752,8 +798,8 @@
     },
     {
       "file": "src-tauri/migrations/007_insights.sql",
-      "bytes": 1322,
-      "sha256": "47f99a3842c2eabf1e5f1733efa460cf80279ce0122b49cb728697e5f852bbba"
+      "bytes": 1321,
+      "sha256": "f1f1cbff032476bc01036ad376c3743badd9e6167de6f72924a9f77fdf545d59"
     },
     {
       "file": "src-tauri/migrations/008_architecture_evolution.sql",
@@ -1087,8 +1133,8 @@
     },
     {
       "file": "src-tauri/src/today/mod.rs",
-      "bytes": 25236,
-      "sha256": "8c48eb0eca71742049bcc6c4adab4513b72f34e027fc90afb0bdb21f0e13c438"
+      "bytes": 25235,
+      "sha256": "bb69f37fd9e9681ba36e7b448113b452d6492b3813a3387afee45e546e6761c2"
     },
     {
       "file": "src-tauri/src/today/native_events.rs",
@@ -1172,8 +1218,8 @@
     },
     {
       "file": "src-tauri/tauri.experimental.conf.json",
-      "bytes": 271,
-      "sha256": "d3ed5dc77345331402ee0be478de978d3fa10f1e1ea877f3cca60c8b9519ff1b"
+      "bytes": 258,
+      "sha256": "c88e5a138180a7bc23ba16a514d99ad5e3a1aa49e00306735743d605d1c9f425"
     },
     {
       "file": "src-tauri/tauri.release.conf.json",
@@ -1182,8 +1228,8 @@
     },
     {
       "file": "src-tauri/tests/glib_security.rs",
-      "bytes": 809,
-      "sha256": "6149dba6d4427cd9d3a66f92c4c1796c57338b8e2fc28431d474d4638e1f4768"
+      "bytes": 792,
+      "sha256": "38cbf42688793511217aa751a54034bc9b843f35690c7325251b5c46d07047af"
     },
     {
       "file": "src-tauri/vendor/glib/COPYRIGHT",
@@ -1217,8 +1263,8 @@
     },
     {
       "file": "src-tauri/vendor/glib/LUMEN_PATCH.md",
-      "bytes": 820,
-      "sha256": "c1e4bed8677459241ab9fe7a0116e5ef0fd756e0c1788eca474430a07c3c8138"
+      "bytes": 812,
+      "sha256": "e6bd1a2d7009e720e7c1b0b9606d44afea724d10da14dfda4d0abcfafd0845f8"
     },
     {
       "file": "src-tauri/vendor/glib/README.md",
@@ -1682,8 +1728,8 @@
     },
     {
       "file": "src-tauri/vendor/glib/src/variant_iter.rs",
-      "bytes": 10253,
-      "sha256": "04c7e2a23d4ea48f4e2469fcd4288d8d1f46eff0c0d3b8aba0e55fa389097292"
+      "bytes": 9882,
+      "sha256": "a0f5ee8acb8faa089bcdfbc9a57372609fce7654026ccef7d9a224d05a654ccc"
     },
     {
       "file": "src-tauri/vendor/glib/src/variant_type.rs",

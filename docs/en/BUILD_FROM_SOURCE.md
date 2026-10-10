@@ -11,3 +11,8 @@ Matching Chinese documentï¼š[BUILD_FROM_SOURCE](../zh-CN/BUILD_FROM_SOURCE.md)ã€
 Phase16 packaging: Rust minimum1.90; project-pinned compiler1.98.1. `scripts/release/build-windows.ps1` produces an optimized current-user installer with the verified opt2/codegen1 profile and locked dependencies. Base config remains unbundled for development. Missing WebView2 uses Microsoft bootstrapper; no security policy bypass. Signing needs an owner-supplied certificate; unsigned candidates are labeled.
 
 On the reference i9-14900HX host, use scripts/release/build-windows.ps1 -AffinityMask FFFF0000 and scripts/verify/phase16.ps1 -AffinityMask FFFF0000. This constrains only the worker to its observed efficiency cores after a WHEA warning; other machines must inspect CPU topology or omit that host-specific mask. It does not modify BIOS/global security policy. See PHASE_16_TOOLCHAIN_DECISION.md for full evidence.
+
+
+## Phase17 distribution update
+
+Native macOS ARM64/Intel and Linux x64 workflows now live in `.github/workflows/native-build.yml`. Build results must come from the actual run; compilation does not establish OS integration support. See [current handbook](TECHNICAL_HANDBOOK.md) and [installation matrix](INSTALLATION.md) for complete commands, platform gaps, the glib backport, private source publication and retained local evidence. Historical Phase16 reports/build scripts are local acceptance references; they are not all included in the allowlisted GitHub source snapshot.

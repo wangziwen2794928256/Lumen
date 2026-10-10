@@ -7,3 +7,8 @@ Kernel负面测试：required模块不可停用、未知/重复ID拒绝、陈旧
 真实原生操作与正式升级另记录NATIVE_QA；生产按升级前原表原列SHA256比较，不保存正文。macOS/Linux构建、完整Wasm隔离、AI调用本阶段NOT RUN/延期，不可标PASS。
 
 本文件对应英文版本：[TESTING](../en/TESTING.md)。
+
+
+## Phase17 发行更新
+
+已新增 `.github/workflows/native-build.yml`，覆盖 macOS ARM64/Intel 与 Linux x64 原生目标。构建结果以实际 run 为准，编译不能代替系统集成验收。最新完整命令、平台缺口、glib 安全回补、私有源码发行与本地证据策略见 [技术手册](TECHNICAL_HANDBOOK.md) 和 [安装矩阵](INSTALLATION.md)。Phase16 历史报告/脚本属于本地验收参考，不全部进入 GitHub 白名单源码快照。

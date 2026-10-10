@@ -36,3 +36,4 @@ playwright-report/
 !docs/testing/phase16/logs/*.log
 !docs/testing/phase16/rust199-attempts/*.log
 /release/
+!docs/testing/phase17/logs/*.log

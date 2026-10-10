@@ -9,3 +9,8 @@ scripts/release/build-windows.ps1 generates the locked optimized NSIS current-us
 After verified commit, scripts/release/package.ps1 produces installer/portable/screenshots/database-schema/test-reports/docs/source/checksums, exact Git source archive and verified SHA256 manifest. Explicit inclusion excludes production data. Portable binaries still use Tauri AppData for user data. Public publishing, auto-update, marketplace, full runtime, actual AI and mobile are excluded. Do not alternate incompatible binaries on the same core database.
 
 Matching Chinese document：[RELEASE](../zh-CN/RELEASE.md)。
+
+
+## Phase17 distribution update
+
+Native macOS ARM64/Intel and Linux x64 workflows now live in `.github/workflows/native-build.yml`. Build results must come from the actual run; compilation does not establish OS integration support. See [current handbook](TECHNICAL_HANDBOOK.md) and [installation matrix](INSTALLATION.md) for complete commands, platform gaps, the glib backport, private source publication and retained local evidence. Historical Phase16 reports/build scripts are local acceptance references; they are not all included in the allowlisted GitHub source snapshot.

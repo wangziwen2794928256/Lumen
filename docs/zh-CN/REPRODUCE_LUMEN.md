@@ -9,3 +9,8 @@
 本文件对应英文版本：[REPRODUCE_LUMEN](../en/REPRODUCE_LUMEN.md)。
 
 Phase16证据：最终报告/checkpoint记录准确提交；scripts/verify/phase16.ps1与scripts/release/build-windows.ps1定义当前复现命令。参考发行使用opt-level2/codegen1，编译器失败日志保留；SHA256验证交付文件身份，不宣称跨机器逐字节一致。
+
+
+## Phase17 发行更新
+
+已新增 `.github/workflows/native-build.yml`，覆盖 macOS ARM64/Intel 与 Linux x64 原生目标。构建结果以实际 run 为准，编译不能代替系统集成验收。最新完整命令、平台缺口、glib 安全回补、私有源码发行与本地证据策略见 [技术手册](TECHNICAL_HANDBOOK.md) 和 [安装矩阵](INSTALLATION.md)。Phase16 历史报告/脚本属于本地验收参考，不全部进入 GitHub 白名单源码快照。

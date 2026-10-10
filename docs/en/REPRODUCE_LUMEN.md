@@ -9,3 +9,8 @@ Delivery includes full commit/tag, SHA256 manifest, optimized installer/portable
 Matching Chinese document：[REPRODUCE_LUMEN](../zh-CN/REPRODUCE_LUMEN.md)。
 
 Phase16 evidence: final reports/checkpoints record exact commit; scripts/verify/phase16.ps1 and scripts/release/build-windows.ps1 define current commands. Reference release uses opt-level2/codegen1 after documented LLVM failures; SHA256 verifies delivered identity, not cross-machine bit-for-bit reproduction.
+
+
+## Phase17 distribution update
+
+Native macOS ARM64/Intel and Linux x64 workflows now live in `.github/workflows/native-build.yml`. Build results must come from the actual run; compilation does not establish OS integration support. See [current handbook](TECHNICAL_HANDBOOK.md) and [installation matrix](INSTALLATION.md) for complete commands, platform gaps, the glib backport, private source publication and retained local evidence. Historical Phase16 reports/build scripts are local acceptance references; they are not all included in the allowlisted GitHub source snapshot.
