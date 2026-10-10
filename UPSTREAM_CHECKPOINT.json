@@ -2,6 +2,7 @@
   "upstreamCommit": "bcee0483ae5c072e49307dada2bee479a830ef99",
   "stablePhase16Commit": "bcee0483ae5c072e49307dada2bee479a830ef99",
   "historyPolicy": "Allowlisted source snapshot. Full phase history and local acceptance evidence stay on the owner workstation.",
+  "workingTreeMayIncludeUncommittedChanges": true,
   "productionDataIncluded": false,
   "files": [
     {
@@ -155,6 +156,11 @@
       "sha256": "8a48d159111d496d8d27abc06210cc7687f130c73573725e6d69eecd6e100a1e"
     },
     {
+      "file": "docs/en/INSTALLATION.md",
+      "bytes": 1919,
+      "sha256": "cfe147f9499a9848341462925c11c3b05f4f61968431d751ad06ad3c21548283"
+    },
+    {
       "file": "docs/en/MODULE_SYSTEM.md",
       "bytes": 982,
       "sha256": "e90e13b514eba758aa380d64dbc63e85f8fe2f0eee9a7b32411459e122f9b745"
@@ -215,6 +221,11 @@
       "sha256": "7670ebace4c3efffa8577fdefb6edd7ed7bcc25e7275acbf9f957bcd286f4671"
     },
     {
+      "file": "docs/en/TECHNICAL_HANDBOOK.md",
+      "bytes": 9601,
+      "sha256": "9c691d04d19cbff569f0bfc45b3516a93bb7b61af6791d1f5f3960e38233faf0"
+    },
+    {
       "file": "docs/en/TESTING.md",
       "bytes": 1041,
       "sha256": "8471e60ff8d1b3d1631ba47a7d0c83c1a523f2a980dac4b8d62b525d4dd2211b"
@@ -268,6 +279,11 @@
       "file": "docs/zh-CN/DESKTOP.md",
       "bytes": 2462,
       "sha256": "6dae1b2d99bc97b553bfcbad34bea5f63a9eda25fe2421f4c14da959874ab3f9"
+    },
+    {
+      "file": "docs/zh-CN/INSTALLATION.md",
+      "bytes": 2116,
+      "sha256": "aedf13366270083692ef1f31514d8a8ac8a5da79161d30e54df16ec3795d0a6f"
     },
     {
       "file": "docs/zh-CN/MODULE_SYSTEM.md",
@@ -328,6 +344,11 @@
       "file": "docs/zh-CN/SOURCE_MAP.md",
       "bytes": 1671,
       "sha256": "894163a77df2867b92e76ecb154ca97b16c35ca87deebfe9fbacbb80e04c5efd"
+    },
+    {
+      "file": "docs/zh-CN/TECHNICAL_HANDBOOK.md",
+      "bytes": 10021,
+      "sha256": "dc466c271f6f24971c790a8c6302a65ecabc65a0b81e2eea24134f2840fcf8a3"
     },
     {
       "file": "docs/zh-CN/TESTING.md",
@@ -396,8 +417,8 @@
     },
     {
       "file": "scripts/distribution/export-source.py",
-      "bytes": 3418,
-      "sha256": "f020ec820e4695ab13267a705476d957367f9f2d9e784853e83a906b3065186d"
+      "bytes": 3500,
+      "sha256": "31b5bb12a375572d1239fce5829ef2ae81ca254966a873254735331d93b58fc6"
     },
     {
       "file": "scripts/distribution/package-evidence.py",
@@ -2380,6 +2401,16 @@
       "sha256": "818e82d33d57cddb57972300d16fa5adf40b54ab1582e8733860241ad43529d0"
     },
     {
+      "file": "tests/fixtures/insights.ts",
+      "bytes": 1598,
+      "sha256": "48e3578ae6ef13245cf7decb34945350c2ca52a9c682ec31fbb97ff7c38af373"
+    },
+    {
+      "file": "tests/fixtures/module-registry.ts",
+      "bytes": 1396,
+      "sha256": "71e6c2474562adb22cf839967bf181fb5551f6d473fbb63fbe948175757f26ea"
+    },
+    {
       "file": "tests/unit/appearance.test.tsx",
       "bytes": 1588,
       "sha256": "7ef68feedca1c0b6caa6a0030fbf55d04ac0f763c497e2c8f660aaa9117ba9da"
@@ -2463,6 +2494,31 @@
       "file": "vite.config.ts",
       "bytes": 759,
       "sha256": "f9ad40f88b97c8c639dd884fd12265fb1fd76c603f5eae38649572ea4a62b766"
+    },
+    {
+      "file": "website/README.md",
+      "bytes": 706,
+      "sha256": "e2aab999987fbfb253e19a746a4cc275abde9756ce23777ed3afc730c691e4bb"
+    },
+    {
+      "file": "website/index.html",
+      "bytes": 2374,
+      "sha256": "d44f45ad89d8967e56f780f0497d1dcfd8fff7703120fa32d6d674b173d87c20"
+    },
+    {
+      "file": "website/site.css",
+      "bytes": 2930,
+      "sha256": "6067c6f2b72c2a29043c50e0322d0574e28da10e7b96d84eddde22a3210762e7"
+    },
+    {
+      "file": "website/site.d.ts",
+      "bytes": 106,
+      "sha256": "cf94ccbeb27453299af2352528c3e3e1c898976cd94cbb019ffbb4632080bf44"
+    },
+    {
+      "file": "website/site.js",
+      "bytes": 5379,
+      "sha256": "d3099b8ac01aafdff4a98b32e59274418e971977a38dc01222da0e6ebe7c396d"
     }
   ]
 }

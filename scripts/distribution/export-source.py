@@ -14,7 +14,7 @@ dest = Path(args.destination).resolve()
 if dest == root or (root in dest.parents and root / 'work' not in dest.parents):
     raise SystemExit('Destination must be an isolated publication checkout')
 dest.mkdir(parents=True, exist_ok=True)
-dirs = ['src', 'public', 'tests/e2e', 'tests/unit', 'src-tauri/src', 'src-tauri/migrations',
+dirs = ['src', 'public', 'tests/e2e', 'tests/unit', 'tests/fixtures', 'website', 'src-tauri/src', 'src-tauri/migrations',
         'src-tauri/capabilities', 'src-tauri/icons', 'src-tauri/tests', 'src-tauri/vendor',
         'docs/en', 'docs/zh-CN', 'docs/contracts', 'docs/data', 'docs/distribution',
         '.github', 'scripts/distribution', 'scripts/release']
@@ -43,6 +43,7 @@ sha = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=root, text=True)
 (dest / 'UPSTREAM_CHECKPOINT.json').write_text(json.dumps({'upstreamCommit': sha,
     'stablePhase16Commit': 'bcee0483ae5c072e49307dada2bee479a830ef99',
     'historyPolicy': 'Allowlisted source snapshot. Full phase history and local acceptance evidence stay on the owner workstation.',
+    'workingTreeMayIncludeUncommittedChanges': True,
     'productionDataIncluded': False, 'files': manifest}, indent=2), encoding='utf-8')
 readme = root / 'docs/distribution/REPOSITORY_README.md'
 if readme.exists(): shutil.copy2(readme, dest / 'README.md')

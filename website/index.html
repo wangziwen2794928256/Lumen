@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'none'; base-uri 'none'; form-action 'none'"
+    />
+    <title>Lumen · Portfolio</title>
+    <link rel="stylesheet" href="./site.css" />
+    <script type="module" src="./site.js"></script>
+  </head>
+  <body>
+    <a class="skip" href="#content">跳至内容</a>
+    <header>
+      <a class="brand" href="#home">LUMEN <span>PORTFOLIO</span></a>
+      <nav aria-label="网站导航">
+        <a href="#home">Home</a><a href="#about">About</a><a href="#projects">Projects</a
+        ><a href="#research">Research</a><a href="#competitions">Competitions</a
+        ><a href="#awards">Awards</a><a href="#portfolio">Portfolio</a><a href="#links">Links</a>
+      </nav>
+    </header>
+    <main id="content">
+      <p id="status" role="status">正在读取公开资料…</p>
+      <section id="home" class="hero">
+        <p class="eyebrow">个人作品 · LOCAL FIRST</p>
+        <h1 id="name">个人作品集</h1>
+        <p id="headline"></p>
+        <a class="button" href="#portfolio">浏览作品</a>
+      </section>
+      <section id="about">
+        <h2>About / 关于</h2>
+        <p id="bio" class="preserve"></p>
+      </section>
+      <section id="projects">
+        <h2>Projects / 项目</h2>
+        <div class="grid"></div>
+      </section>
+      <section id="research">
+        <h2>Research / 研究</h2>
+        <div class="grid"></div>
+      </section>
+      <section id="competitions">
+        <h2>Competitions / 比赛</h2>
+        <div class="grid"></div>
+      </section>
+      <section id="awards">
+        <h2>Awards / 奖项</h2>
+        <div class="grid"></div>
+      </section>
+      <section id="portfolio">
+        <h2>Portfolio / 全部作品</h2>
+        <div class="grid"></div>
+      </section>
+      <section id="links">
+        <h2>Contact Links / 联系链接</h2>
+        <div class="contact"></div>
+      </section>
+    </main>
+    <footer>
+      由 Lumen 的公开资料快照生成 · <a href="lumen://today">Open in Lumen</a>
+      <p>仅展示明确公开的资料；本页不连接主数据库。</p>
+    </footer>
+  </body>
+</html>
