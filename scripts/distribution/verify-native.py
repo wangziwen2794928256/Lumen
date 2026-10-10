@@ -10,6 +10,8 @@ for build in Path('downloaded').rglob('BUILD.json'):
     metadata = json.loads(build.read_text())
     for entry in metadata['files']:
         package = (build.parent / entry['file']).resolve()
+        if not package.is_relative_to(build.parent.resolve()):
+            raise SystemExit('Package path escapes artifact')
         if hashlib.sha256(package.read_bytes()).hexdigest() != entry['sha256']:
             raise SystemExit('Package hash mismatch')
         result = {'file': package.name, 'target': metadata['target'], 'commit': metadata['commit'], 'sha256': entry['sha256'], 'checks': []}
@@ -58,8 +60,9 @@ for build in Path('downloaded').rglob('BUILD.json'):
         result['nativeLaunchVerified'] = False
         result['osIntegrationVerified'] = False
         results.append(result)
-if not results:
-    raise SystemExit('No applicable packages verified')
+expected_targets = {'aarch64-apple-darwin', 'x86_64-apple-darwin'} if platform.system() == 'Darwin' else {'x86_64-unknown-linux-gnu'}
+if len(results) != 2 or {r['target'] for r in results} != expected_targets:
+    raise SystemExit('Expected two native packages and complete target coverage')
 Path('verification').mkdir(exist_ok=True)
 Path('verification/native-package-verification.json').write_text(json.dumps({'result': 'PASS', 'packages': results}, indent=2))
 print(json.dumps({'result': 'PASS', 'packages': [r['file'] for r in results], 'scope': 'static package validation only'}))

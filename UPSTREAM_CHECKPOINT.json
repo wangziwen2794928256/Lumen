@@ -1,5 +1,5 @@
 {
-  "upstreamCommit": "74fdc62d744de862ac1443fb3a6be4793db9c5a1",
+  "upstreamCommit": "5d321d5dffaaa1b1ac74ac8a72e30c249a324bc4",
   "stablePhase16Commit": "bcee0483ae5c072e49307dada2bee479a830ef99",
   "historyPolicy": "Allowlisted source snapshot. Full phase history and local acceptance evidence stay on the owner workstation.",
   "workingTreeMayIncludeUncommittedChanges": true,
@@ -453,8 +453,8 @@
     },
     {
       "file": "scripts/distribution/verify-native.py",
-      "bytes": 4229,
-      "sha256": "70c4517312ce382f5ebba78a4c5a2ea8ae358d5547f507205d517cfdd3b26619"
+      "bytes": 4574,
+      "sha256": "a12ca6de64cef7efab932f8f9c6162108d71123ea16d3d7e5cc78263eb6c542e"
     },
     {
       "file": "scripts/distribution/verify-source.py",
