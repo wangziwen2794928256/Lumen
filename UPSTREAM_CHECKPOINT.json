@@ -1,5 +1,5 @@
 {
-  "upstreamCommit": "50cdee5cbc009fa13b4c582f1fd47dcc0c4b2fec",
+  "upstreamCommit": "0e82e8e5f4bd5d370b13a81a6a9ca9c6e72eba78",
   "stablePhase16Commit": "bcee0483ae5c072e49307dada2bee479a830ef99",
   "historyPolicy": "Allowlisted source snapshot. Full phase history and local acceptance evidence stay on the owner workstation.",
   "workingTreeMayIncludeUncommittedChanges": true,
@@ -18,8 +18,8 @@
     },
     {
       "file": ".github/workflows/verify-packages.yml",
-      "bytes": 1431,
-      "sha256": "9f755f7baf26f7974b976bfa567eaed7dbf0f9d41223128a70ce25af0b5b7441"
+      "bytes": 1767,
+      "sha256": "2501a3e9561f0b8805a3569866705ef2dffac595555925c446c3c4ab911af326"
     },
     {
       "file": ".gitignore",

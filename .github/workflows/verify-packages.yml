@@ -2,6 +2,11 @@ name: Verify native package structure
 on:
   workflow_dispatch:
     inputs:
+      platform:
+        description: Platform package verification
+        type: choice
+        default: all
+        options: [all, macos, linux]
       build_run_id:
         description: macOS native package workflow run ID
         required: true
@@ -19,11 +24,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        include:
-          - os: macos-14
-            pattern: Lumen-experimental-*apple-darwin
-          - os: ubuntu-22.04
-            pattern: Lumen-experimental-*linux-gnu
+        include: ${{ fromJSON(inputs.platform == 'macos' && '[{"os":"macos-14","pattern":"Lumen-experimental-*apple-darwin"}]' || inputs.platform == 'linux' && '[{"os":"ubuntu-22.04","pattern":"Lumen-experimental-*linux-gnu"}]' || '[{"os":"macos-14","pattern":"Lumen-experimental-*apple-darwin"},{"os":"ubuntu-22.04","pattern":"Lumen-experimental-*linux-gnu"}]') }}
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
