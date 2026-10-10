@@ -1,0 +1,14 @@
+{
+  "bundle": {
+    "active": true,
+    "category": "Productivity",
+    "shortDescription": "Experimental local-first personal growth workspace",
+    "targets": [
+      "app",
+      "dmg"
+    ],
+    "macOS": {
+      "minimumSystemVersion": "14.0"
+    }
+  }
+}

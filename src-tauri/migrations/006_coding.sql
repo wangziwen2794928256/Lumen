@@ -1,0 +1,22 @@
+-- Published migrations remain immutable; no seed records.
+ALTER TABLE coding_problems ADD COLUMN platform TEXT NOT NULL DEFAULT 'Other';
+ALTER TABLE coding_problems ADD COLUMN external_id TEXT NOT NULL DEFAULT '';
+ALTER TABLE coding_problems ADD COLUMN tags_json TEXT NOT NULL DEFAULT '[]';
+ALTER TABLE coding_problems ADD COLUMN notes TEXT NOT NULL DEFAULT '';
+ALTER TABLE coding_problems ADD COLUMN journey_id TEXT REFERENCES journeys(id);
+ALTER TABLE coding_problems ADD COLUMN task_id TEXT REFERENCES tasks(id);
+ALTER TABLE coding_problems ADD COLUMN competition_id TEXT REFERENCES competitions(id);
+ALTER TABLE coding_problems ADD COLUMN revision INTEGER NOT NULL DEFAULT 0 CHECK(revision>=0);
+CREATE UNIQUE INDEX idx_coding_identity ON coding_problems(platform,external_id COLLATE NOCASE) WHERE deleted_at IS NULL AND external_id<>'';
+ALTER TABLE coding_attempts ADD COLUMN attempted_on TEXT;
+ALTER TABLE coding_attempts ADD COLUMN started_at TEXT;
+ALTER TABLE coding_attempts ADD COLUMN manual_seconds INTEGER NOT NULL DEFAULT 0 CHECK(manual_seconds>=0);
+ALTER TABLE coding_attempts ADD COLUMN focus_session_id TEXT REFERENCES focus_sessions(id);
+ALTER TABLE coding_attempts ADD COLUMN revision INTEGER NOT NULL DEFAULT 0 CHECK(revision>=0);
+CREATE UNIQUE INDEX idx_coding_focus_unique ON coding_attempts(focus_session_id) WHERE deleted_at IS NULL AND focus_session_id IS NOT NULL;
+CREATE INDEX idx_coding_attempt_date ON coding_attempts(problem_id,attempted_on,started_at,id) WHERE deleted_at IS NULL;
+ALTER TABLE competitions ADD COLUMN platform TEXT NOT NULL DEFAULT 'Other';
+ALTER TABLE competitions ADD COLUMN participated INTEGER NOT NULL DEFAULT 0 CHECK(participated IN (0,1));
+ALTER TABLE competitions ADD COLUMN notes TEXT NOT NULL DEFAULT '';
+ALTER TABLE competitions ADD COLUMN revision INTEGER NOT NULL DEFAULT 0 CHECK(revision>=0);
+CREATE TABLE coding_receipts(request_id TEXT PRIMARY KEY NOT NULL CHECK(length(request_id)=36),payload_hash TEXT NOT NULL CHECK(length(payload_hash)=64),created_at TEXT NOT NULL);

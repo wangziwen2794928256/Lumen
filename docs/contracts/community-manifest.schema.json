@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Community Runtime Manifest 1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "version", "api_version", "runtime", "entry", "permissions"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "maxLength": 80,
+      "pattern": "^[a-z][a-z0-9-]*(\\.[a-z][a-z0-9-]*)+$",
+      "description": "lumen.* reserved, enforced by Kernel"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "api_version": {
+      "const": "1.0"
+    },
+    "runtime": {
+      "const": "wasm-component"
+    },
+    "entry": {
+      "const": "plugin.wasm"
+    },
+    "permissions": {
+      "type": "array",
+      "maxItems": 3,
+      "uniqueItems": true,
+      "items": {
+        "enum": ["storage.own", "widget.contribute", "plan.propose"]
+      }
+    }
+  }
+}

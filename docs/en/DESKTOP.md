@@ -1,0 +1,15 @@
+# Desktop Experience
+
+Kernel `src-tauri/src/kernel/desktop.rs` owns the tray, duplicate-launch routing, window behavior, explicit autostart control and restrained notifications. Official stable Tauri plugins are pinned; no new JavaScript plugin permissions or community native execution are enabled. Register single-instance first. Only main-window size, position and maximization are restored; visibility/minimization and the capture window are excluded.
+
+The tray provides Open, Start Focus, Quick Capture, Pause Focus, Today and Quit. Focus actions call the existing TodayService; no separate timer or database writer is introduced. Starting focus chooses the first active/planned Today task when no session exists; otherwise opens the existing session. Empty tasks open Focus for manual selection. Duplicate launches accept only the existing strict lumen:// route allowlist and bring the main window forward.
+
+Autostart is OFF unless the user explicitly registers it through General settings. Its actual OS state is read back, with unavailable state and failures displayed. Main-window close exits by default; close-to-tray is opt-in and requires a successfully installed tray. Quit always saves window state and exits.
+
+Notification master setting is OFF. Four category switches allow only focus completion, timed calendar events within five minutes, previous-week journal review readiness, and backup failures. Bodies contain no task titles, calendar titles or private text. No permission request occurs on startup. Desktop plugin permission availability does not guarantee OS delivery. Polling runs only while the application is running; events are deduplicated per session and expired after six minutes, focus completions use a timestamp/id cursor, weekly reviews once per ISO week, backup failures on state changes. Notifications are best-effort, with no missed-notification replay across restarts.
+
+Optional onboarding has five steps: main journey, capacity, subjects, optional shortcut and confirmation. Skip creates no personal records. Completion uses one existing-schema transaction and existing roadmap validators; only user-entered records are created, subjects are deduplicated and retries are idempotent. Existing personal records suppress onboarding and block concurrent initialization. Shortcut conflicts preserve saved manual data and allow entry. No integrations or tracking are enabled by onboarding.
+
+Settings exposes thirteen keyboard-focusable groups. Existing Appearance, Planning, Capture, Module, Backup and Privacy panels are reused. Strings are centralized; stacked form controls and action gaps support three viewport sizes and dark/light modes. Preferences use `settings` keys `desktop.v1` and `onboarding.v1`; no migration is introduced. Desktop preferences use revision conflicts.
+
+Verification: `scripts/verify/phase14.ps1`; isolated Rust desktop tests and browser IPC fixtures, plus native QA evidence under `docs/testing/phase14`. Native OS notifications/autostart policy changes require appropriate manual checks and are not implied by browser fixtures. macOS/Linux builds and notification delivery are not claimed.

@@ -1,0 +1,96 @@
+name: Native experimental packages
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: native-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  build:
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-22.04
+            target: x86_64-unknown-linux-gnu
+            bundles: deb,appimage
+          - os: macos-14
+            target: aarch64-apple-darwin
+            bundles: app,dmg
+          - os: macos-15-intel
+            target: x86_64-apple-darwin
+            bundles: app,dmg
+    runs-on: ${{ matrix.os }}
+    env:
+      CARGO_BUILD_JOBS: 2
+      CARGO_INCREMENTAL: 0
+      CARGO_PROFILE_RELEASE_OPT_LEVEL: 2
+      CARGO_PROFILE_RELEASE_CODEGEN_UNITS: 1
+      LUMEN_E2E_BROWSER: chromium
+      LUMEN_E2E_REPORT: evidence/e2e-results.json
+      NO_STRIP: true
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+        with:
+          node-version: 24.15.0
+      - name: Linux native prerequisites
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y libwebkit2gtk-4.1-dev build-essential libssl-dev libgtk-3-dev libayatana-appindicator3-dev librsvg2-dev patchelf libfuse2 file
+      - name: Locked tools and dependencies
+        shell: bash
+        run: |
+          mkdir -p evidence docs/testing
+          npm install --global pnpm@11.19.0
+          rustup toolchain install 1.98.1 --profile minimal --component rustfmt,clippy
+          rustup target add ${{ matrix.target }} --toolchain 1.98.1
+          pnpm install --frozen-lockfile
+          node --version > evidence/toolchain.txt
+          pnpm --version >> evidence/toolchain.txt
+          rustc --version >> evidence/toolchain.txt
+          git rev-parse HEAD >> evidence/toolchain.txt
+      - name: Frontend gates
+        shell: bash
+        run: |
+          set -o pipefail
+          pnpm lint 2>&1 | tee evidence/lint.txt
+          pnpm typecheck 2>&1 | tee evidence/typecheck.txt
+          pnpm test 2>&1 | tee evidence/unit.txt
+          pnpm build 2>&1 | tee evidence/frontend-build.txt
+      - name: Rust formatting and tests including migrations
+        shell: bash
+        run: |
+          set -o pipefail
+          cargo fmt --manifest-path src-tauri/Cargo.toml --check
+          cargo test --manifest-path src-tauri/Cargo.toml --locked 2>&1 | tee evidence/rust-tests.txt
+      - name: Optimized glib security regression
+        if: runner.os == 'Linux'
+        shell: bash
+        run: |
+          set -o pipefail
+          cargo test --manifest-path src-tauri/Cargo.toml --locked --release --test glib_security 2>&1 | tee evidence/glib-security.txt
+      - name: Browser regression at three sizes
+        if: runner.os == 'Linux'
+        shell: bash
+        run: |
+          set -o pipefail
+          pnpm exec playwright install --with-deps chromium
+          pnpm test:e2e 2>&1 | tee evidence/e2e.txt
+      - name: Native unsigned experimental bundles
+        shell: bash
+        run: |
+          set -o pipefail
+          pnpm tauri build --config src-tauri/tauri.experimental.conf.json --bundles ${{ matrix.bundles }} --target ${{ matrix.target }} -- --locked 2>&1 | tee evidence/native-build.txt
+          python3 scripts/distribution/package-evidence.py ${{ matrix.target }}
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        if: always()
+        with:
+          name: Lumen-experimental-${{ matrix.target }}
+          path: |
+            native-output/
+            evidence/
+            tests/screenshots/
+          if-no-files-found: error
+          retention-days: 30

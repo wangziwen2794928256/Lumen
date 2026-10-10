@@ -1,0 +1,152 @@
+[
+  {
+    "id": "lumen.today",
+    "name": {
+      "zh-CN": "今日",
+      "en": "Today"
+    },
+    "version": "1.0.0",
+    "api_version": "1.0",
+    "layer": "kernel",
+    "route": "/",
+    "icon": "Sun",
+    "required": true,
+    "status": "stable",
+    "permissions": []
+  },
+  {
+    "id": "lumen.focus",
+    "name": {
+      "zh-CN": "专注",
+      "en": "Focus"
+    },
+    "version": "1.0.0",
+    "api_version": "1.0",
+    "layer": "official",
+    "route": "/focus",
+    "icon": "Timer",
+    "required": false,
+    "status": "legacy-bridge",
+    "permissions": []
+  },
+  {
+    "id": "lumen.calendar",
+    "name": {
+      "zh-CN": "日历",
+      "en": "Calendar"
+    },
+    "version": "1.0.0",
+    "api_version": "1.0",
+    "layer": "official",
+    "route": "/calendar",
+    "icon": "CalendarDays",
+    "required": false,
+    "status": "legacy-bridge",
+    "permissions": []
+  },
+  {
+    "id": "lumen.roadmap",
+    "name": {
+      "zh-CN": "路线图",
+      "en": "Roadmap"
+    },
+    "version": "1.0.0",
+    "api_version": "1.0",
+    "layer": "official",
+    "route": "/roadmap",
+    "icon": "Map",
+    "required": false,
+    "status": "legacy-bridge",
+    "permissions": []
+  },
+  {
+    "id": "lumen.journal",
+    "name": {
+      "zh-CN": "日记",
+      "en": "Journal"
+    },
+    "version": "1.0.0",
+    "api_version": "1.0",
+    "layer": "official",
+    "route": "/journal",
+    "icon": "NotebookPen",
+    "required": false,
+    "status": "legacy-bridge",
+    "permissions": []
+  },
+  {
+    "id": "lumen.coding",
+    "name": {
+      "zh-CN": "编程练习",
+      "en": "Coding"
+    },
+    "version": "1.0.0",
+    "api_version": "1.0",
+    "layer": "official",
+    "route": "/coding",
+    "icon": "CodeXml",
+    "required": false,
+    "status": "legacy-bridge",
+    "permissions": []
+  },
+  {
+    "id": "lumen.insights",
+    "name": {
+      "zh-CN": "洞察",
+      "en": "Insights"
+    },
+    "version": "1.0.0",
+    "api_version": "1.0",
+    "layer": "official",
+    "route": "/insights",
+    "icon": "ChartNoAxesCombined",
+    "required": false,
+    "status": "module",
+    "permissions": ["core.insights.read", "core.insights.write"]
+  },
+  {
+    "id": "lumen.music",
+    "name": {
+      "zh-CN": "音乐",
+      "en": "Music"
+    },
+    "version": "1.0.0",
+    "api_version": "1.0",
+    "layer": "official",
+    "route": "/music",
+    "icon": "Music2",
+    "required": false,
+    "status": "module",
+    "permissions": ["core.music.read", "core.music.write", "platform.media.observe"]
+  },
+  {
+    "id": "lumen.vault",
+    "name": {
+      "zh-CN": "作品库",
+      "en": "Vault"
+    },
+    "version": "1.0.0",
+    "api_version": "1.0",
+    "layer": "official",
+    "route": "/vault",
+    "icon": "Archive",
+    "required": false,
+    "status": "module",
+    "permissions": ["core.vault.read", "core.vault.write", "platform.attachments"]
+  },
+  {
+    "id": "lumen.profile",
+    "name": {
+      "zh-CN": "个人档案",
+      "en": "Profile"
+    },
+    "version": "1.0.0",
+    "api_version": "1.0",
+    "layer": "official",
+    "route": "/profile",
+    "icon": "UserRound",
+    "required": false,
+    "status": "module",
+    "permissions": ["core.profile.read", "core.profile.write", "core.public.export"]
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "main-capability",
+  "description": "Minimal bootstrap window permissions.",
+  "windows": [
+    "main", "capture"
+  ],
+  "permissions": [
+    "core:default"
+  ]
+}

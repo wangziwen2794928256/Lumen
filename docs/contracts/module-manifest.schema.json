@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "maxLength": 80,
+      "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9-]*)+$"
+    },
+    "name": {
+      "type": "object",
+      "properties": {
+        "zh-CN": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80
+        },
+        "en": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80
+        }
+      },
+      "required": ["zh-CN", "en"],
+      "additionalProperties": false
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "api_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "layer": {
+      "type": "string",
+      "enum": ["kernel", "official", "community", "theme"]
+    },
+    "route": {
+      "type": "string",
+      "pattern": "^\\/[a-z0-9/-]*$"
+    },
+    "icon": {
+      "type": "string",
+      "maxLength": 40
+    },
+    "required": {
+      "type": "boolean"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["stable", "module", "legacy-bridge", "planned"]
+    },
+    "permissions": {
+      "maxItems": 16,
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "version",
+    "api_version",
+    "layer",
+    "route",
+    "icon",
+    "required",
+    "status",
+    "permissions"
+  ],
+  "additionalProperties": false
+}

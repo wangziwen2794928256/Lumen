@@ -1,0 +1,45 @@
+import { Component, type ReactNode } from 'react';
+import { insightsWidgets } from '../../modules/official/insights';
+import { useModules } from './ModuleProvider';
+import { moduleText } from './model';
+class WidgetBoundary extends Component<{ children: ReactNode }, { failed: boolean }> {
+  state = { failed: false };
+  static getDerivedStateFromError() {
+    return { failed: true };
+  }
+  render() {
+    return this.state.failed ? (
+      <p role="status">模块组件暂不可用，其他首页功能仍可使用。</p>
+    ) : (
+      this.props.children
+    );
+  }
+}
+export function TodayWidgets({ slot }: { slot: 'today.after-summary' }) {
+  const { state, ready } = useModules();
+  return (
+    <>
+      {ready &&
+        insightsWidgets
+          .filter(
+            (w) => w.slot === slot && state.items.some((i) => i.id === w.moduleId && i.enabled),
+          )
+          .sort((a, b) => a.order - b.order)
+          .map((w) => (
+            <WidgetBoundary key={w.id}>
+              <w.Component />
+            </WidgetBoundary>
+          ))}
+    </>
+  );
+}
+export function ModuleGate({ id, children }: { id: string; children: ReactNode }) {
+  const { state, ready } = useModules();
+  return !ready ? (
+    <p role="status">正在读取模块配置…</p>
+  ) : state.items.some((i) => i.id === id && i.enabled) ? (
+    children
+  ) : (
+    <p role="status">{moduleText.disabled}</p>
+  );
+}

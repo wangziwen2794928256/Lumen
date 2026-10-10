@@ -1,0 +1,24 @@
+package lumen:plugin@1.0.0;
+
+interface storage {
+  // Opaque keys, own namespace only; no host paths, SQL or arbitrary files.
+  get: func(key: string) -> result<option<list<u8>>, string>;
+  put: func(key: string, value: list<u8>) -> result<_, string>;
+}
+interface widgets {
+  // Host-validated declarative JSON only; no HTML, scripts or Tauri IPC.
+  contribute: func(widget-json: string) -> result<_, string>;
+}
+interface plans {
+  // Validated proposal only, never direct task writes or auto-accept.
+  propose: func(exchange-json: string) -> result<_, string>;
+}
+world community-plugin {
+  import storage;
+  import widgets;
+  import plans;
+  export initialize: func() -> result<_, string>;
+  export shutdown: func();
+}
+// Draft SDK contract; future host calls enforce grants and deny ungranted resources.
+// Wasmtime/WASI dependency and runtime are intentionally absent in Phase9.5.
