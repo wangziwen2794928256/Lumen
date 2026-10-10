@@ -1,5 +1,5 @@
 {
-  "upstreamCommit": "e1b6b79b6bf63d038a818e8cd8e04ab8fde98c81",
+  "upstreamCommit": "74fdc62d744de862ac1443fb3a6be4793db9c5a1",
   "stablePhase16Commit": "bcee0483ae5c072e49307dada2bee479a830ef99",
   "historyPolicy": "Allowlisted source snapshot. Full phase history and local acceptance evidence stay on the owner workstation.",
   "workingTreeMayIncludeUncommittedChanges": true,
@@ -15,6 +15,11 @@
       "file": ".github/workflows/native-build.yml",
       "bytes": 3729,
       "sha256": "43fee292c72fe754a22d0222a54b5b87e199bde49878caa66bb1dec494ba2008"
+    },
+    {
+      "file": ".github/workflows/verify-packages.yml",
+      "bytes": 1247,
+      "sha256": "6f59b1fe22ba66c0feeb769a8c34b55d511c0d6d82656dd7424e43caabfd33bb"
     },
     {
       "file": ".gitignore",
@@ -445,6 +450,11 @@
       "file": "scripts/distribution/package-evidence.py",
       "bytes": 914,
       "sha256": "3618e0e54101a3611b0098456640f99ecb541cfb8bd151a2656282c47179b490"
+    },
+    {
+      "file": "scripts/distribution/verify-native.py",
+      "bytes": 4229,
+      "sha256": "70c4517312ce382f5ebba78a4c5a2ea8ae358d5547f507205d517cfdd3b26619"
     },
     {
       "file": "scripts/distribution/verify-source.py",

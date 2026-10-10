@@ -1,0 +1,39 @@
+name: Verify native package structure
+on:
+  workflow_dispatch:
+    inputs:
+      build_run_id:
+        description: Successful native package workflow run ID
+        required: true
+        type: string
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify:
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: macos-14
+            pattern: Lumen-experimental-*apple-darwin
+          - os: ubuntu-22.04
+            pattern: Lumen-experimental-*linux-gnu
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
+        with:
+          github-token: ${{ github.token }}
+          run-id: ${{ inputs.build_run_id }}
+          pattern: ${{ matrix.pattern }}
+          path: downloaded
+      - name: Validate native image and executable structure
+        run: python3 scripts/distribution/verify-native.py
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: Lumen-package-verification-${{ runner.os }}
+          path: verification/
+          if-no-files-found: error
+          retention-days: 30
