@@ -9,7 +9,7 @@
 | O002 | 第一原则：先审计，禁止直接安装 | ENGINEERING | Repository/phase records exist; historical environment and tool choices are not reinstalled during an audit. `AGENTS.md` · `docs/environment/environment_audit.md` · `package.json` |
 | O003 | 项目根目录 | ENGINEERING | Repository/phase records exist; historical environment and tool choices are not reinstalled during an audit. `AGENTS.md` · `docs/environment/environment_audit.md` · `package.json` |
 | O004 | 强制 Git 规则 | ENGINEERING | Repository/phase records exist; historical environment and tool choices are not reinstalled during an audit. `AGENTS.md` · `docs/environment/environment_audit.md` · `package.json` |
-| O005 | 技术栈 | ENGINEERING | Repository/phase records exist; historical environment and tool choices are not reinstalled during an audit. `AGENTS.md` · `docs/environment/environment_audit.md` · `package.json` |
+| O005 | 技术栈 | PARTIAL | Stack deviation: hooks/context instead of Zustand/TanStack Query; semantic DOM/SVG instead of ECharts/Recharts. Custom lightweight calendar has ADR-004; state simplification discussed in ADR-006. No blind dependency installation. `package.json` · `docs/decisions/ADR-004-calendar.md` · `docs/decisions/ADR-006-design-system.md` |
 | O006 | Tauri 官方能力优先 | ENGINEERING | Repository/phase records exist; historical environment and tool choices are not reinstalled during an audit. `AGENTS.md` · `docs/environment/environment_audit.md` · `package.json` |
 | O007 | 建议工程结构 | ENGINEERING | Repository/phase records exist; historical environment and tool choices are not reinstalled during an audit. `AGENTS.md` · `docs/environment/environment_audit.md` · `package.json` |
 | O008 | AGENTS.md | ENGINEERING | Repository/phase records exist; historical environment and tool choices are not reinstalled during an audit. `AGENTS.md` · `docs/environment/environment_audit.md` · `package.json` |
@@ -121,18 +121,26 @@
 | O114 | Codex 工作方式 | ENGINEERING | Release/test/rollback receipts and editable deliverables exist. This phase does not claim new native installer lifecycle or PowerPoint acceptance. `docs/reports` · `release` · `scripts/distribution` |
 | O115 | 第一轮实际执行范围 | SUPERSEDED | Original Phase0-only instruction was superseded by subsequent explicit user phase progression; no historical gate is replayed. `PROJECT_STATUS.md` |
 | O116 | 最高验收原则 | CORE | Preserve production data first: read-only baseline and final comparison; no schema changes in this phase. `AGENTS.md` · `src-tauri/src/database/migrations.rs` |
-| A01 | Four layers/Kernel security | CORE | See audit overview for implementation and verification limits. `src/kernel/modules/catalogue.json` |
-| A02 | Manifest, Registry, enabled/hidden/pinned/order/drag | CORE | See audit overview for implementation and verification limits. `src/kernel/modules/registry.ts` |
-| A03 | Today widget contribution slots | CORE | See audit overview for implementation and verification limits. `src/kernel/modules/Extensions.tsx` |
-| A04 | Windows/macOS/Linux adapter boundary | PARTIAL | See audit overview for implementation and verification limits. `src-tauri/src/kernel/platform/mod.rs` |
-| A05 | Permissions, API version, lifecycle | CONTRACT | See audit overview for implementation and verification limits. `src/kernel` |
-| A06 | Future isolated WASM/capability runtime; no native third parties | CONTRACT | See audit overview for implementation and verification limits. `docs/zh-CN/PLUGIN_SECURITY.md` |
-| A07 | AppData layout, isolated plugin data | CORE | See audit overview for implementation and verification limits. `src-tauri/src/kernel/storage.rs` |
-| A08 | Plan exchange and observations without AI calls | CORE | See audit overview for implementation and verification limits. `src-tauri/migrations/008_architecture_evolution.sql` |
-| A09 | Bilingual technical documentation | CORE | See audit overview for implementation and verification limits. `docs/zh-CN/TECHNICAL_HANDBOOK.md` |
-| A10 | Retain previous data using migrations | CORE | See audit overview for implementation and verification limits. `src-tauri/src/database/tests.rs` |
-| A11 | At least one official module migration | CORE | See audit overview for implementation and verification limits. `src/modules/official/insights` |
-| A12 | Architecture report and check results | ENGINEERING | See audit overview for implementation and verification limits. `docs/reports` |
+| A01 | 9.5.1 Kernel / Official / Community / Themes | CORE | See audit overview for implementation and verification limits. `src/kernel/modules/catalogue.json` |
+| A02 | 9.5.2 Module Manifest and Registry | CORE | See audit overview for implementation and verification limits. `src/kernel/modules/registry.ts` |
+| A03 | 9.5.3 Dynamic sidebar enable/hide/pin/order/drag | CORE | See audit overview for implementation and verification limits. `src/components/layout/AppShell.tsx` |
+| A04 | 9.5.4 Today widget extension point | CORE | See audit overview for implementation and verification limits. `src/kernel/modules/Extensions.tsx` |
+| A05 | 9.5.5 Central platform adapter boundaries | PARTIAL | See audit overview for implementation and verification limits. `src-tauri/src/kernel/platform/mod.rs` |
+| A06 | 9.5.6 Permission model, no arbitrary native code | CONTRACT | See audit overview for implementation and verification limits. `src-tauri/src/kernel/permissions.rs` |
+| A07 | 9.5.7 Non-removable Kernel security | CORE | See audit overview for implementation and verification limits. `src-tauri/src/kernel/privacy.rs` |
+| A08 | 9.5.8 Isolated WASM/Wasmtime capability runtime design | CONTRACT | See audit overview for implementation and verification limits. `docs/zh-CN/PLUGIN_SECURITY.md` |
+| A09 | 9.5.9 All production data directory categories | CORE | See audit overview for implementation and verification limits. `src-tauri/src/kernel/storage.rs` |
+| A10 | 9.5.10 Plugin isolated database, no core SQLite access | CONTRACT | See audit overview for implementation and verification limits. `docs/zh-CN/PLUGIN_SECURITY.md` |
+| A11 | 9.5.11 Module API versioning | CONTRACT | See audit overview for implementation and verification limits. `docs/zh-CN/MODULE_SYSTEM.md` |
+| A12 | 9.5.12 install/enable/disable/update/rollback/uninstall design | CONTRACT | See audit overview for implementation and verification limits. `docs/zh-CN/RELEASE.md` |
+| A13 | 9.5.13 Plan Exchange without actual AI calls | CORE | See audit overview for implementation and verification limits. `src/kernel/plan/exchange.ts` |
+| A14 | 9.5.14 Planner estimates/actuals/history/accept/reject/capacity observations | CORE | See audit overview for implementation and verification limits. `src-tauri/migrations/008_architecture_evolution.sql` |
+| A15 | 9.5.15 Bilingual technical document structure | CORE | See audit overview for implementation and verification limits. `docs/zh-CN/README.md` |
+| A16 | 9.5.16 No full marketplace/runtime/AI/mobile implementation | DEFERRED | See audit overview for implementation and verification limits. `docs/zh-CN/TECHNICAL_HANDBOOK.md` |
+| A17 | 9.5.17 Preserve existing features and use migration only | CORE | See audit overview for implementation and verification limits. `src-tauri/src/database/tests.rs` |
+| A18 | 9.5.18 Build/lint/type/unit/E2E/migration/UI gates | CORE | See audit overview for implementation and verification limits. `tests/e2e` |
+| A19 | 9.5.19 Pilot official module migration | CORE | See audit overview for implementation and verification limits. `src/modules/official/insights` |
+| A20 | 9.5.20 Architecture report/checkpoint and historical stop | ENGINEERING | See audit overview for implementation and verification limits. `docs/reports` |
 | U01 | Open-source/public editable source and docs | CORE | See audit overview for implementation and verification limits. `LICENSE` |
 | U02 | Detailed bilingual docs and editable reviewed PPT | CORE | See audit overview for implementation and verification limits. `docs/presentations` |
 | U03 | English UI package | PARTIAL | See audit overview for implementation and verification limits. `src/locales/en/messages.json` |

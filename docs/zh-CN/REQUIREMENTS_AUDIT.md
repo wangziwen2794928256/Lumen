@@ -25,6 +25,7 @@
 | P2 | 可移植导出是白名单 | JSON/CSV/Markdown 覆盖主要数据，但不是所有内部/偏好/权限表的完整替代；全量恢复应使用验证过的备份。 |
 | P3 | Spotify / ActivityWatch 未完成 | 默认关闭，Spotify 仅接口，ActivityWatch 无实际集成。手工使用不依赖这些服务。 |
 | P3 | 部分大型页面维护性不足 | InsightsPage 超过建议规模；后续渐进拆分，不在本轮批量改写稳定服务。 |
+| P3 | 技术栈存在取舍 | 当前使用 React hooks/context 与语义 DOM/SVG，没有引入原指定的 Zustand/TanStack Query/ECharts。轻量日历已有 ADR-004，状态简化见 ADR-006；不能声称技术栈逐项完全一致。 |
 
 社区插件执行、完整 WASM Runtime、插件市场、AI Planner、移动端仍是**明确延后**，并非本阶段遗漏。Theme Packs/第三方生命周期主要为契约准备，不把源码级官方模块说成可直接安装的第三方插件。
 

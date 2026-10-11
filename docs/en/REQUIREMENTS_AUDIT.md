@@ -23,6 +23,7 @@ Module settings action buttons now have a 12px wrapping gap. Navigation scrolls 
 | P2 | Portable export is allowlisted | JSON/CSV/Markdown cover main data, not every internal/preferences/grants table. Use verified complete backups for full recovery. |
 | P3 | Spotify/ActivityWatch are incomplete | Spotify is an interface; ActivityWatch has no actual integration. Both are off and unnecessary for manual use. |
 | P3 | Some pages remain large | InsightsPage exceeds the suggested component size. Further incremental refactoring is preferable to a wholesale rewrite. |
+| P3 | Stack choices differ | React hooks/context and semantic DOM/SVG are used instead of the specified Zustand/TanStack Query/ECharts. The lightweight calendar has ADR-004; state simplification is discussed in ADR-006. Exact stack conformance is not claimed. |
 
 Community execution, full WASM, marketplace, AI Planner and mobile apps are intentionally deferred. Theme packs and third-party lifecycle are contract preparation, not an installed third-party runtime.
 

@@ -1,5 +1,5 @@
 {
-  "upstreamCommit": "93201ef9d510a3aaea226c8fbac3c007268de129",
+  "upstreamCommit": "7077c6499bfb08455d67e9b80b1d42bf018a80a3",
   "stablePhase16Commit": "bcee0483ae5c072e49307dada2bee479a830ef99",
   "historyPolicy": "Allowlisted source snapshot. Full phase history and local acceptance evidence stay on the owner workstation.",
   "workingTreeMayIncludeUncommittedChanges": true,
@@ -113,8 +113,8 @@
     },
     {
       "file": "docs/data/REQUIREMENTS_MATRIX.md",
-      "bytes": 30922,
-      "sha256": "72f0ee175fefbc020af7f54d9ab7242844c0bdbaaae04eba9c41db81d9fc3700"
+      "bytes": 32473,
+      "sha256": "5edd15380620d9b60dd3d613a926b71ecbc395023064e8425cbe4586f5e4f74a"
     },
     {
       "file": "docs/data/ROADMAP_PLANNER.md",
@@ -353,8 +353,8 @@
     },
     {
       "file": "docs/en/REQUIREMENTS_AUDIT.md",
-      "bytes": 4458,
-      "sha256": "6c98c183d16b8c92e6ca611f24fd0a1ad843a50dd7b23d8d921a5eaec52cc4e0"
+      "bytes": 4721,
+      "sha256": "191ad4dc23fcde60877b8d9d197affde08fd11dd286ab5afe8d6d41de2032c7d"
     },
     {
       "file": "docs/en/SOURCE_MAP.md",
@@ -543,8 +543,8 @@
     },
     {
       "file": "docs/zh-CN/REQUIREMENTS_AUDIT.md",
-      "bytes": 4614,
-      "sha256": "421834ed080de33054a55052162718dcdbeb1c13a6beda40dee4c3ce4e0d874f"
+      "bytes": 4856,
+      "sha256": "4b5c5652f6180cbcbcb1a11fd2429998c260acc7042b448dfe6ee8b1ba1d5ac4"
     },
     {
       "file": "docs/zh-CN/SOURCE_MAP.md",
