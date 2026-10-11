@@ -1,5 +1,5 @@
 {
-  "upstreamCommit": "b8cd5af8543adef4745c2b2727b85d5d17747a0a",
+  "upstreamCommit": "cc38ab270750904a3b1814130e448152a9ec7031",
   "stablePhase16Commit": "bcee0483ae5c072e49307dada2bee479a830ef99",
   "historyPolicy": "Allowlisted source snapshot. Full phase history and local acceptance evidence stay on the owner workstation.",
   "workingTreeMayIncludeUncommittedChanges": true,
@@ -38,8 +38,8 @@
     },
     {
       "file": "CONTRIBUTING.md",
-      "bytes": 5539,
-      "sha256": "26041ecdfcef0d5225df8757b0a1321f95cc2177d258afdcef30e781c89b1632"
+      "bytes": 6330,
+      "sha256": "ded11d49985cad1c5ecc711317f09054853fff49f8e4f548f3689b93342db458"
     },
     {
       "file": "LICENSE",
@@ -163,8 +163,8 @@
     },
     {
       "file": "docs/distribution/REPOSITORY_README.md",
-      "bytes": 10510,
-      "sha256": "ae85c90449d1187daaf877c8de3b67ae14c052cea06a00246c5c791153f78a75"
+      "bytes": 12199,
+      "sha256": "d2d90437a304a5ae816e94f81bd4414393a86d08661044e5ee0fb32de99a983b"
     },
     {
       "file": "docs/distribution/presentation-assets/focus-en.png",
@@ -233,8 +233,8 @@
     },
     {
       "file": "docs/en/CONTRIBUTING.md",
-      "bytes": 3929,
-      "sha256": "7776ab2558c8111c1f395c851388368141a5789f74e9d680747da4e53df4e7d1"
+      "bytes": 4372,
+      "sha256": "fe948635a5f73cc9bf4ba198e45be39dbbf554744ec8980e64babac5a79600d9"
     },
     {
       "file": "docs/en/CROSS_PLATFORM.md",
@@ -263,8 +263,8 @@
     },
     {
       "file": "docs/en/EXTENSION_IDEAS.md",
-      "bytes": 3249,
-      "sha256": "25154a7b31fe3fbf16f46c267d266046504e96e2cb77f3aedc318ca6dc12b2fb"
+      "bytes": 5526,
+      "sha256": "a75e59a1a6ac27784c89da454c766d622f794c44581ebaf3cce9d8d25af84acb"
     },
     {
       "file": "docs/en/INSTALLATION.md",
@@ -418,8 +418,8 @@
     },
     {
       "file": "docs/zh-CN/CONTRIBUTING.md",
-      "bytes": 3482,
-      "sha256": "f5fec2a18293d949aea8b2ca27cc55d7199bab33ecf799d63d788ef9ae67565e"
+      "bytes": 3867,
+      "sha256": "aae10ff873e8afc40715e95355db722ba8338e4727de5913d68846c28a631af2"
     },
     {
       "file": "docs/zh-CN/CROSS_PLATFORM.md",
@@ -448,8 +448,8 @@
     },
     {
       "file": "docs/zh-CN/EXTENSION_IDEAS.md",
-      "bytes": 3193,
-      "sha256": "030dcf07dc595a569c38e3a6db5407e1013364af295be516a80113a08afce1fb"
+      "bytes": 5285,
+      "sha256": "95c590691a99dd794068f173d9b391dc09118a53f95d504b9003f86a33d9e098"
     },
     {
       "file": "docs/zh-CN/INSTALLATION.md",

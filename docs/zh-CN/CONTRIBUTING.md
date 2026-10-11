@@ -4,6 +4,8 @@
 
 ## 选择切入口
 
+保持默认体验简约易用；额外需求可以先反馈，也可以自行或借助 AI 开发独立模块，不以功能堆叠为目标。AI 工具可选，生成结果需要审阅和验证。移动端 App 是重要的未来展望，可从需求、原型和数据契约贡献开始，当前没有可用移动版或默认设备同步。详见 [扩展方向](EXTENSION_IDEAS.md)。
+
 可以报告问题、补充使用示例、修正文案、翻译、改进可访问性，也可以贡献模块、主题设计和公开可编辑 PPT。考研、考公、语言、科研、编程和职业成长等场景均欢迎。可拓展方向见 [EXTENSION_IDEAS](EXTENSION_IDEAS.md)。
 
 源码模块接入请先阅读 [MODULE_TUTORIAL](MODULE_TUTORIAL.md)、[MODULE_SYSTEM](MODULE_SYSTEM.md) 和 [API_REFERENCE](API_REFERENCE.md)。当前官方模块采用可信源码集成；社区 WASM Runtime、插件市场和运行时主题包加载并未实现。设计契约不等于已开放执行能力。

@@ -13,6 +13,10 @@ Lumen 将长期目标、每日任务、实际专注、日历、日记、编程�
 
 考研时，把数学、英语和专业课拆成目标与任务，比较计划和实际；考公时，分别记录行测模块、申论练习和错题复盘；科研或作品冲刺时，用日记记录推导，用 Vault 保存成果、证书和项目链接。模板是起点，字段与路线都可以按自己的情况修改。程序不预测录取概率，不用连续打卡惩罚休息。
 
+### 简约使用，按需扩展
+
+Lumen 主打简约、易上手，不以堆叠功能取胜。默认体验保持清晰，需要时再启用相应模块；额外需求可以通过 Issues 反馈，也可以参考教程 Fork 源码，自行编写组件，或借助 AI 等开发工具实现。AI 可选，日常使用无需 AI 账户；开发时请使用合成数据，并审阅、验证生成代码。
+
 ### Everything is a Module：缺少的组件，可以自己写
 
 Lumen 采用 Kernel、Official Modules、Community Modules、Theme Packs 四层结构。核心负责安全、本地数据、迁移、备份和平台服务；功能通过模块组织。侧栏来自 Module Registry，可启用、隐藏、置顶和拖动排序。Today 提供 widget 贡献点。Insights、Music、Vault、Profile 已有独立官方模块入口，其他稳定模块通过兼容桥逐步迁移。
@@ -35,8 +39,11 @@ Lumen 采用 Kernel、Official Modules、Community Modules、Theme Packs 四层�
 
 ### 接下来，你可以把它变成什么？
 
+**移动端 App 是重要的未来展望。** 希望探索轻量 iOS / Android 体验，先从离线 Today 概览与快速记录入手，保持本地优先和简约界面。移动安装包与设备同步尚未实现，也没有承诺发布日期。详见 [移动端展望](docs/zh-CN/EXTENSION_IDEAS.md#重要展望移动端-app)。
+
 | 方向 | 可以先做的模块 | 接入基础 | 需要额外设计的边界 |
 | --- | --- | --- | --- |
+| 移动端 App | 离线 Today 概览、快速记录原型 | 领域模型、数据交换契约 | 尚未开发；平台行为、冲突与隐私需独立验证 |
 | 考研 / 考公 | 错题复习队列、专题计时、阶段模板 | Tasks、Journal、Roadmap | 题目来源许可，不能自动推测分数 |
 | 语言与阅读 | 词汇复习、书籍进度、口语练习日志 | Journal、Today widget | 音频附件类型与容量策略 |
 | 科研与创作 | 实验日志、论文节点、作品版本记录 | Calendar、Vault | 大文件和实验数据导入校验 |
@@ -66,6 +73,10 @@ Lumen brings long-term goals, daily tasks, actual focus, calendar, journals, cod
 
 Break subjects into journeys and tasks, review estimates against actual focus, keep reasoning in journals and collect real outcomes in Vault. Templates are editable starting points. Lumen does not predict admission probability or punish rest with streak pressure.
 
+### Simple to use, extensible when needed
+
+Lumen prioritizes an approachable, simple experience over accumulating features. Keep the default workflow clear and enable modules when needed. Request additional capabilities through Issues, or fork the source and build them yourself with optional AI-assisted development. Everyday use needs no AI account. Develop with synthetic data and review and validate generated code.
+
 ### Everything is a Module
 
 Four layers organize the system: Kernel, Official Modules, Community Modules and Theme Packs. Kernel owns security, local data, migrations, backup and platform services. Module Registry generates navigation with enable/hide/pin/reorder preferences. Today exposes a widget extension point. Insights, Music, Vault and Profile have dedicated official entrypoints, while stable legacy features migrate incrementally.
@@ -87,6 +98,8 @@ The application source uses the [MIT License](LICENSE). Learn from it, modify it
 Source and editable materials are published with the owner’s authorization. Read, fork, adapt and contribute. If Lumen helps you, please give the project a Star.
 
 ### Extension opportunities
+
+**A mobile app is an important future direction.** A lightweight iOS / Android experience could provide an offline Today overview and quick capture while preserving local-first storage and a simple interface. Mobile apps and device sync are not implemented; there is no promised release date. See [the mobile outlook](docs/en/EXTENSION_IDEAS.md#major-outlook-a-mobile-app).
 
 Build exam revision queues, reading progress, experiment logs, interview plans, skill trees, certificates, accessible themes or additional languages. Future interoperability could add reviewed ICS/Markdown imports. Future local planning could use Plan Exchange 1.0 for proposals that users explicitly accept. These are contribution opportunities, not shipped features. Each needs its own validation, privacy and compatibility decisions. See [extension ideas](docs/en/EXTENSION_IDEAS.md).
 

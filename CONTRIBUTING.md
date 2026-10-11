@@ -8,6 +8,8 @@ Everyone is welcome to contribute code, documentation, translations, usability f
 
 Lumen 是 MIT 开源、本地优先的个人成长工作台。Everything is a Module：欢迎 Fork 成自己的作品，编写需要的组件，也欢迎把通用改进贡献回来。修改和分发时保留许可证、版权及第三方声明。
 
+产品坚持简约易用，额外需求优先通过 Issues 讨论或独立模块探索，不默认增加核心复杂度。你可以自行开发，也可以借助 AI 等工具；请使用合成数据并审阅、验证生成结果。[移动端 App](docs/zh-CN/EXTENSION_IDEAS.md#重要展望移动端-app) 是重要展望，欢迎需求讨论与原型贡献，当前尚未实现。
+
 ### 可以从哪里开始
 
 - **功能模块：** 错题复盘、考研/考公专题训练、阅读进度、语言练习、实验日志或作品迭代。参考 [扩展方向](docs/zh-CN/EXTENSION_IDEAS.md)。
@@ -33,6 +35,8 @@ Lumen 是 MIT 开源、本地优先的个人成长工作台。Everything is a Mo
 ## English
 
 Lumen is an MIT-licensed, local-first personal growth workspace. Everything is a Module: fork it into your own work, build the components you need and contribute reusable improvements. Preserve license, copyright and third-party notices when adapting or distributing it.
+
+Keep the product simple and approachable. Discuss additional needs through Issues or explore a focused module without adding default core complexity. Build it yourself, optionally using AI tools, with synthetic data and reviewed, validated results. A [mobile app](docs/en/EXTENSION_IDEAS.md#major-outlook-a-mobile-app) is a major future direction; needs and prototypes are welcome, but it is not implemented.
 
 ### Ways to contribute
 

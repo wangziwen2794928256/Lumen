@@ -4,6 +4,8 @@ Users, developers, designers and documentation authors are welcome. No particula
 
 ## Choose a starting point
 
+Keep the default experience simple and approachable. Request additional capabilities or build focused modules yourself, optionally with AI assistance, instead of accumulating core features. Review and validate generated work. A mobile app is an important future direction: contribute needs, prototypes or data contracts, while recognizing that no mobile version or default device sync is available. See [extension ideas](EXTENSION_IDEAS.md).
+
 Report bugs, add examples, correct wording, translate, improve accessibility or contribute modules, theme designs and editable presentations. Exam preparation, languages, research, coding and career development are all relevant. See [EXTENSION_IDEAS](EXTENSION_IDEAS.md).
 
 Read [MODULE_TUTORIAL](MODULE_TUTORIAL.md), [MODULE_SYSTEM](MODULE_SYSTEM.md) and [API_REFERENCE](API_REFERENCE.md) for source integration. Official modules currently use trusted source code. Community WASM execution, a marketplace and runtime theme-pack loading remain deferred. Design contracts do not establish executable plugin support.

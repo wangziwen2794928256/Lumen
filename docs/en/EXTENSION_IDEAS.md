@@ -2,8 +2,17 @@
 
 Everything is a Module lets different growth workflows share a safe foundation. These are design opportunities, not shipped features. Prefer a small offline, manual and read-only module first.
 
+## Simple core, optional extensions
+
+Lumen prioritizes a simple, approachable growth-recording experience. Keep daily workflows clear instead of competing on feature count or putting every request into the default interface. Users can choose modules and hide or disable entrypoints they do not need.
+
+For additional needs, open a GitHub Issue describing the situation, friction and smallest useful solution. You can also fork the source, follow the [module tutorial](MODULE_TUTORIAL.md) and build an extension yourself, with optional help from AI or coding assistants. AI is a development option, not a requirement for using Lumen. Use synthetic fixtures rather than sending real tasks, journals, databases or secrets to external services. Review and validate generated changes. Reusable small modules are welcome as PRs; inclusion in the default core depends on necessity and maintenance cost.
+
+## Extension directions
+
 | Direction | First useful increment | Reuse | Acceptance boundary |
 | --- | --- | --- | --- |
+| Mobile app (major outlook) | Offline Today overview, quick capture and reviewed manual-exchange prototype | Domain models, module contracts, Kernel exchange design | Separate data/platform boundaries, conflict recovery, no default cloud sync; not implemented |
 | Mistake review | Revision list from manually tagged entries | Journal tags, Today widget | Stable entry IDs, no bodies in logs |
 | Civil-service practice | Topic timing and essay-review templates | Tasks, Focus, Journal | Reuse the actual ledger, no double counting |
 | Exam journeys | Editable subjects and study phases | Roadmap entities | Separate annual sources, no admission prediction |
@@ -18,6 +27,14 @@ Everything is a Module lets different growth workflows share a safe foundation. 
 | Local planning | Explainable proposal review | Plan Exchange | Minimal context, explicit acceptance, no automatic training |
 | OS support | macOS/Linux session adapters | kernel/platform | Lock/sleep/recovery without invented actual time |
 | Security tooling | Manifest/lifecycle static review | Kernel contracts | No native-execution bypass |
+
+## Major outlook: a mobile app
+
+A future lightweight iOS / Android experience could let users check today's plan and capture a thought away from their computer, then return to desktop for deeper organization. It should preserve simplicity, local-first storage and manual operation, rather than replicate every desktop screen or module.
+
+Start by exploring an offline Today overview and quick capture, followed by explicit import/export. Any device synchronization needs a separate design for identity, minimal exchange scope, encryption, version compatibility, conflicts and backup recovery. Do not upload the core database by default. Mobile background timing, lock and sleep behavior require explicit platform-adapter support; desktop focus behavior cannot be assumed to work unchanged on a phone.
+
+This is an important future direction, not an available mobile package, synchronization service or promised release date. Contributions can begin with user needs, interaction prototypes, shared data contracts and isolated fixtures. The implementation stack and scope remain to be evaluated.
 
 ## Choosing a first contribution
 
