@@ -1,5 +1,5 @@
 {
-  "upstreamCommit": "a805ad1f29932fdf9cd05296e2bb5e89fbf89670",
+  "upstreamCommit": "b8cd5af8543adef4745c2b2727b85d5d17747a0a",
   "stablePhase16Commit": "bcee0483ae5c072e49307dada2bee479a830ef99",
   "historyPolicy": "Allowlisted source snapshot. Full phase history and local acceptance evidence stay on the owner workstation.",
   "workingTreeMayIncludeUncommittedChanges": true,
@@ -38,8 +38,8 @@
     },
     {
       "file": "CONTRIBUTING.md",
-      "bytes": 214,
-      "sha256": "84d537759d3f38488200300a4d02a15e9d31ab125393f446e9814bd66a6b9cd4"
+      "bytes": 5539,
+      "sha256": "26041ecdfcef0d5225df8757b0a1321f95cc2177d258afdcef30e781c89b1632"
     },
     {
       "file": "LICENSE",
@@ -233,8 +233,8 @@
     },
     {
       "file": "docs/en/CONTRIBUTING.md",
-      "bytes": 837,
-      "sha256": "4fda9356a782e243b4a283fb47d9d3a54f5631c4a4abbb8ca4ae2ca5139a02e8"
+      "bytes": 3929,
+      "sha256": "7776ab2558c8111c1f395c851388368141a5789f74e9d680747da4e53df4e7d1"
     },
     {
       "file": "docs/en/CROSS_PLATFORM.md",
@@ -418,8 +418,8 @@
     },
     {
       "file": "docs/zh-CN/CONTRIBUTING.md",
-      "bytes": 752,
-      "sha256": "1f6211f131bf24f8f6888558b37a9f20e00d46da1c50f2c4f5d6f11b49319dd6"
+      "bytes": 3482,
+      "sha256": "f5fec2a18293d949aea8b2ca27cc55d7199bab33ecf799d63d788ef9ae67565e"
     },
     {
       "file": "docs/zh-CN/CROSS_PLATFORM.md",
