@@ -1,5 +1,11 @@
 # Lumen — 双语文档与英化版本 / Bilingual documentation and English UI
 
+## 已审核的 PPT v4 修订 / Approved PPT v4 revision
+
+2026-10-11：用户已审核通过的中英文 r6 原样发行为 v4，各24页。新增概念封面，优化场景、工作流、模块接入、开源衍生创作与双语排版。同步更新源码快照、技术文档 ZIP、BUILD_MANIFEST.json 和 SHA256SUMS；v3 重建输入保留在技术文档 ZIP 的 docs/presentations 内。此修订只更新资料，不重新构建 Windows/英化包；原始 tag 仍指向原程序发布提交，当前资料提交见 BUILD_MANIFEST.json 的 publicationCommit。未重跑原生 PowerPoint 打开编辑验收。
+
+The accepted r6 decks are released byte-for-byte as v4, 24 slides per language. The source snapshot, documentation ZIP and checksum manifests are updated. Original v3 authoring inputs remain inside the documentation ZIP. Application and language-pack binaries are unchanged. The original release tag keeps its application provenance; the documentation revision commit is recorded as publicationCommit in BUILD_MANIFEST.json. Native PowerPoint open/edit validation remains unrun.
+
 ## 中文
 
 本地优先、开源的个人成长工作台：考研、考公、语言、编程、科研、职业转型都可以用计划、真实时间、日记和作品记录。Everything is a Module：从源码接入自己需要的组件。

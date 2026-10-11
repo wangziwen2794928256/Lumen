@@ -1,0 +1,19 @@
+{
+  "approvedDate": "2026-10-11",
+  "reviewCommit": "f236c38",
+  "files": [
+    {
+      "sha256": "cfb418b24d0f0db52ab292778dc9ab436bc92e3cdac670a263887300e813c9ef",
+      "release": "Lumen-Launch-Developer-zh-CN-v4.pptx",
+      "review": "Lumen-Review-zh-CN-r6.pptx"
+    },
+    {
+      "sha256": "cd303a410e42f664b587d61ea3d4be274ff467f602e0ac9d7cf08a8776490685",
+      "release": "Lumen-Launch-Developer-en-v4.pptx",
+      "review": "Lumen-Review-en-r6.pptx"
+    }
+  ],
+  "slidesPerDeck": 24,
+  "revision": "v4",
+  "release": "v0.1.0-docs-i18n-rc1"
+}

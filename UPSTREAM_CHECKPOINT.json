@@ -1,5 +1,5 @@
 {
-  "upstreamCommit": "a5747a1d1873f732cec5453ad6ab5bab633e97f2",
+  "upstreamCommit": "a805ad1f29932fdf9cd05296e2bb5e89fbf89670",
   "stablePhase16Commit": "bcee0483ae5c072e49307dada2bee479a830ef99",
   "historyPolicy": "Allowlisted source snapshot. Full phase history and local acceptance evidence stay on the owner workstation.",
   "workingTreeMayIncludeUncommittedChanges": true,
@@ -133,13 +133,23 @@
     },
     {
       "file": "docs/distribution/PHASE18_RELEASE_NOTES.md",
-      "bytes": 3012,
-      "sha256": "856c7773095675cee3591cdc63df49287c72b127d1c3044cedd39051e7978cf1"
+      "bytes": 4107,
+      "sha256": "ca10eb997d20c9db3bc50b89aa44cab5b9fd46864b3190df800e8fe6f17a644c"
     },
     {
       "file": "docs/distribution/PRESENTATION_CONTENT.json",
       "bytes": 27023,
       "sha256": "096fde1c100d750d84689566643744d5dc4f63729cd635fb0458f8af52106843"
+    },
+    {
+      "file": "docs/distribution/PRESENTATION_REVIEW_CONTENT.json",
+      "bytes": 26266,
+      "sha256": "e3494e43828da19824c341879593fc3761e4a83a9afbfecb538a4408775533b2"
+    },
+    {
+      "file": "docs/distribution/PRESENTATION_REVIEW_SCOPE.md",
+      "bytes": 897,
+      "sha256": "a2d6db014a411453eb7db0f89b726d4d7c6246393a61b51150d5c193054d10b0"
     },
     {
       "file": "docs/distribution/PUBLICATION.md",
@@ -195,6 +205,11 @@
       "file": "docs/distribution/presentation-assets/vault-zh-CN.png",
       "bytes": 26528,
       "sha256": "46cfe0267dcb3f3d892fa4968ee35ad1f3d6c8d917e57dd352d02a8b6911de89"
+    },
+    {
+      "file": "docs/distribution/presentation-review-assets/cover-concept.png",
+      "bytes": 1950270,
+      "sha256": "d2d33e5cf7c613e9ce451ddf2fc24f882512bf405a8768fd2a5924bead15dffb"
     },
     {
       "file": "docs/en/API_REFERENCE.md",
@@ -338,8 +353,8 @@
     },
     {
       "file": "docs/en/TECHNICAL_HANDBOOK.md",
-      "bytes": 10266,
-      "sha256": "b361052ebd6d7fd7193f318b015d1e4dee99593fde2504e0d8d7099583fa102f"
+      "bytes": 10456,
+      "sha256": "ab078d3afc37fe6c33898f5237ef119d8807dde4af0edd59139744c95c257d8b"
     },
     {
       "file": "docs/en/TESTING.md",
@@ -367,9 +382,19 @@
       "sha256": "b553b6767e6d50326e034d21b8d2a3a58b0987d3486b202897ee18cfc3276d57"
     },
     {
+      "file": "docs/presentations/PRESENTATION_RELEASE.json",
+      "bytes": 553,
+      "sha256": "d800ebddc0be7542d8aec83039568cee7b2e079c4b5142d01bd75af29bab105e"
+    },
+    {
       "file": "docs/presentations/README.md",
-      "bytes": 2839,
-      "sha256": "daa5444a93df146bc9da78773e1ed2064106ddc56655200832e04fdaa51104e4"
+      "bytes": 3976,
+      "sha256": "e3fdb5a271594774b11a83103e5c61df508cf51ecc0079d64042091f1d48234f"
+    },
+    {
+      "file": "docs/presentations/REVIEW_GUIDE.md",
+      "bytes": 2817,
+      "sha256": "3f3440b5f587be870fb70ae0f0eaf2e80b3c86044a525f981fe424b5f5c365cb"
     },
     {
       "file": "docs/zh-CN/API_REFERENCE.md",
@@ -513,8 +538,8 @@
     },
     {
       "file": "docs/zh-CN/TECHNICAL_HANDBOOK.md",
-      "bytes": 10617,
-      "sha256": "9e939307824f6ce842489967196c148d2bc96b731ee2cd621428d0bfd6731439"
+      "bytes": 10770,
+      "sha256": "4ac0058c2d28d8f5217f26bce037bbca6c81254c7a21b2098ce03ce21efbb6ee"
     },
     {
       "file": "docs/zh-CN/TESTING.md",
@@ -592,6 +617,11 @@
       "sha256": "f7f48c808fa472991c0cf57cb4ebc69fe28d85f52af35da914130a05e7371c8a"
     },
     {
+      "file": "scripts/distribution/build-presentation-review.mjs",
+      "bytes": 8363,
+      "sha256": "1a5e041feab9748bdbd6a2567f3814b1c578b4eaf7cd21172458ad12e7c0df11"
+    },
+    {
       "file": "scripts/distribution/build-presentation.mjs",
       "bytes": 5591,
       "sha256": "39d39ecf4a50c49e3136f72c7bdf0535c1c6f746a2d457788e504c79ad0639d8"
@@ -608,8 +638,8 @@
     },
     {
       "file": "scripts/distribution/export-source.py",
-      "bytes": 4404,
-      "sha256": "75be290e512be924746ced63b59d7d71acf1a07b1f1c0f97dcf75dfb8fdb136f"
+      "bytes": 4490,
+      "sha256": "0456fbccc50412cc0f16e3b218e2ca29e39c1f57864f89e52dac32aaeaa7b9da"
     },
     {
       "file": "scripts/distribution/package-evidence.py",

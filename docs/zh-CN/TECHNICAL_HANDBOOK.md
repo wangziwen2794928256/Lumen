@@ -5,11 +5,11 @@
 本手册给出系统全景。逐模块的工作流、技术原理与边界见 [MODULE_REFERENCE](MODULE_REFERENCE.md)；可执行源码接入步骤见 [MODULE_TUTORIAL](MODULE_TUTORIAL.md)；60 个 IPC 命令签名与 12 组领域模型见 [API_REFERENCE](API_REFERENCE.md)；环境、配置、隔离开发和打包见 [ENVIRONMENT_AND_CONFIGURATION](ENVIRONMENT_AND_CONFIGURATION.md)。用户起步见 [USER_GUIDE](USER_GUIDE.md)，可贡献方向见 [EXTENSION_IDEAS](EXTENSION_IDEAS.md)。当前 English UI 包见 [LOCALIZATION](LOCALIZATION.md)。
 
 
-版本：0.1.0 候选；发行扩展：Phase17；2026-10-11。
+版本：0.1.0 候选；双语文档与英化版，PPT v4 资料修订；2026-10-11。
 
 ## 1. 产品范围与支持级别
 
-Lumen 是本地个人成长工作台，使用任务、路线规划、专注、日历、日记、搜索、洞察、刷题、音乐、作品库与个人档案连接计划和实际活动。Windows x64 已完成本地安装、升级、卸载保留数据与原生窗口验收。macOS ARM64 / Intel、Linux x64 属于实验构建：CI 成功只证明指定环境中的测试和打包，不代表真实设备上的全部集成可用。
+Lumen 是本地个人成长工作台，使用任务、路线规划、专注、日历、日记、搜索、洞察、刷题、音乐、作品库与个人档案连接计划和实际活动。此前 Windows x64 候选完成本地安装、升级、卸载保留数据与原生窗口验收；当前英化包完成构建与浏览器回归，未重复原生安装验收。本次 PPT 修订不重新构建程序。macOS ARM64 / Intel、Linux x64 属于实验构建：CI 成功只证明指定环境中的测试和打包，不代表真实设备上的全部集成可用。
 
 默认手动操作。AI Planner 只有数据交换契约，没有实际模型调用、训练或后台数据上传。社区插件市场、完整 WASM Runtime、移动端均未实现。
 

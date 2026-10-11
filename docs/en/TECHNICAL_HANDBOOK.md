@@ -5,11 +5,11 @@
 This handbook provides the system overview. [MODULE_REFERENCE](MODULE_REFERENCE.md) explains workflows, mechanisms and boundaries for each module. [MODULE_TUTORIAL](MODULE_TUTORIAL.md) gives source integration steps. [API_REFERENCE](API_REFERENCE.md) indexes 60 IPC signatures and 12 domain model groups. [ENVIRONMENT_AND_CONFIGURATION](ENVIRONMENT_AND_CONFIGURATION.md) covers prerequisites, isolation and packaging. Begin with [USER_GUIDE](USER_GUIDE.md), explore [EXTENSION_IDEAS](EXTENSION_IDEAS.md) and see [LOCALIZATION](LOCALIZATION.md) for English UI coverage.
 
 
-Version 0.1.0 candidate · Documentation and localization edition · 2026-10-11
+Version 0.1.0 candidate · Documentation and localization edition, PPT v4 revision · 2026-10-11
 
 ## Product and support
 
-Lumen connects tasks, roadmaps, focus, calendar, journals, search, insights, coding practice, music, portfolio and profile in a local desktop workspace. The Windows x64 unsigned candidate passed local native launch, installation, upgrade and uninstall-with-data-retention acceptance. macOS Apple Silicon/Intel and Linux x64 are experimental build targets. Compilation and browser tests do not establish native feature parity.
+Lumen connects tasks, roadmaps, focus, calendar, journals, search, insights, coding practice, music, portfolio and profile in a local desktop workspace. A previous Windows x64 unsigned candidate passed local native launch, installation, upgrade and uninstall-with-data-retention acceptance. The current localized package passed build and browser regression checks without repeated native installation acceptance. This PPT revision does not rebuild the app. macOS Apple Silicon/Intel and Linux x64 are experimental build targets. Compilation and browser tests do not establish native feature parity.
 
 Manual operation is the default. AI planning has exchange schemas only: no actual model calls, training or background data upload. The community marketplace, full WASM runtime and mobile apps are deferred.
 
