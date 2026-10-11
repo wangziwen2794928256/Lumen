@@ -8,7 +8,7 @@ async fn module_registry_validation_revision_disable_and_reopen() {
     let root = tempfile::tempdir().unwrap();
     let db = Database::open(root.path()).await.unwrap();
     let mut value = db.module_registry().await.unwrap();
-    assert_eq!(value.items.len(), 10);
+    assert_eq!(value.items.len(), modules::catalogue().len());
     let initial = value.clone();
     value
         .items

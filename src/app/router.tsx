@@ -6,6 +6,7 @@ import { ProfileRoute } from '../modules/official/profile';
 import { DeepLink } from '../kernel/DeepLink';
 import { MusicRoute } from '../modules/official/music';
 import { InsightsRoute as InsightsPage } from '../modules/official/insights';
+import { FortuneRoute } from '../modules/official/fortune';
 import { ModuleProvider } from '../kernel/modules/ModuleProvider';
 import { ModuleGate } from '../kernel/modules/Extensions';
 const CodingPage = lazy(() =>
@@ -61,6 +62,14 @@ export function AppRoutes() {
                 element={
                   <ModuleGate id="lumen.music">
                     <MusicRoute />
+                  </ModuleGate>
+                }
+              />
+              <Route
+                path="/fortune"
+                element={
+                  <ModuleGate id="lumen.fortune">
+                    <FortuneRoute />
                   </ModuleGate>
                 }
               />

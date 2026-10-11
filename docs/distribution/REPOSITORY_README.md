@@ -19,7 +19,7 @@ Lumen 主打简约、易上手，不以堆叠功能取胜。默认体验保持�
 
 ### Everything is a Module：缺少的组件，可以自己写
 
-Lumen 采用 Kernel、Official Modules、Community Modules、Theme Packs 四层结构。核心负责安全、本地数据、迁移、备份和平台服务；功能通过模块组织。侧栏来自 Module Registry，可启用、隐藏、置顶和拖动排序。Today 提供 widget 贡献点。Insights、Music、Vault、Profile 已有独立官方模块入口，其他稳定模块通过兼容桥逐步迁移。
+Lumen 采用 Kernel、Official Modules、Community Modules、Theme Packs 四层结构。核心负责安全、本地数据、迁移、备份和平台服务；功能通过模块组织。侧栏来自 Module Registry，可启用、隐藏、置顶和拖动排序。Today 提供 widget 贡献点。Insights、Music、Vault、Profile、每日运势已有独立官方模块入口，其他稳定模块通过兼容桥逐步迁移。
 
 想要错题面板、阅读进度、论文实验日志、考公专题训练、作品迭代记录，或者自己的配色？你可以从 MIT 源码 fork，在官方模块教程的基础上编写入口、声明 manifest、接入路由和贡献点，复用现有服务与组件。文档提供真实代码路径、参数模型、环境要求和验证步骤，无需从头推导整个应用。
 
@@ -79,7 +79,7 @@ Lumen prioritizes an approachable, simple experience over accumulating features.
 
 ### Everything is a Module
 
-Four layers organize the system: Kernel, Official Modules, Community Modules and Theme Packs. Kernel owns security, local data, migrations, backup and platform services. Module Registry generates navigation with enable/hide/pin/reorder preferences. Today exposes a widget extension point. Insights, Music, Vault and Profile have dedicated official entrypoints, while stable legacy features migrate incrementally.
+Four layers organize the system: Kernel, Official Modules, Community Modules and Theme Packs. Kernel owns security, local data, migrations, backup and platform services. Module Registry generates navigation with enable/hide/pin/reorder preferences. Today exposes a widget extension point. Insights, Music, Vault, Profile and Daily fortune have dedicated official entrypoints, while stable legacy features migrate incrementally.
 
 Missing a mistake-review queue, reading tracker, experiment notebook, exam-practice panel or project log? Fork the MIT source and build your component using the official-module tutorial. It explains manifests, routes, contributions, typed services and verification with real source paths. You can reuse the foundation instead of reverse-engineering the application.
 
@@ -111,3 +111,5 @@ Build exam revision queues, reading progress, experiment logs, interview plans, 
 - **English UI:** Settings → Appearance → Interface language → English. Save your work before applying. Your records retain their original language.
 
 If Lumen helps your work, a **Star** on [GitHub](https://github.com/wangziwen2794928256/Lumen) supports the creator. Issues, documentation improvements and module contributions are welcome.
+
+[当前需求覆盖与差距 / Coverage and remaining gaps](docs/zh-CN/REQUIREMENTS_AUDIT.md) · [English audit](docs/en/REQUIREMENTS_AUDIT.md)

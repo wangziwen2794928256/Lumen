@@ -94,17 +94,19 @@ export function ModuleSettings() {
             </li>
           ))}
         </ol>
-        <Button onClick={() => void submit()}>{t.save}</Button>
-        <Button
-          variant="secondary"
-          onClick={() => {
-            void reload()
-              .then(() => setDraft(null))
-              .catch(() => setMessage(t.error));
-          }}
-        >
-          {t.reload}
-        </Button>
+        <div className="module-settings-actions">
+          <Button onClick={() => void submit()}>{t.save}</Button>
+          <Button
+            variant="secondary"
+            onClick={() => {
+              void reload()
+                .then(() => setDraft(null))
+                .catch(() => setMessage(t.error));
+            }}
+          >
+            {t.reload}
+          </Button>
+        </div>
       </fieldset>
       {message && <p role="status">{message}</p>}
     </Card>

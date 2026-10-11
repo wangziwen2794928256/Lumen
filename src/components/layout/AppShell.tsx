@@ -17,6 +17,7 @@ import {
   Leaf,
   CodeXml,
   Music2,
+  Sparkles,
 } from 'lucide-react';
 import { useAppearance } from '../../app/providers/appearance-context';
 import { Button } from '../ui/button';
@@ -37,6 +38,7 @@ const icons = {
   UserRound,
   CodeXml,
   Music2,
+  Sparkles,
 };
 export function AppShell({ children }: { children: ReactNode }) {
   const { value, update } = useAppearance();

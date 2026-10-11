@@ -41,3 +41,7 @@ Vault 默认私密；主动设公开的作品可进入 Profile 白名单投影�
 Windows 为主验收平台。macOS/Linux 实验原生包的 Today/Focus 当前不可用，媒体监听及部分打开助手不支持。社区插件执行、完整插件市场、AI 调用、移动端、ICS 导入均未实现。英文包覆盖现有前端文案，原生 OS 对话框由系统语言决定，Rust 托盘/通知仍有中文文案。
 
 继续阅读 [模块逐项原理](MODULE_REFERENCE.md)、[环境配置](ENVIRONMENT_AND_CONFIGURATION.md)、[扩展方向](EXTENSION_IDEAS.md)。
+
+## 每日运势在哪里
+
+侧栏「每日运势」或 Today 右侧「看看今日签」。设置→高级→模块管理可以关闭。固定签文随本地日期轮换，仅供娱乐；不采集生日，不联网，不影响计划。

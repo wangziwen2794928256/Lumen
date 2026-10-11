@@ -38,3 +38,5 @@
 - [THEME_SDK](THEME_SDK.md)
 - [THREAT_MODEL](THREAT_MODEL.md)
 - [VAULT](VAULT.md)
+
+最新需求覆盖与未完成项见 [需求与界面复查](REQUIREMENTS_AUDIT.md)。

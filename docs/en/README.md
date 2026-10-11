@@ -38,3 +38,5 @@ Editable Markdown documentation. Choose a reading path, then follow task-specifi
 - [THEME_SDK](THEME_SDK.md)
 - [THREAT_MODEL](THREAT_MODEL.md)
 - [VAULT](VAULT.md)
+
+See the current [requirements and UI audit](REQUIREMENTS_AUDIT.md) for coverage and remaining gaps.

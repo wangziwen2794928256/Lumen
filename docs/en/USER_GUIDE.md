@@ -41,3 +41,7 @@ Full backups include database, settings and attachments. Portable JSON exchanges
 Windows is the primary accepted platform. Native Today/Focus are unavailable in experimental macOS/Linux packages. Media observation and several OS-opening helpers are unsupported there. Community execution, a complete marketplace, AI calls, mobile apps and ICS import do not exist. English covers existing frontend copy. OS dialogs follow system language and some Rust tray/notification text remains Chinese.
 
 Continue with the [module reference](MODULE_REFERENCE.md), [environment](ENVIRONMENT_AND_CONFIGURATION.md) and [extension ideas](EXTENSION_IDEAS.md).
+
+## Finding Daily fortune
+
+Use the sidebar or “Read today’s sign” in Today’s secondary column. Turn it off in Settings → Advanced → Module management. Fixed signs rotate by local date for entertainment, with no birthday, network or planner effect.

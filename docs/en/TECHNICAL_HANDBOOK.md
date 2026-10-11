@@ -93,3 +93,5 @@ The owner has authorized public source and editable materials. Publication uses 
 - Issue reports: include app version, OS/architecture, reproduction and error code. Remove private content, private paths and credentials.
 
 The next acceptance sequence is native packages/security regression, real macOS/Linux session events and Today/focus, then media/attachments/preview/deep links, tray/notifications/autostart, install/upgrade/uninstall data retention, and legitimate signing/notarization. Full plugin execution and AI planning remain separate scopes.
+
+See the current [requirements and UI audit](REQUIREMENTS_AUDIT.md) for coverage and remaining gaps.

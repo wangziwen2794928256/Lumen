@@ -83,5 +83,5 @@ export const designText = {
   bodyText: translate('清晰的文字，适当的留白。界面不评价努力，也不制造负担。'),
   mutedText: translate('辅助信息保持可读，不抢占注意力。'),
   pending: translate('本页仅用于导航和布局预览。功能将在对应阶段实现。'),
-  phase: 'Phase 14 · Desktop',
+  phase: 'Lumen · Local-first',
 };

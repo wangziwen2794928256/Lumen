@@ -23,6 +23,7 @@ test('English pages and accessible controls fit in light and dark themes', async
     await page.getByRole('button', { name: mode, exact: true }).click();
     for (const route of [
       '/',
+      '/fortune',
       '/focus',
       '/calendar',
       '/roadmap',

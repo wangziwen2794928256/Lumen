@@ -1,5 +1,6 @@
 import { translate } from '../../lib/locale';
 import { Component, type ReactNode } from 'react';
+import { fortuneWidgets } from '../../modules/official/fortune';
 import { insightsWidgets } from '../../modules/official/insights';
 import { useModules } from './ModuleProvider';
 import { moduleText } from './text';
@@ -16,12 +17,12 @@ class WidgetBoundary extends Component<{ children: ReactNode }, { failed: boolea
     );
   }
 }
-export function TodayWidgets({ slot }: { slot: 'today.after-summary' }) {
+export function TodayWidgets({ slot }: { slot: 'today.after-summary' | 'today.sidebar' }) {
   const { state, ready } = useModules();
   return (
     <>
       {ready &&
-        insightsWidgets
+        [...insightsWidgets, ...fortuneWidgets]
           .filter(
             (w) => w.slot === slot && state.items.some((i) => i.id === w.moduleId && i.enabled),
           )

@@ -170,3 +170,13 @@
 | `lumen.profile` | `/profile` | official | module |
 
 已拆出官方入口：insights、music、vault、profile。其余 official legacy-bridge 仍复用稳定页面与 Service，后续逐步迁移，不推倒重写。Kernel Today 必须保留；安全系统无可卸载插件入口。
+
+## 每日运势（可选官方模块）
+
+使用：Today 右栏或侧栏进入。在设置→高级→模块管理停用。
+
+原理：本地日期映射至固定 12 条中英每日签；午夜、重新聚焦与时钟变化时更新。无需出生信息、网络或 SQLite，状态仅使用已有 Registry。签文是娱乐与启发，不参与规划与成绩预测。
+
+接入：manifest → FortuneRoute/ModuleGate → `today.sidebar` contribution。隐藏仅影响侧栏，停用同时关闭卡片。测试覆盖日期合法性、闰日、跨日、恢复及开关持久化。
+
+Source: [FortuneCard](../../src/features/fortune/FortuneCard.tsx) · [date model](../../src/features/fortune/model.ts) · [official entry](../../src/modules/official/fortune/index.tsx)

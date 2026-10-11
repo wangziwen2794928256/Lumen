@@ -192,7 +192,8 @@ async fn old_registry_grows_without_changing_saved_preferences() {
     let folder = tempfile::tempdir().unwrap();
     let db = Database::open(folder.path()).await.unwrap();
     let mut old = crate::kernel::modules::Registry::default();
-    old.items.retain(|m| m.id != "lumen.music");
+    old.items
+        .retain(|m| m.id != "lumen.music" && m.id != "lumen.fortune");
     old.items[1].enabled = false;
     old.items[2].pinned = true;
     old.revision = 7;
@@ -204,7 +205,10 @@ async fn old_registry_grows_without_changing_saved_preferences() {
         .await
         .unwrap();
     let current = db.module_registry().await.unwrap();
-    assert_eq!(current.items.len(), 10);
+    assert_eq!(
+        current.items.len(),
+        crate::kernel::modules::catalogue().len()
+    );
     assert_eq!(current.revision, 7);
     assert!(!current.items[1].enabled);
     assert!(current.items[2].pinned);
@@ -221,5 +225,13 @@ async fn old_registry_grows_without_changing_saved_preferences() {
         .await
         .unwrap();
     assert_eq!(stored, payload);
+    assert!(
+        current
+            .items
+            .iter()
+            .find(|m| m.id == "lumen.fortune")
+            .unwrap()
+            .enabled
+    );
     db.pool.close().await;
 }

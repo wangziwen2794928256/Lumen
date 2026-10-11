@@ -4,7 +4,7 @@ function desktop() {
   if (!isTauri()) throw new Error('DESKTOP_REQUIRED');
 }
 export const codingApi = {
-  snapshot: (filter: Filter) => {
+  snapshot: async (filter: Filter) => {
     desktop();
     return invoke<Snapshot>('coding_snapshot', { filter });
   },

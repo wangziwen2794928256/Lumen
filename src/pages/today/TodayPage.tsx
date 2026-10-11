@@ -392,6 +392,7 @@ export function TodayPage() {
               </Button>
             </form>
           </Card>
+          <TodayWidgets slot="today.sidebar" />
           <Card>
             <CardHeader>
               <CardTitle>{t.timeline}</CardTitle>

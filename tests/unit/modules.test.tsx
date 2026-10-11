@@ -56,7 +56,7 @@ it('hidden and pinned navigation plus stable drag order do not discard modules',
   expect(ordered(state, true).some((i) => i.id === 'lumen.journal')).toBe(false);
   const moved = reorder(defaults, 'lumen.insights', 'lumen.focus');
   expect(ordered(moved)[1].id).toBe('lumen.insights');
-  expect(moved.items).toHaveLength(10);
+  expect(moved.items).toHaveLength(defaults.items.length);
 });
 it('explicit module disable survives reload and guards the official route', async () => {
   const first = render(

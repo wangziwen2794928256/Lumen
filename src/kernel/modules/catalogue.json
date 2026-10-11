@@ -148,5 +148,20 @@
     "required": false,
     "status": "module",
     "permissions": ["core.profile.read", "core.profile.write", "core.public.export"]
+  },
+  {
+    "id": "lumen.fortune",
+    "name": {
+      "zh-CN": "每日运势",
+      "en": "Daily fortune"
+    },
+    "version": "1.0.0",
+    "api_version": "1.0",
+    "layer": "official",
+    "route": "/fortune",
+    "icon": "Sparkles",
+    "required": false,
+    "status": "module",
+    "permissions": []
   }
 ]

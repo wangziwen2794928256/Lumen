@@ -5,7 +5,9 @@ export const messages = {
     connectionStatus: translate('桌面连接状态'),
     tagline: translate('为长期成长，留一盏灯。'),
     bootstrap: translate('基础工程已就绪'),
-    description: translate('这是 Lumen 的基础桌面窗口。业务模块将在后续阶段逐步建立。'),
+    description: translate(
+      '这里检查桌面连接、本地数据库与备份状态。日常记录请使用侧栏中的功能模块。',
+    ),
     home: translate('基础窗口'),
     about: translate('关于工程'),
     verify: translate('验证桌面连接'),
@@ -16,7 +18,7 @@ export const messages = {
     phase: 'Phase 01 · Bootstrap',
     aboutTitle: translate('本地优先，长期可读'),
     aboutDescription: translate(
-      'React + TypeScript + Tauri 2。设计系统和本地数据库核心已建立，业务功能将在后续阶段开放。',
+      'Lumen 是开源的本地成长工作台，支持任务、专注、日历、日记与可选模块。数据保存在本机；社区插件运行时、AI Planner 与移动端仍是未来方向。',
     ),
   },
 };

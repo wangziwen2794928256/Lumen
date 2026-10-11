@@ -170,3 +170,13 @@ These are trusted features bundled with source, not downloadable third-party plu
 | `lumen.profile` | `/profile` | official | module |
 
 Dedicated official entrypoints exist for insights, music, vault and profile. Other official legacy bridges reuse stable pages/services and can migrate incrementally. Kernel Today remains required. Security has no uninstallable plugin entrypoint.
+
+## Daily fortune (optional official module)
+
+Open it in the sidebar or Today’s secondary column. Disable it in Settings → Advanced → Module management.
+
+A local date maps to twelve bilingual signs, with midnight/focus/clock-change refresh. No birthday, network or SQLite is used. It is entertainment and inspiration, never a prediction or planner input. The existing registry stores enable/hide preferences.
+
+Integration: manifest → FortuneRoute/ModuleGate → `today.sidebar` contribution. Hiding affects navigation; disabling also removes the widget. Tests cover invalid/leap dates, rollover/resume and persisted controls.
+
+Source: [FortuneCard](../../src/features/fortune/FortuneCard.tsx) · [date model](../../src/features/fortune/model.ts) · [official entry](../../src/modules/official/fortune/index.tsx)
