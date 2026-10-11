@@ -46,18 +46,3 @@ export const registryStateSchema = z
       .max(32),
   })
   .strict();
-export const moduleText = {
-  heading: '模块管理',
-  hint: '启用控制页面和模块入口；隐藏只改变侧栏。置顶模块优先显示。拖动排列，或用上下按钮。关闭模块不会删除记录。',
-  enabled: '启用',
-  hidden: '隐藏',
-  pinned: '置顶',
-  up: '上移',
-  down: '下移',
-  save: '保存模块配置',
-  error: '保存失败或版本已变化；当前选择已保留，请重新载入后重试。',
-  reload: '重新载入模块配置',
-  disabled: '此模块已停用，可在设置中重新启用。',
-  saved: '模块配置已保存',
-  required: '核心模块不能停用；安全系统始终属于 Kernel。',
-};

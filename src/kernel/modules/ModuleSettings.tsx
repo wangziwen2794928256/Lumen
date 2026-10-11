@@ -1,6 +1,8 @@
+import { locale } from '../../lib/locale';
 import { useState } from 'react';
 import { useModules } from './ModuleProvider';
-import { moduleText as t, type RegistryState } from './model';
+import { type RegistryState } from './model';
+import { moduleText as t } from './text';
 import { ordered, reorder } from './registry';
 import { Button } from '../../components/ui/button';
 import { Card } from '../../components/ui/card';
@@ -54,7 +56,7 @@ export function ModuleSettings() {
                 setDrag('');
               }}
             >
-              <strong>{m.name['zh-CN']}</strong>
+              <strong>{m.name[locale]}</strong>
               <span className="secondary-text">
                 {m.layer} · {m.status}
               </span>
@@ -62,7 +64,7 @@ export function ModuleSettings() {
                 <label key={k}>
                   <input
                     type="checkbox"
-                    aria-label={`${m.name['zh-CN']} ${t[k]}`}
+                    aria-label={`${m.name[locale]} ${t[k]}`}
                     checked={m.preference[k]}
                     disabled={k === 'enabled' && m.required}
                     onChange={(e) => change(m.id, k, e.target.checked)}
@@ -72,7 +74,7 @@ export function ModuleSettings() {
               ))}
               <Button
                 variant="secondary"
-                aria-label={`${m.name['zh-CN']} ${t.up}`}
+                aria-label={`${m.name[locale]} ${t.up}`}
                 disabled={index === 0 || rows[index - 1].preference.pinned !== m.preference.pinned}
                 onClick={() => setDraft(reorder(value, m.id, rows[index - 1].id))}
               >
@@ -80,7 +82,7 @@ export function ModuleSettings() {
               </Button>
               <Button
                 variant="secondary"
-                aria-label={`${m.name['zh-CN']} ${t.down}`}
+                aria-label={`${m.name[locale]} ${t.down}`}
                 disabled={
                   index === rows.length - 1 ||
                   rows[index + 1].preference.pinned !== m.preference.pinned

@@ -1,3 +1,4 @@
+import { locale, translate } from '../../lib/locale';
 import type { Day, LabelValue } from './model';
 import { minutes, ratio, statuses } from './model';
 import { useState } from 'react';
@@ -20,7 +21,11 @@ export function Trend({
       <svg
         viewBox="0 0 600 110"
         role="img"
-        aria-label={`${title}，${days.length} 天。详细值见下方数据。`}
+        aria-label={
+          locale === 'en'
+            ? `${title}, ${days.length} days. Detailed values below.`
+            : `${title}，${days.length} 天。详细值见下方数据。`
+        }
       >
         <polyline
           fill="none"
@@ -35,12 +40,12 @@ export function Trend({
         />
       </svg>
       <details>
-        <summary>查看数据</summary>
+        <summary>{translate('查看数据')}</summary>
         <div className="insight-table-scroll">
           <table>
             <thead>
               <tr>
-                <th>日期</th>
+                <th>{translate('日期')}</th>
                 <th>{title}</th>
               </tr>
             </thead>
@@ -55,7 +60,7 @@ export function Trend({
           </table>
         </div>
         <button type="button" disabled={page === 0} onClick={() => setTablePage(page - 1)}>
-          上一组日期
+          {translate('上一组日期')}
         </button>{' '}
         {page + 1}/{Math.max(1, Math.ceil(days.length / 90))}{' '}
         <button
@@ -63,7 +68,7 @@ export function Trend({
           disabled={(page + 1) * 90 >= days.length}
           onClick={() => setTablePage(page + 1)}
         >
-          下一组日期
+          {translate('下一组日期')}
         </button>
       </details>
     </figure>
@@ -79,7 +84,7 @@ export function Distribution({
   return (
     <ul className="insight-distribution">
       {items.length === 0 ? (
-        <li>暂无记录</li>
+        <li>{translate('暂无记录')}</li>
       ) : (
         items.map((i, n) => (
           <li key={`${i.label}-${n}`}>
@@ -101,9 +106,9 @@ export function Heatmap({ days, onDay }: { days: Day[]; onDay: (day: Day) => voi
   return (
     <div>
       <p className="secondary-text">
-        颜色表示活动强度。特殊日保留记录，免除一致性分母，不影响计划容量。
+        {translate('颜色表示活动强度。特殊日保留记录，免除一致性分母，不影响计划容量。')}
       </p>
-      <div className="insight-heatmap" aria-label="年度活动热图">
+      <div className="insight-heatmap" aria-label={translate('年度活动热图')}>
         {Array.from(
           { length: days[0] ? (new Date(days[0].date + 'T12:00:00').getDay() + 6) % 7 : 0 },
           (_, i) => (
@@ -115,14 +120,14 @@ export function Heatmap({ days, onDay }: { days: Day[]; onDay: (day: Day) => voi
             type="button"
             key={d.date}
             data-intensity={d.intensity}
-            aria-label={`${d.date} ${statuses[d.status] ?? d.status} 活动强度 ${d.intensity}`}
-            title={`${d.date} · 强度 ${d.intensity}`}
+            aria-label={`${d.date} ${statuses[d.status] ?? d.status} ${locale === 'en' ? 'Activity intensity' : '活动强度'} ${d.intensity}`}
+            title={`${d.date} · ${locale === 'en' ? 'Intensity' : '强度'} ${d.intensity}`}
             onClick={() => onDay(d)}
             className={d.status === 'normal' ? '' : 'protected-day'}
           />
         ))}
       </div>
-      <p>每列一周，周一至周日。强度 0–4；描边为特殊日。Tab 浏览，Enter 查看当日。</p>
+      <p>{translate('每列一周，周一至周日。强度 0–4；描边为特殊日。Tab 浏览，Enter 查看当日。')}</p>
     </div>
   );
 }

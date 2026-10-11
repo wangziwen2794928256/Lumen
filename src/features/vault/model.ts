@@ -1,14 +1,15 @@
+import { translate } from '../../lib/locale';
 export const categories = {
-  award: '奖项',
-  competition: '比赛',
-  paper: '论文',
-  project: '项目',
-  certificate: '证书',
-  open_source: '开源',
-  course_project: '课程项目',
-  research: '研究',
-  presentation: '演示',
-  other: '其他',
+  award: translate('奖项'),
+  competition: translate('比赛'),
+  paper: translate('论文'),
+  project: translate('项目'),
+  certificate: translate('证书'),
+  open_source: translate('开源'),
+  course_project: translate('课程项目'),
+  research: translate('研究'),
+  presentation: translate('演示'),
+  other: translate('其他'),
 };
 export interface Artifact {
   id: string;

@@ -1,3 +1,4 @@
+import { locale, translate } from '../../lib/locale';
 export type Preferences = {
   weights: number[];
   thresholds: number[];
@@ -102,22 +103,22 @@ export function shift(day: string, days: number) {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
 }
 export function ratio(n: number, d: number) {
-  return d > 0 ? `${Math.round((n / d) * 100)}%` : '暂无样本';
+  return d > 0 ? `${Math.round((n / d) * 100)}%` : translate('暂无样本');
 }
 export function minutes(n: number) {
-  return `${n.toFixed(1)} 分钟`;
+  return `${n.toFixed(1)} ${locale === 'en' ? 'minutes' : '分钟'}`;
 }
 export const statuses: Record<string, string> = {
-  normal: '普通日',
-  rest: '休息日',
-  sick: '生病日',
-  exam: '考试日',
-  travel: '旅行日',
-  paper_deadline: '论文截止日',
-  special: '特殊日',
-  competition: '竞赛日',
-  paper_sprint: '论文冲刺日',
-  other: '其他',
+  normal: translate('普通日'),
+  rest: translate('休息日'),
+  sick: translate('生病日'),
+  exam: translate('考试日'),
+  travel: translate('旅行日'),
+  paper_deadline: translate('论文截止日'),
+  special: translate('特殊日'),
+  competition: translate('竞赛日'),
+  paper_sprint: translate('论文冲刺日'),
+  other: translate('其他'),
 };
 export function recordHref(r: RecordLink) {
   if (r.kind === 'journal') return `/journal?entry=${encodeURIComponent(r.id)}`;

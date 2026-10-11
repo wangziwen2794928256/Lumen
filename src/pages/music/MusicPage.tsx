@@ -1,3 +1,4 @@
+import { locale, translate } from '../../lib/locale';
 import { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Card } from '../../components/ui/card';
@@ -213,10 +214,10 @@ export function MusicPage() {
                   value={draft.journal_id}
                   onChange={(e) => setDraft({ ...draft, journal_id: e.target.value })}
                 >
-                  <option value="">不关联</option>
+                  <option value="">{translate('不关联')}</option>
                   {data?.journals.map((j) => (
                     <option key={j.id} value={j.id}>
-                      {j.title || '无标题日记'}
+                      {j.title || translate('无标题日记')}
                     </option>
                   ))}
                 </select>
@@ -245,7 +246,7 @@ export function MusicPage() {
           <h2>{t.cloud}</h2>
           <div className="music-controls">
             <label>
-              云类型
+              {translate('云类型')}
               <select value={mode} onChange={(e) => setMode(e.target.value as typeof mode)}>
                 <option value="title">Song</option>
                 <option value="artist">Artist</option>
@@ -253,7 +254,8 @@ export function MusicPage() {
               </select>
             </label>
             <p>
-              {data?.totals?.count ?? 0} 次 · {Math.round((data?.totals?.seconds ?? 0) / 60)} 分钟
+              {data?.totals?.count ?? 0} {translate('次 ·')}
+              {Math.round((data?.totals?.seconds ?? 0) / 60)} {translate('分钟')}
             </p>
           </div>
           <div className="music-cloud">
@@ -266,7 +268,8 @@ export function MusicPage() {
                 >
                   {g.label}
                   <small>
-                    {g.count} 次 · {Math.round(g.seconds / 60)} 分钟
+                    {g.count} {translate('次 ·')}
+                    {Math.round(g.seconds / 60)} {translate('分钟')}
                   </small>
                 </span>
               ))}
@@ -286,8 +289,8 @@ export function MusicPage() {
                   {p.artist || t.unknown} · {p.album || t.unknown} · {p.platform || t.unknown}
                 </p>
                 <p>
-                  {new Date(p.played_at).toLocaleString('zh-CN')} · {p.duration_seconds} 秒 ·{' '}
-                  {p.source === 'manual' ? '手动' : p.source_app}
+                  {new Date(p.played_at).toLocaleString(locale)} · {p.duration_seconds}{' '}
+                  {translate('秒 ·')} {p.source === 'manual' ? translate('手动') : p.source_app}
                 </p>
                 {p.journal_title && (
                   <Link to={'/journal?entry=' + p.journal_id}>
@@ -323,7 +326,7 @@ export function MusicPage() {
                   onClick={() =>
                     void act(
                       { type: 'trash', id: p.id, revision: p.revision, restore: bin },
-                      bin ? '已恢复' : '已移入音乐回收站',
+                      bin ? translate('已恢复') : translate('已移入音乐回收站'),
                     )
                   }
                 >
@@ -403,7 +406,7 @@ export function MusicPage() {
           </form>
         )}
         <p role="status">
-          {status ? t.modes[status.state] : '手动模式可用'}
+          {status ? t.modes[status.state] : translate('手动模式可用')}
           {status?.source_app && ' · ' + status.source_app}
           {status?.error && ' · ' + status.error}
         </p>

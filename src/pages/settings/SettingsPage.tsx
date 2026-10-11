@@ -1,3 +1,5 @@
+import { LanguagePanel } from '../../features/appearance/LanguagePanel';
+import { translate } from '../../lib/locale';
 import { type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { ModuleSettings } from '../../kernel/modules/ModuleSettings';
@@ -52,6 +54,7 @@ export function SettingsPage() {
       </Group>
       <Group id="appearance" title={t.copy11}>
         <Card>
+          <LanguagePanel />
           <AppearancePanel />
         </Card>
       </Group>
@@ -98,7 +101,7 @@ export function SettingsPage() {
               document.getElementById('settings-privacy')?.scrollIntoView({ block: 'start' });
             }}
           >
-            前往数据操作
+            {translate('前往数据操作')}
           </Button>
         </Card>
       </Group>

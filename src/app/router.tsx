@@ -1,3 +1,4 @@
+import { translate } from '../lib/locale';
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 import { VaultRoute } from '../modules/official/vault';
@@ -42,7 +43,7 @@ export function AppRoutes() {
           <Suspense
             fallback={
               <div className="route-loading" role="status">
-                正在载入模块…
+                {translate('正在载入模块…')}
               </div>
             }
           >

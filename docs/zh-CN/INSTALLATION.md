@@ -7,7 +7,7 @@
 | macOS Intel | x86_64 DMG / app | 实验包；原生构建与静态包校验 PASS |
 | Linux x64 | deb / AppImage | 实验包；原生构建与静态包校验 PASS |
 
-GitHub 仓库：https://github.com/wangziwen2794928256/Lumen 。当前为私有发行准备仓库，需要账号访问。Actions 中手动运行 Native experimental packages，下载与目标架构一致的 artifact。每个成功产物目录带 BUILD.json 和 SHA256SUMS；保存文件后核对 SHA256。Artifact 保留 30 天，最终交付另有本地副本。
+GitHub 仓库：https://github.com/wangziwen2794928256/Lumen 。源码与可编辑资料按所有者授权公开。Actions 中手动运行 Native experimental packages，下载与目标架构一致的 artifact。每个成功产物目录带 BUILD.json 和 SHA256SUMS；保存文件后核对 SHA256。Artifact 保留 30 天，最终交付另有本地副本。
 
 Windows 安装为 currentUser，无需为 Lumen 请求管理员权限；缺少 WebView2 时按微软官方安装流程处理。升级前在设置创建一致性备份。卸载不应删除 AppData，Phase16 隔离验收已验证；不要在未备份情况下手动删除目录。桌面快捷方式的固定 Windows 候选位于此前交付目录，Phase17 不替换已验收二进制。
 

@@ -1,3 +1,4 @@
+import { locale, translate } from '../../lib/locale';
 import { useEffect, useState, useCallback } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { isTauri } from '@tauri-apps/api/core';
@@ -56,33 +57,33 @@ function Summary({ data }: { data: Facts }) {
   return (
     <dl className="insight-metrics">
       <div>
-        <dt>实际专注</dt>
+        <dt>{translate('实际专注')}</dt>
         <dd>{minutes(deep)}</dd>
       </div>
       <div>
-        <dt>编码用时</dt>
+        <dt>{translate('编码用时')}</dt>
         <dd>{minutes(coding)}</dd>
       </div>
       <div>
-        <dt>计划预算</dt>
+        <dt>{translate('计划预算')}</dt>
         <dd>{minutes(plan)}</dd>
       </div>
       <div>
-        <dt>计划任务当前完成比例</dt>
+        <dt>{translate('计划任务当前完成比例')}</dt>
         <dd>{ratio(data.task_summary.completed, data.task_summary.total)}</dd>
       </div>
       <div>
-        <dt>近 7 日一致性</dt>
+        <dt>{translate('近 7 日一致性')}</dt>
         <dd>
           {ratio(data.consistency.days7.active, data.consistency.days7.eligible)} ·{' '}
-          {data.consistency.days7.protected} 个特殊日
+          {data.consistency.days7.protected} {translate('个特殊日')}
         </dd>
       </div>
       <div>
-        <dt>近 28 日一致性</dt>
+        <dt>{translate('近 28 日一致性')}</dt>
         <dd>
           {ratio(data.consistency.days28.active, data.consistency.days28.eligible)} ·{' '}
-          {data.consistency.days28.protected} 个特殊日
+          {data.consistency.days28.protected} {translate('个特殊日')}
         </dd>
       </div>
     </dl>
@@ -104,7 +105,11 @@ function WordCloud({ words }: { words: Word[] }) {
               key={w.word}
               onClick={() => setSelectedWord(w.word)}
               style={{ fontSize: `${Math.min(2, 1 + Math.log2(w.count + 1) / 6)}rem` }}
-              aria-label={`${w.word}，${w.count} 次，查看来源`}
+              aria-label={
+                locale === 'en'
+                  ? `${w.word}, ${w.count} occurrences, view sources`
+                  : `${w.word}，${w.count} 次，查看来源`
+              }
             >
               {w.word} <small>{w.count}</small>
             </button>
@@ -112,8 +117,10 @@ function WordCloud({ words }: { words: Word[] }) {
         )}
       </div>
       {selected && (
-        <section aria-label="词语来源">
-          <h3>{selected.word} · 来源</h3>
+        <section aria-label={translate('词语来源')}>
+          <h3>
+            {selected.word} {translate('· 来源')}
+          </h3>
           <Records records={selected.records} />
         </section>
       )}
@@ -127,9 +134,9 @@ function Music({ items }: { items: Facts['music'] }) {
   for (const i of items) {
     const key =
       mode === 'artist'
-        ? i.artist || '未标注艺术家'
+        ? i.artist || translate('未标注艺术家')
         : mode === 'album'
-          ? i.album || '未标注专辑'
+          ? i.album || translate('未标注专辑')
           : i.label;
     grouped.set(
       key,
@@ -138,20 +145,20 @@ function Music({ items }: { items: Facts['music'] }) {
   }
   return (
     <>
-      <p>音乐与日记词语分开；当前库中的播放记录，来源接入将在音乐阶段完善。</p>
+      <p>{translate('音乐与日记词语分开；当前库中的播放记录，来源接入将在音乐阶段完善。')}</p>
       <label>
-        音乐维度{' '}
+        {translate('音乐维度')}{' '}
         <select value={mode} onChange={(e) => setMode(e.target.value)}>
-          <option value="song">歌曲</option>
-          <option value="artist">艺术家</option>
-          <option value="album">专辑</option>
+          <option value="song">{translate('歌曲')}</option>
+          <option value="artist">{translate('艺术家')}</option>
+          <option value="album">{translate('专辑')}</option>
         </select>
       </label>
       <label>
-        音乐指标{' '}
+        {translate('音乐指标')}{' '}
         <select value={metric} onChange={(e) => setMetric(e.target.value)}>
-          <option value="count">播放次数</option>
-          <option value="minutes">收听分钟</option>
+          <option value="count">{translate('播放次数')}</option>
+          <option value="minutes">{translate('收听分钟')}</option>
         </select>
       </label>
       <Distribution
@@ -194,38 +201,46 @@ function Settings({ data, onSave }: { data: Facts; onSave: (a: Action) => Promis
       }}
     >
       <fieldset disabled={busy}>
-        <legend>活动强度算法</legend>
+        <legend>{translate('活动强度算法')}</legend>
         <p>
-          强度 = 六项信号 ×
-          各自权重之和，再按四个阈值划分。权重可为零；这是活动量，不是成绩或道德分。
+          {translate(
+            '强度 = 六项信号 ×\n          各自权重之和，再按四个阈值划分。权重可为零；这是活动量，不是成绩或道德分。',
+          )}
         </p>
         {Boolean(readDraft(key)) && <p role="status">{t.pending}</p>}
         <div className="insight-fields">
-          {['实际专注分钟', '编码分钟', '完成任务', '日记数', '练习题数', '音乐播放数'].map(
-            (s, i) => (
-              <label key={s}>
-                {s}权重
-                <input
-                  type="number"
-                  min="0"
-                  max="100"
-                  step="0.1"
-                  value={draft.value.weights[i]}
-                  onChange={(e) =>
-                    change({
-                      ...draft.value,
-                      weights: draft.value.weights.map((w, n) =>
-                        n === i ? Number(e.target.value) : w,
-                      ),
-                    })
-                  }
-                />
-              </label>
-            ),
-          )}
+          {[
+            translate('实际专注分钟'),
+            translate('编码分钟'),
+            translate('完成任务'),
+            translate('日记数'),
+            translate('练习题数'),
+            translate('音乐播放数'),
+          ].map((s, i) => (
+            <label key={s}>
+              {s}
+              {translate('权重')}
+              <input
+                type="number"
+                min="0"
+                max="100"
+                step="0.1"
+                value={draft.value.weights[i]}
+                onChange={(e) =>
+                  change({
+                    ...draft.value,
+                    weights: draft.value.weights.map((w, n) =>
+                      n === i ? Number(e.target.value) : w,
+                    ),
+                  })
+                }
+              />
+            </label>
+          ))}
           {draft.value.thresholds.map((v, i) => (
             <label key={i}>
-              强度阈值 {i + 1}
+              {translate('强度阈值')}
+              {i + 1}
               <input
                 type="number"
                 min="0.1"
@@ -245,7 +260,7 @@ function Settings({ data, onSave }: { data: Facts; onSave: (a: Action) => Promis
           ))}
         </div>
         <label>
-          自定义停用词（空格分隔）
+          {translate('自定义停用词（空格分隔）')}
           <textarea
             value={stopText}
             onChange={(e) => {
@@ -260,9 +275,9 @@ function Settings({ data, onSave }: { data: Facts; onSave: (a: Action) => Promis
             checked={draft.value.memories}
             onChange={(e) => change({ ...draft.value, memories: e.target.checked })}
           />{' '}
-          在今日显示往年记录
+          {translate('在今日显示往年记录')}
         </label>
-        <Button type="submit">保存活动配置</Button>
+        <Button type="submit">{translate('保存活动配置')}</Button>
         <Button
           type="button"
           variant="secondary"
@@ -276,7 +291,7 @@ function Settings({ data, onSave }: { data: Facts; onSave: (a: Action) => Promis
             localStorage.setItem(key, JSON.stringify(next));
           }}
         >
-          采用当前版本并保留输入
+          {translate('采用当前版本并保留输入')}
         </Button>
       </fieldset>
     </form>
@@ -341,27 +356,30 @@ function ReviewPanel({ week, onSaved }: { week: string; onSaved: () => void }) {
       {error && <p role="alert">{error}</p>}
       {review && draft ? (
         <>
-          <h2>{review.week} · 本周事实</h2>
+          <h2>
+            {review.week} {translate('· 本周事实')}
+          </h2>
           <Summary data={review.facts} />
           <p>{t.definition}</p>
           <p>
-            未完成 {review.facts.task_summary.unfinished} · 移动 {review.facts.task_summary.moved}{' '}
-            个计划任务。较上一等长时段，专注变化{' '}
+            {translate('未完成')}
+            {review.facts.task_summary.unfinished} {translate('· 移动')}
+            {review.facts.task_summary.moved} {translate('个计划任务。较上一等长时段，专注变化')}{' '}
             {minutes(
               review.facts.days.reduce((s, d) => s + d.deep_minutes, 0) -
                 review.facts.previous.deep_minutes,
             )}
             。
           </p>
-          <h3>科目分配</h3>
+          <h3>{translate('科目分配')}</h3>
           <Distribution items={review.facts.subjects} />
-          <h3>编码主题</h3>
+          <h3>{translate('编码主题')}</h3>
           <Distribution mode="count" items={review.facts.topics} />
-          <h3>日记与音乐摘选</h3>
+          <h3>{translate('日记与音乐摘选')}</h3>
           <Records
             records={review.facts.records.filter((r) => r.kind === 'journal' || r.kind === 'music')}
           />
-          <h3>本周词语</h3>
+          <h3>{translate('本周词语')}</h3>
           <WordCloud words={review.facts.words} />
           <form
             onSubmit={(e) => {
@@ -370,7 +388,7 @@ function ReviewPanel({ week, onSaved }: { week: string; onSaved: () => void }) {
             }}
           >
             <fieldset disabled={busy}>
-              <legend>我的心得 · 由你填写</legend>
+              <legend>{translate('我的心得 · 由你填写')}</legend>
               {Boolean(readDraft(key)) && <p role="status">{t.pending}</p>}
               <label>
                 My Reflection
@@ -381,14 +399,14 @@ function ReviewPanel({ week, onSaved }: { week: string; onSaved: () => void }) {
                 />
               </label>
               <label>
-                下周关注
+                {translate('下周关注')}
                 <textarea
                   value={draft.next_focus}
                   onChange={(e) => change({ next_focus: e.target.value })}
                   maxLength={10000}
                 />
               </label>
-              <Button type="submit">保存我的心得</Button>
+              <Button type="submit">{translate('保存我的心得')}</Button>
               <Button
                 type="button"
                 variant="secondary"
@@ -408,13 +426,13 @@ function ReviewPanel({ week, onSaved }: { week: string; onSaved: () => void }) {
                     .catch(() => setError(t.error));
                 }}
               >
-                采用当前版本并保留输入
+                {translate('采用当前版本并保留输入')}
               </Button>
             </fieldset>
           </form>
         </>
       ) : (
-        <p>正在读取周回顾…</p>
+        <p>{translate('正在读取周回顾…')}</p>
       )}
     </section>
   );
@@ -443,35 +461,42 @@ function MonthPanel({ month }: { month: string }) {
         <>
           <h2>{month} Snapshot</h2>
           <p>
-            {data.closed ? '已封存月份；保留生成时的统计。' : '进行中的月份；读取时自动更新。'} ·{' '}
-            {data.from} — {data.until}
+            {data.closed
+              ? translate('已封存月份；保留生成时的统计。')
+              : translate('进行中的月份；读取时自动更新。')}{' '}
+            · {data.from} — {data.until}
           </p>
           <p>
-            专注 {minutes(data.totals.deep_minutes)} · 编码 {minutes(data.totals.coding_minutes)} ·
-            日记 {data.totals.journals}
+            {translate('专注')}
+            {minutes(data.totals.deep_minutes)} {translate('· 编码')}
+            {minutes(data.totals.coding_minutes)} {translate('·\n            日记')}
+            {data.totals.journals}
           </p>
           <p>
-            竞赛 {data.counts.competitions} · 成就 {data.counts.achievements} · 项目{' '}
-            {data.counts.projects} · 照片 {data.counts.photos}
+            {translate('竞赛')}
+            {data.counts.competitions} {translate('· 成就')}
+            {data.counts.achievements} {translate('· 项目')} {data.counts.projects}{' '}
+            {translate('· 照片')}
+            {data.counts.photos}
           </p>
-          <h3>科目</h3>
+          <h3>{translate('科目')}</h3>
           <Distribution items={data.subjects} />
-          <h3>主题</h3>
+          <h3>{translate('主题')}</h3>
           <Distribution mode="count" items={data.topics} />
-          <h3>词语</h3>
+          <h3>{translate('词语')}</h3>
           <p>{data.words.map((w) => `${w.word} (${w.count})`).join(' · ') || t.empty}</p>
-          <h3>音乐</h3>
+          <h3>{translate('音乐')}</h3>
           <Music items={data.music} />
-          <h3>日记摘选</h3>
+          <h3>{translate('日记摘选')}</h3>
           <Records records={data.highlights ?? []} />
           <p>{t.private}</p>
-          <Button onClick={() => exportJson(data)}>导出私密 JSON</Button>
+          <Button onClick={() => exportJson(data)}>{translate('导出私密 JSON')}</Button>
           <Button variant="secondary" onClick={() => exportPng(data)}>
-            导出私密 PNG
+            {translate('导出私密 PNG')}
           </Button>
         </>
       ) : (
-        <p>正在生成月快照…</p>
+        <p>{translate('正在生成月快照…')}</p>
       )}
     </section>
   );
@@ -555,7 +580,7 @@ export function InsightsPage() {
   return (
     <section className="page-stack insights-page">
       <header className="page-heading">
-        <p className="eyebrow">INSIGHTS / 洞察与回顾</p>
+        <p className="eyebrow">{translate('INSIGHTS / 洞察与回顾')}</p>
         <h1>{t.title}</h1>
         <p>{t.description}</p>
       </header>
@@ -567,7 +592,7 @@ export function InsightsPage() {
         <>
           <div className="insight-controls">
             <label>
-              时间范围
+              {translate('时间范围')}
               <select
                 value={range}
                 onChange={(e) => {
@@ -579,11 +604,11 @@ export function InsightsPage() {
                 }}
               >
                 {[
-                  ['7', '近 7 天'],
-                  ['30', '近 30 天'],
-                  ['90', '近 90 天'],
-                  ['365', '近一年'],
-                  ['custom', '自定义'],
+                  ['7', translate('近 7 天')],
+                  ['30', translate('近 30 天')],
+                  ['90', translate('近 90 天')],
+                  ['365', translate('近一年')],
+                  ['custom', translate('自定义')],
                 ].map(([v, s]) => (
                   <option key={v} value={v}>
                     {s}
@@ -592,7 +617,7 @@ export function InsightsPage() {
               </select>
             </label>
             <label>
-              开始日期
+              {translate('开始日期')}
               <input
                 type="date"
                 value={from}
@@ -603,7 +628,7 @@ export function InsightsPage() {
               />
             </label>
             <label>
-              结束日期
+              {translate('结束日期')}
               <input
                 type="date"
                 value={until}
@@ -617,7 +642,7 @@ export function InsightsPage() {
               {t.refresh}
             </Button>
           </div>
-          <nav className="insight-tabs" aria-label="洞察视图">
+          <nav className="insight-tabs" aria-label={translate('洞察视图')}>
             {views.map((v) => (
               <Button
                 key={v}
@@ -634,7 +659,7 @@ export function InsightsPage() {
           </nav>
           {error && <p role="alert">{error}</p>}
           {notice && <p role="status">{notice}</p>}
-          {loading && <p role="status">正在读取本机记录…</p>}
+          {loading && <p role="status">{translate('正在读取本机记录…')}</p>}
           {data && (
             <>
               <p className="secondary-text">{t.definition}</p>
@@ -645,14 +670,14 @@ export function InsightsPage() {
                       {day.date} · {t.day}
                     </h2>
                     <Button variant="secondary" onClick={() => setDay(null)}>
-                      返回洞察
+                      {translate('返回洞察')}
                     </Button>
                   </div>
                   {detail && detail.from === day.date ? (
                     <>
                       <Summary data={detail} />
                       <label>
-                        当日状态
+                        {translate('当日状态')}
                         <select
                           value={detail.days[0].status}
                           onChange={(e) => {
@@ -683,19 +708,19 @@ export function InsightsPage() {
                             ))}
                         </select>
                       </label>
-                      <h3>科目与实际时间</h3>
+                      <h3>{translate('科目与实际时间')}</h3>
                       <Distribution items={detail.subjects} />
                       {[
-                        ['study', '专注'],
-                        ['task', '任务'],
-                        ['problem', '编码与题目'],
-                        ['journal', '日记'],
-                        ['music', '音乐'],
-                        ['event', '日程'],
-                        ['contest', '竞赛'],
-                        ['achievement', '成就'],
-                        ['photo', '照片'],
-                        ['project', '项目'],
+                        ['study', translate('专注')],
+                        ['task', translate('任务')],
+                        ['problem', translate('编码与题目')],
+                        ['journal', translate('日记')],
+                        ['music', translate('音乐')],
+                        ['event', translate('日程')],
+                        ['contest', translate('竞赛')],
+                        ['achievement', translate('成就')],
+                        ['photo', translate('照片')],
+                        ['project', translate('项目')],
                       ].map(([kind, label]) => (
                         <section key={kind}>
                           <h3>{label}</h3>
@@ -704,7 +729,7 @@ export function InsightsPage() {
                       ))}
                     </>
                   ) : (
-                    <p>正在读取当日…</p>
+                    <p>{translate('正在读取当日…')}</p>
                   )}
                 </Card>
               ) : view === 'overview' ? (
@@ -712,34 +737,53 @@ export function InsightsPage() {
                   <Summary data={data} />
                   <div className="insight-grid">
                     <Card>
-                      <Trend days={data.days} field="deep_minutes" title="实际专注趋势" />
+                      <Trend
+                        days={data.days}
+                        field="deep_minutes"
+                        title={translate('实际专注趋势')}
+                      />
                     </Card>
                     <Card>
-                      <h2>科目分配</h2>
+                      <h2>{translate('科目分配')}</h2>
                       <Distribution items={data.subjects} />
                     </Card>
                     <Card>
-                      <Trend days={data.days} field="planned_minutes" title="计划预算" />
+                      <Trend
+                        days={data.days}
+                        field="planned_minutes"
+                        title={translate('计划预算')}
+                      />
                       <p>
-                        实际专注 {minutes(data.days.reduce((a, d) => a + d.deep_minutes, 0))}
-                        ；计划与实际并列展示，超出预算不裁剪。
+                        {translate('实际专注')}
+                        {minutes(data.days.reduce((a, d) => a + d.deep_minutes, 0))}
+                        {translate('；计划与实际并列展示，超出预算不裁剪。')}
                       </p>
                     </Card>
                     <Card>
-                      <Trend days={data.days} field="coding_minutes" title="编码趋势" />
+                      <Trend
+                        days={data.days}
+                        field="coding_minutes"
+                        title={translate('编码趋势')}
+                      />
                     </Card>
                     <Card>
-                      <h2>Journey 计划任务进度</h2>
+                      <h2>{translate('Journey 计划任务进度')}</h2>
                       <Distribution mode="progress" items={data.journeys} />
                     </Card>
                     <Card>
-                      <Trend days={data.days} field="capacity_minutes" title="每日容量" />
+                      <Trend
+                        days={data.days}
+                        field="capacity_minutes"
+                        title={translate('每日容量')}
+                      />
                     </Card>
                   </div>
                 </>
               ) : view === 'heatmap' ? (
                 <Card>
-                  <h2>{current.slice(0, 4)} 年度活动</h2>
+                  <h2>
+                    {current.slice(0, 4)} {translate('年度活动')}
+                  </h2>
                   <Heatmap days={data.heatmap} onDay={setDay} />
                 </Card>
               ) : view === 'words' ? (
@@ -757,7 +801,7 @@ export function InsightsPage() {
               ) : view === 'review' ? (
                 <Card>
                   <label>
-                    回顾所在周
+                    {translate('回顾所在周')}
                     <input type="date" value={week} onChange={(e) => setWeek(e.target.value)} />
                   </label>
                   <ReviewPanel key={week} week={week} onSaved={() => void refresh()} />
@@ -765,7 +809,7 @@ export function InsightsPage() {
               ) : view === 'month' ? (
                 <Card>
                   <label>
-                    快照月份
+                    {translate('快照月份')}
                     <input
                       type="month"
                       max={current.slice(0, 7)}

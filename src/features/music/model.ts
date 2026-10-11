@@ -1,3 +1,4 @@
+import { translate } from '../../lib/locale';
 export interface Preferences {
   enabled: boolean;
   threshold_seconds: number;
@@ -44,7 +45,7 @@ export function musicCloud(rows: Group[], mode: 'title' | 'artist' | 'album') {
   for (const row of rows) {
     const label =
       (mode === 'title' ? `${row.title}${row.artist ? ' · ' + row.artist : ''}` : row[mode]) ||
-      '未填写';
+      translate('未填写');
     const value = grouped.get(label) ?? { label, count: 0, seconds: 0 };
     value.count += row.count;
     value.seconds += row.seconds;

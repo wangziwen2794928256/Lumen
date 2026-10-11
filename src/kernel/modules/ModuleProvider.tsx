@@ -1,3 +1,4 @@
+import { translate } from '../../lib/locale';
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
 import { invoke, isTauri } from '@tauri-apps/api/core';
 import { defaults, normalizeState } from './registry';
@@ -44,7 +45,9 @@ export function ModuleProvider({ children }: { children: ReactNode }) {
         .catch(() => {
           if (live) {
             setReady(true);
-            setError('模块配置读取失败；显示默认导航，数据库权限检查仍生效。请在设置重新载入。');
+            setError(
+              translate('模块配置读取失败；显示默认导航，数据库权限检查仍生效。请在设置重新载入。'),
+            );
           }
         });
     return () => {

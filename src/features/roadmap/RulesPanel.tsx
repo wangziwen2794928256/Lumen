@@ -1,3 +1,4 @@
+import { locale } from '../../lib/locale';
 import { useRef, useState } from 'react';
 import { Dialog } from '../../components/ui/dialog';
 import { Card, CardTitle } from '../../components/ui/card';
@@ -127,7 +128,7 @@ export function RulesPanel({
             {rule.deleted_at ? ' · ' + t.recycle : ''}
           </summary>
           <p>
-            {t.captured}：{new Date(rule.captured_at).toLocaleString('zh-CN')}
+            {t.captured}：{new Date(rule.captured_at).toLocaleString(locale)}
           </p>
           <p className="roadmap-hash">
             {t.hash}：{rule.content_hash}

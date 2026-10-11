@@ -1925,3 +1925,18 @@ summary {
   width: 100%;
   min-width: 0;
 }
+
+.language-panel {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.language-panel select {
+  width: min(100%, 22rem);
+  min-height: 2.75rem;
+}
+.language-panel button {
+  justify-self: start;
+}

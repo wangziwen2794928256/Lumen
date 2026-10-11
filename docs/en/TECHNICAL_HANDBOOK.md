@@ -1,6 +1,11 @@
 # Lumen technical handbook
 
-Version 0.1.0 candidate · Phase17 distribution extension · 2026-10-11
+## Detailed reading paths
+
+This handbook provides the system overview. [MODULE_REFERENCE](MODULE_REFERENCE.md) explains workflows, mechanisms and boundaries for each module. [MODULE_TUTORIAL](MODULE_TUTORIAL.md) gives source integration steps. [API_REFERENCE](API_REFERENCE.md) indexes 60 IPC signatures and 12 domain model groups. [ENVIRONMENT_AND_CONFIGURATION](ENVIRONMENT_AND_CONFIGURATION.md) covers prerequisites, isolation and packaging. Begin with [USER_GUIDE](USER_GUIDE.md), explore [EXTENSION_IDEAS](EXTENSION_IDEAS.md) and see [LOCALIZATION](LOCALIZATION.md) for English UI coverage.
+
+
+Version 0.1.0 candidate · Documentation and localization edition · 2026-10-11
 
 ## Product and support
 
@@ -76,7 +81,7 @@ Version-based cargo audit may still report 0.18.5. This is a scoped source patch
 
 Distinguish compilation, unit/browser regression, install, real native window, OS integration, signing and notarization. Current candidates have no commercial signing certificate or Apple notarization. Never ask users to disable Gatekeeper, SmartScreen or other protections. Test experimental builds under an isolated OS user, keeping the only production database safe.
 
-The default GitHub distribution repository is private. export-source.py allowlists code and technical docs, excluding local Git history, production databases, journals, music history, native personal screenshots, workstation logs and credentials. UPSTREAM_CHECKPOINT.json preserves source provenance and hashes. Original local phase history remains intact. Release packages and SHA256 must identify the producing commit. A Windows Phase16 binary remains labelled Phase16, rather than being presented as a new native CI build.
+The owner has authorized public source and editable materials. Publication uses a sanitized source-only snapshot. export-source.py allowlists code and technical docs, excluding local Git history, production databases, journals, music history, native personal screenshots, workstation logs and credentials. UPSTREAM_CHECKPOINT.json preserves source provenance and hashes. Original local phase history remains intact. Release packages and SHA256 must identify the producing commit. A Windows Phase16 binary remains labelled Phase16, rather than being presented as a new native CI build.
 
 ## Troubleshooting and maintenance
 

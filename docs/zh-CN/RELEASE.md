@@ -1,5 +1,7 @@
 # RELEASE
 
+当前版本：按授权公开源码、详细双语文档、24页可编辑演示和前端英化。见 [本版发行说明](../distribution/PHASE18_RELEASE_NOTES.md)。下文 Phase17 私有发行描述为历史记录。
+
 Phase17 在已验收 Phase16 Windows0.1.0 候选之上追加私有 prerelease：保持原 hash 的安装/便携程序、实验 macOS ARM64/Intel DMG、Linux x64 deb/AppImage、双语文档、可编辑中文 PPT、源码 ZIP、CI 证据和 SHA256 manifest。BUILD_MANIFEST.json 分别记录原生构建提交与最终 publication commit；见 [构建结果](../distribution/BUILD_RESULTS.md)。原 Windows 验收报告留在本地；失败/待运行不得标 PASS。
 
 未来插件install：离线校验manifest/API/hash/签名策略→staged→disabled；enable需授权和runtime预检；disable撤销停止；update事务化包+独立DB备份、新权限同意→disabled；rollback仅兼容快照，失败保留旧包；uninstall停用后移除包，默认保留用户数据。纯状态机可测，安装器未实现。

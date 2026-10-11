@@ -1,5 +1,10 @@
 # Lumen 技术手册
 
+## 详细阅读路线
+
+本手册给出系统全景。逐模块的工作流、技术原理与边界见 [MODULE_REFERENCE](MODULE_REFERENCE.md)；可执行源码接入步骤见 [MODULE_TUTORIAL](MODULE_TUTORIAL.md)；60 个 IPC 命令签名与 12 组领域模型见 [API_REFERENCE](API_REFERENCE.md)；环境、配置、隔离开发和打包见 [ENVIRONMENT_AND_CONFIGURATION](ENVIRONMENT_AND_CONFIGURATION.md)。用户起步见 [USER_GUIDE](USER_GUIDE.md)，可贡献方向见 [EXTENSION_IDEAS](EXTENSION_IDEAS.md)。当前 English UI 包见 [LOCALIZATION](LOCALIZATION.md)。
+
+
 版本：0.1.0 候选；发行扩展：Phase17；2026-10-11。
 
 ## 1. 产品范围与支持级别
@@ -101,7 +106,7 @@ Linux Tauri GTK 依赖要求 glib 0.18.5，其 `VariantStrIter` 存在 [RUSTSEC-
 
 正式发布应区分编译、自动测试、安装、真实窗口、OS 集成、签名/公证。当前候选未提供商业签名证书与 Apple notarization，不能建议用户关闭 Gatekeeper、SmartScreen 或其他安全机制。实验包不得覆盖唯一生产数据；优先在独立 OS 用户中验证。
 
-GitHub 默认为私有源代码发行仓库。发布导出脚本采用文件白名单，不上传完整本地 Git 历史、生产库、日记、音乐历史、原生用户窗口截图、本机日志或凭据。`UPSTREAM_CHECKPOINT.json` 记录上游 checkpoint 与文件 hash；本地完整历史保留。发行页与 SHA256 对应同一构建 commit，候选先使用 prerelease/draft，不能把本机 Windows 旧包标为新 CI 编译结果。
+GitHub 按所有者最新授权公开源码与可编辑资料。发布导出脚本采用文件白名单，不上传完整本地 Git 历史、生产库、日记、音乐历史、原生用户窗口截图、本机日志或凭据。`UPSTREAM_CHECKPOINT.json` 记录上游 checkpoint 与文件 hash；本地完整历史保留。发行页与 SHA256 对应同一构建 commit，候选先使用 prerelease/draft，不能把本机 Windows 旧包标为新 CI 编译结果。
 
 ## 9. 维护与故障排查
 

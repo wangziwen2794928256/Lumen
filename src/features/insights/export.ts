@@ -1,3 +1,4 @@
+import { locale, translate } from '../../lib/locale';
 import type { Monthly } from './model';
 function download(blob: Blob, name: string) {
   const url = URL.createObjectURL(blob);
@@ -43,25 +44,46 @@ export function exportPng(month: Monthly) {
   ctx.font = '32px sans-serif';
   ctx.fillText(`Lumen · ${month.month} Snapshot`, 60, 70);
   ctx.font = '20px sans-serif';
-  const rows = [
-    `私密快照 · ${month.from} — ${month.until}`,
-    `实际专注 ${month.totals.deep_minutes.toFixed(1)} 分钟`,
-    `编码 ${month.totals.coding_minutes.toFixed(1)} 分钟（可能与专注重叠）`,
-    `计划 ${month.totals.planned_minutes.toFixed(1)} 分钟`,
-    `任务 ${month.totals.tasks_completed} · 日记 ${month.totals.journals}`,
-    `主题 ${
-      month.topics
-        .slice(0, 6)
-        .map((i) => i.label)
-        .join(' · ') || '暂无记录'
-    }`,
-    `词语 ${
-      month.words
-        .slice(0, 6)
-        .map((i) => i.word)
-        .join(' · ') || '暂无记录'
-    }`,
-  ];
+  const rows =
+    locale === 'en'
+      ? [
+          `Private snapshot · ${month.from} — ${month.until}`,
+          `Actual focus ${month.totals.deep_minutes.toFixed(1)} minutes`,
+          `Coding ${month.totals.coding_minutes.toFixed(1)} minutes (may overlap focus)`,
+          `Planned ${month.totals.planned_minutes.toFixed(1)} minutes`,
+          `Tasks ${month.totals.tasks_completed} · Journals ${month.totals.journals}`,
+          `Topics ${
+            month.topics
+              .slice(0, 6)
+              .map((i) => i.label)
+              .join(' · ') || translate('暂无记录')
+          }`,
+          `Words ${
+            month.words
+              .slice(0, 6)
+              .map((i) => i.word)
+              .join(' · ') || translate('暂无记录')
+          }`,
+        ]
+      : [
+          `私密快照 · ${month.from} — ${month.until}`,
+          `实际专注 ${month.totals.deep_minutes.toFixed(1)} 分钟`,
+          `编码 ${month.totals.coding_minutes.toFixed(1)} 分钟（可能与专注重叠）`,
+          `计划 ${month.totals.planned_minutes.toFixed(1)} 分钟`,
+          `任务 ${month.totals.tasks_completed} · 日记 ${month.totals.journals}`,
+          `主题 ${
+            month.topics
+              .slice(0, 6)
+              .map((i) => i.label)
+              .join(' · ') || translate('暂无记录')
+          }`,
+          `词语 ${
+            month.words
+              .slice(0, 6)
+              .map((i) => i.word)
+              .join(' · ') || translate('暂无记录')
+          }`,
+        ];
   rows.forEach((r, i) => ctx.fillText(r, 60, 135 + i * 45, 1080));
   const max = Math.max(1, ...month.days.map((d) => d.deep_minutes));
   ctx.strokeStyle = '#477058';

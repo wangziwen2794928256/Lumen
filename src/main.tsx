@@ -1,8 +1,10 @@
+import { locale } from './lib/locale';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { App } from './app/App';
 import './styles/base.css';
 import { readAppearance } from './lib/appearance';
+document.documentElement.lang = locale;
 const preference = readAppearance();
 document.documentElement.dataset.theme =
   preference.mode === 'system'

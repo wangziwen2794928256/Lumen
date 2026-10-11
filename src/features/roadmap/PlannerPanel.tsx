@@ -1,3 +1,4 @@
+import { locale } from '../../lib/locale';
 import { useRef, useState } from 'react';
 import { Card, CardTitle } from '../../components/ui/card';
 import { Button } from '../../components/ui/button';
@@ -42,7 +43,7 @@ function DecisionCard({
     <section className="roadmap-decision">
       <div className="roadmap-card-heading">
         <h3>{t.decisionStates[d.status]}</h3>
-        <time>{new Date(d.created_at).toLocaleString('zh-CN')}</time>
+        <time>{new Date(d.created_at).toLocaleString(locale)}</time>
       </div>
       <p>{d.reason}</p>
       <div className="roadmap-budget-grid">

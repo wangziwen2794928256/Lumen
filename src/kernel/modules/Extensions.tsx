@@ -1,7 +1,8 @@
+import { translate } from '../../lib/locale';
 import { Component, type ReactNode } from 'react';
 import { insightsWidgets } from '../../modules/official/insights';
 import { useModules } from './ModuleProvider';
-import { moduleText } from './model';
+import { moduleText } from './text';
 class WidgetBoundary extends Component<{ children: ReactNode }, { failed: boolean }> {
   state = { failed: false };
   static getDerivedStateFromError() {
@@ -9,7 +10,7 @@ class WidgetBoundary extends Component<{ children: ReactNode }, { failed: boolea
   }
   render() {
     return this.state.failed ? (
-      <p role="status">模块组件暂不可用，其他首页功能仍可使用。</p>
+      <p role="status">{translate('模块组件暂不可用，其他首页功能仍可使用。')}</p>
     ) : (
       this.props.children
     );
@@ -36,7 +37,7 @@ export function TodayWidgets({ slot }: { slot: 'today.after-summary' }) {
 export function ModuleGate({ id, children }: { id: string; children: ReactNode }) {
   const { state, ready } = useModules();
   return !ready ? (
-    <p role="status">正在读取模块配置…</p>
+    <p role="status">{translate('正在读取模块配置…')}</p>
   ) : state.items.some((i) => i.id === id && i.enabled) ? (
     children
   ) : (

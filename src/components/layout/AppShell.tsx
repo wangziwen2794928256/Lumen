@@ -1,3 +1,4 @@
+import { locale, translate } from '../../lib/locale';
 import { useEffect, useState, type ReactNode } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import {
@@ -76,10 +77,10 @@ export function AppShell({ children }: { children: ReactNode }) {
         >
           {value.collapsed ? <PanelLeftOpen size={19} /> : <PanelLeftClose size={19} />}
         </Button>
-        <nav aria-label="主要导航">
+        <nav aria-label={translate('主要导航')}>
           {items.map((module, i) => {
             const url = module.route,
-              label = module.name['zh-CN'],
+              label = module.name[locale],
               Icon = icons[module.icon as keyof typeof icons] ?? Layers;
             return (
               <NavLink
@@ -95,7 +96,7 @@ export function AppShell({ children }: { children: ReactNode }) {
                   if (e.dataTransfer.getData('text/plain') === drag)
                     void modules
                       .save(reorder(modules.state, drag, module.id))
-                      .catch(() => setModuleError('模块排列未保存，请在设置重试。'));
+                      .catch(() => setModuleError(translate('模块排列未保存，请在设置重试。')));
                   setDrag('');
                 }}
                 to={url}

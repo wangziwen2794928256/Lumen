@@ -1,3 +1,4 @@
+import { translate } from '../../lib/locale';
 import { useState, useId, cloneElement, isValidElement, type ReactNode } from 'react';
 import { Button } from '../../components/ui/button';
 import { codingApi } from './api';
@@ -35,7 +36,7 @@ function Choices({
   return (
     <Field label={label}>
       <select value={value ?? ''} onChange={(e) => onChange(e.target.value || null)}>
-        <option value="">不关联</option>
+        <option value="">{translate('不关联')}</option>
         {choices.map((c) => (
           <option key={c.id} value={c.id}>
             {c.title}
@@ -79,7 +80,7 @@ export function Editor({
     try {
       localStorage.setItem(draftKey(next), JSON.stringify(next));
     } catch {
-      setError('本地待提交稿未写入，请保留此窗口并完成保存。');
+      setError(translate('本地待提交稿未写入，请保留此窗口并完成保存。'));
     }
   }
   async function save() {
@@ -100,7 +101,7 @@ export function Editor({
     a = draft.type === 'attempt' ? draft.input : null;
   return (
     <section className="ui-card coding-editor">
-      <h2>{p ? '题目资料' : c ? '竞赛资料' : t.attempt}</h2>
+      <h2>{p ? translate('题目资料') : c ? translate('竞赛资料') : t.attempt}</h2>
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -111,7 +112,7 @@ export function Editor({
           <div className="roadmap-form-grid">
             {(p || c) && (
               <>
-                <Field label="名称">
+                <Field label={translate('名称')}>
                   <input
                     required
                     maxLength={1000}
@@ -119,7 +120,7 @@ export function Editor({
                     onChange={(e) => change({ title: e.target.value })}
                   />
                 </Field>
-                <Field label="平台">
+                <Field label={translate('平台')}>
                   <select
                     value={(p ?? c)!.platform}
                     onChange={(e) => change({ platform: e.target.value })}
@@ -129,7 +130,7 @@ export function Editor({
                     ))}
                   </select>
                 </Field>
-                <Field label="平台链接">
+                <Field label={translate('平台链接')}>
                   <input
                     type="url"
                     maxLength={2000}
@@ -142,7 +143,7 @@ export function Editor({
             )}
             {p && (
               <>
-                <Field label="平台题号">
+                <Field label={translate('平台题号')}>
                   <input
                     required
                     maxLength={100}
@@ -150,7 +151,7 @@ export function Editor({
                     onChange={(e) => change({ external_id: e.target.value })}
                   />
                 </Field>
-                <Field label="难度">
+                <Field label={translate('难度')}>
                   <select
                     value={p.difficulty}
                     onChange={(e) => change({ difficulty: e.target.value })}
@@ -162,7 +163,7 @@ export function Editor({
                     ))}
                   </select>
                 </Field>
-                <Field label="算法标签（逗号分隔）">
+                <Field label={translate('算法标签（逗号分隔）')}>
                   <input
                     value={tags}
                     maxLength={3000}
@@ -183,19 +184,19 @@ export function Editor({
                   />
                 </Field>
                 <Choices
-                  label="关联长期目标"
+                  label={translate('关联长期目标')}
                   value={p.journey_id}
                   choices={data.journeys}
                   onChange={(v) => change({ journey_id: v })}
                 />
                 <Choices
-                  label="关联任务"
+                  label={translate('关联任务')}
                   value={p.task_id}
                   choices={data.tasks}
                   onChange={(v) => change({ task_id: v })}
                 />
                 <Choices
-                  label="关联竞赛"
+                  label={translate('关联竞赛')}
                   value={p.competition_id}
                   choices={data.contests
                     .filter((c) => !c.deleted_at)
@@ -206,7 +207,7 @@ export function Editor({
             )}
             {c && (
               <>
-                <Field label="竞赛日期">
+                <Field label={translate('竞赛日期')}>
                   <input
                     type="date"
                     required
@@ -214,20 +215,20 @@ export function Editor({
                     onChange={(e) => change({ event_date: e.target.value })}
                   />
                 </Field>
-                <Field label="参加状态">
+                <Field label={translate('参加状态')}>
                   <select
                     value={String(c.participated)}
                     onChange={(e) => change({ participated: e.target.value === 'true' })}
                   >
-                    <option value="false">未参加</option>
-                    <option value="true">已参加</option>
+                    <option value="false">{translate('未参加')}</option>
+                    <option value="true">{translate('已参加')}</option>
                   </select>
                 </Field>
               </>
             )}
             {a && (
               <>
-                <Field label="尝试时间">
+                <Field label={translate('尝试时间')}>
                   <input
                     type="datetime-local"
                     required
@@ -242,7 +243,7 @@ export function Editor({
                     }}
                   />
                 </Field>
-                <Field label="语言">
+                <Field label={translate('语言')}>
                   <input
                     required
                     maxLength={100}
@@ -251,7 +252,7 @@ export function Editor({
                     onChange={(e) => change({ language: e.target.value })}
                   />
                 </Field>
-                <Field label="结果">
+                <Field label={translate('结果')}>
                   <select value={a.outcome} onChange={(e) => change({ outcome: e.target.value })}>
                     {outcomes.map((s) => (
                       <option key={s} value={s}>
@@ -260,7 +261,7 @@ export function Editor({
                     ))}
                   </select>
                 </Field>
-                <Field label="额外手工用时（分钟）">
+                <Field label={translate('额外手工用时（分钟）')}>
                   <input
                     type="number"
                     min={0}
@@ -273,18 +274,20 @@ export function Editor({
                   />
                 </Field>
                 <Choices
-                  label="关联已完成专注"
+                  label={translate('关联已完成专注')}
                   value={a.focus_session_id}
                   choices={data.focus}
                   onChange={(v) => change({ focus_session_id: v })}
                 />
                 <p className="muted">
-                  已完成专注从真实账本读取，不可重复关联。额外手工用时不包含这段专注。
+                  {translate(
+                    '已完成专注从真实账本读取，不可重复关联。额外手工用时不包含这段专注。',
+                  )}
                 </p>
               </>
             )}
           </div>
-          <Field label="笔记">
+          <Field label={translate('笔记')}>
             <textarea
               value={draft.input.notes}
               maxLength={100000}
@@ -295,7 +298,7 @@ export function Editor({
           {error && <p role="alert">{error}</p>}
           <div className="journal-toolbar">
             <Button type="submit" disabled={busy}>
-              {busy ? '正在保存…' : t.save}
+              {busy ? translate('正在保存…') : t.save}
             </Button>
             <Button variant="secondary" disabled={busy} onClick={onBack}>
               {t.back}

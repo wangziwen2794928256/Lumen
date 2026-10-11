@@ -1,3 +1,4 @@
+import { locale } from '../../lib/locale';
 import { useRef, useState } from 'react';
 import { Card, CardHeader, CardTitle } from '../../components/ui/card';
 import { Button } from '../../components/ui/button';
@@ -399,7 +400,7 @@ export function TodayPage() {
               data.timeline.map((item) => (
                 <div className="timeline-entry" key={item.id}>
                   <span>
-                    {new Date(item.started_at).toLocaleTimeString('zh-CN', {
+                    {new Date(item.started_at).toLocaleTimeString(locale, {
                       hour: '2-digit',
                       minute: '2-digit',
                     })}

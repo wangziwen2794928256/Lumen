@@ -18,7 +18,7 @@ dirs = ['src', 'public', 'tests/e2e', 'tests/unit', 'tests/fixtures', 'website',
         'src-tauri/capabilities', 'src-tauri/icons', 'src-tauri/tests', 'src-tauri/vendor',
         'docs/en', 'docs/zh-CN', 'docs/contracts', 'docs/data', 'docs/distribution',
         '.github', 'scripts/distribution', 'scripts/release']
-files = ['.gitattributes', '.gitignore', '.prettierrc.json', '.prettierignore', 'LICENSE', 'SECURITY.md',
+files = ['docs/presentations/README.md', '.gitattributes', '.gitignore', '.prettierrc.json', '.prettierignore', 'LICENSE', 'SECURITY.md',
          'CONTRIBUTING.md', 'components.json', 'eslint.config.js', 'index.html', 'package.json',
          'playwright.config.ts', 'pnpm-lock.yaml', 'pnpm-workspace.yaml', 'rust-toolchain.toml',
          'tsconfig.json', 'vite.config.ts', 'src-tauri/build.rs', 'src-tauri/Cargo.toml',

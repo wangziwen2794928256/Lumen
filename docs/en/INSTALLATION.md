@@ -7,7 +7,7 @@
 | macOS Intel | x86_64 DMG / app | Experimental; check actual CI result |
 | Linux x64 | deb / AppImage | Experimental; check actual CI result |
 
-Repository: https://github.com/wangziwen2794928256/Lumen . It is private by default and requires authorized account access. Manually run Native experimental packages under Actions and select the correct architecture artifact. Successful outputs include BUILD.json and SHA256SUMS. CI artifacts expire after 30 days; retain a verified local copy.
+Repository: https://github.com/wangziwen2794928256/Lumen . Source and editable materials are publicly available. Manually run Native experimental packages under Actions and select the correct architecture artifact. Successful outputs include BUILD.json and SHA256SUMS. CI artifacts expire after 30 days; retain a verified local copy.
 
 Windows uses current-user installation. Follow Microsoft's WebView2 installation process if required. Create an application-consistent backup before upgrading. Phase16 isolated acceptance verified that uninstall retained AppData; do not manually delete unbacked-up data. Phase17 preserves the already accepted Windows binary and shortcut.
 
@@ -17,4 +17,4 @@ macOS/Linux session-event monitoring and several open/deep-link adapters remain 
 
 Verify files with PowerShell Get-FileHash -Algorithm SHA256, macOS shasum -a 256, or Linux sha256sum -c SHA256SUMS against the trusted delivery manifest.
 
-Both macOS DMGs and Linux deb/AppImage have now passed actual native build and static package/architecture/SHA256 checks. The [private distribution candidate](https://github.com/wangziwen2794928256/Lumen/releases/tag/v0.1.0-distribution-rc1) includes these packages, original Windows binaries, PPT, source/documents/CI-evidence archives and manifest/checksums. See [BUILD_RESULTS](../distribution/BUILD_RESULTS.md); native runtime and integration limitations above remain unchanged.
+Both macOS DMGs and Linux deb/AppImage have now passed actual native build and static package/architecture/SHA256 checks. The [distribution candidate](https://github.com/wangziwen2794928256/Lumen/releases/tag/v0.1.0-distribution-rc1) includes these packages, original Windows binaries, PPT, source/documents/CI-evidence archives and manifest/checksums. See [BUILD_RESULTS](../distribution/BUILD_RESULTS.md); native runtime and integration limitations above remain unchanged.

@@ -1,32 +1,40 @@
-# Lumen technical documentation / 技术文档
+# Lumen documentation hub
 
-Phase17 distribution extension · candidate 0.1.0 · Module API1.0. Windows baseline acceptance remains local; macOS/Linux are experimental.
+Editable Markdown documentation. Choose a reading path, then follow task-specific detail. Official source integration works today. Community execution stays closed.
 
-- [Technical handbook](TECHNICAL_HANDBOOK.md)
-- [Installation and support](INSTALLATION.md)
-- [Module extension guide](MODULE_EXTENSION_GUIDE.md)
+- [USER_GUIDE](USER_GUIDE.md)
+- [TECHNICAL_HANDBOOK](TECHNICAL_HANDBOOK.md)
+- [MODULE_REFERENCE](MODULE_REFERENCE.md)
+- [MODULE_TUTORIAL](MODULE_TUTORIAL.md)
+- [API_REFERENCE](API_REFERENCE.md)
+- [ENVIRONMENT_AND_CONFIGURATION](ENVIRONMENT_AND_CONFIGURATION.md)
+- [EXTENSION_IDEAS](EXTENSION_IDEAS.md)
+- [LOCALIZATION](LOCALIZATION.md)
+- [DESIGN_REFERENCES](DESIGN_REFERENCES.md)
+
+## Reference
 
 - [ARCHITECTURE](ARCHITECTURE.md)
-- [SOURCE_MAP](SOURCE_MAP.md)
+- [BACKUP_PRIVACY](BACKUP_PRIVACY.md)
+- [BUILD_FROM_SOURCE](BUILD_FROM_SOURCE.md)
+- [CONTRIBUTING](CONTRIBUTING.md)
+- [CROSS_PLATFORM](CROSS_PLATFORM.md)
 - [DATABASE](DATABASE.md)
+- [DESKTOP](DESKTOP.md)
+- [INSTALLATION](INSTALLATION.md)
+- [MODULE_EXTENSION_GUIDE](MODULE_EXTENSION_GUIDE.md)
 - [MODULE_SYSTEM](MODULE_SYSTEM.md)
+- [MUSIC](MUSIC.md)
+- [PERMISSION_MODEL](PERMISSION_MODEL.md)
+- [PLAN_ENGINE](PLAN_ENGINE.md)
 - [PLUGIN_SDK](PLUGIN_SDK.md)
 - [PLUGIN_SECURITY](PLUGIN_SECURITY.md)
-- [PERMISSION_MODEL](PERMISSION_MODEL.md)
-- [THEME_SDK](THEME_SDK.md)
-- [BUILD_FROM_SOURCE](BUILD_FROM_SOURCE.md)
-- [CROSS_PLATFORM](CROSS_PLATFORM.md)
-- [CONTRIBUTING](CONTRIBUTING.md)
-- [REPRODUCE_LUMEN](REPRODUCE_LUMEN.md)
-- [PLAN_ENGINE](PLAN_ENGINE.md)
 - [PRIVACY](PRIVACY.md)
-- [THREAT_MODEL](THREAT_MODEL.md)
-- [TESTING](TESTING.md)
+- [PUBLIC_WEBSITE](PUBLIC_WEBSITE.md)
 - [RELEASE](RELEASE.md)
-
-- [Vault / Portfolio](VAULT.md)
-- [Public website and deep links](PUBLIC_WEBSITE.md)
-
-- [Backup / Privacy](BACKUP_PRIVACY.md)
-
-- [Desktop experience](DESKTOP.md)
+- [REPRODUCE_LUMEN](REPRODUCE_LUMEN.md)
+- [SOURCE_MAP](SOURCE_MAP.md)
+- [TESTING](TESTING.md)
+- [THEME_SDK](THEME_SDK.md)
+- [THREAT_MODEL](THREAT_MODEL.md)
+- [VAULT](VAULT.md)

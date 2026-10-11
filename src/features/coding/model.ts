@@ -1,3 +1,4 @@
+import { locale, translate } from '../../lib/locale';
 export const platforms = [
   'Luogu',
   'NowCoder',
@@ -254,9 +255,9 @@ export function safeLink(value: string) {
 }
 export function firstPass(a: Pick<Analytics, 'first_pass_numerator' | 'first_pass_denominator'>) {
   return a.first_pass_denominator === 0
-    ? '暂无样本'
+    ? translate('暂无样本')
     : `${((100 * a.first_pass_numerator) / a.first_pass_denominator).toFixed(1)}% (${a.first_pass_numerator}/${a.first_pass_denominator})`;
 }
 export function minutes(seconds: number) {
-  return `${(seconds / 60).toFixed(1)} 分钟`;
+  return `${(seconds / 60).toFixed(1)} ${locale === 'en' ? 'minutes' : '分钟'}`;
 }

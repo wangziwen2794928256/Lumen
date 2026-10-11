@@ -1,3 +1,4 @@
+import { translate } from '../../lib/locale';
 import { useCallback, useEffect, useState } from 'react';
 import { isTauri } from '@tauri-apps/api/core';
 import { useSearchParams } from 'react-router-dom';
@@ -98,7 +99,7 @@ export function JournalPage() {
   return (
     <>
       <div className="page-heading journal-page-heading">
-        <p className="eyebrow">JOURNAL / 日记</p>
+        <p className="eyebrow">{translate('JOURNAL / 日记')}</p>
         <h1>{t.title}</h1>
         <p className="intro">{t.intro}</p>
       </div>
@@ -199,7 +200,7 @@ export function JournalPage() {
           </Card>
           {undo && (
             <div role="status" className="journal-toolbar">
-              <span>记录已移入回收站。</span>
+              <span>{translate('记录已移入回收站。')}</span>
               <Button variant="secondary" onClick={() => void trash(undo, true)}>
                 {t.undo}
               </Button>
@@ -247,7 +248,8 @@ export function JournalPage() {
                 {t.prev}
               </Button>
               <span>
-                {filter.page + 1} / {Math.max(1, Math.ceil(data.total / 30))} · {data.total} 条
+                {filter.page + 1} / {Math.max(1, Math.ceil(data.total / 30))} · {data.total}{' '}
+                {translate('条')}
               </span>
               <Button
                 disabled={(filter.page + 1) * 30 >= data.total}

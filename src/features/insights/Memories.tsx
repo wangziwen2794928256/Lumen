@@ -1,3 +1,4 @@
+import { translate } from '../../lib/locale';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { insightsApi } from './api';
@@ -19,7 +20,7 @@ export function Memories() {
   if (items.length === 0) return null;
   return (
     <section className="ui-card insight-memory">
-      <h2>往年今日</h2>
+      <h2>{translate('往年今日')}</h2>
       <ul>
         {items.map((r) => (
           <li key={`${r.kind}-${r.id}-${r.date}`}>
@@ -29,7 +30,7 @@ export function Memories() {
           </li>
         ))}
       </ul>
-      <p className="secondary-text">可在洞察的活动配置中关闭。</p>
+      <p className="secondary-text">{translate('可在洞察的活动配置中关闭。')}</p>
     </section>
   );
 }

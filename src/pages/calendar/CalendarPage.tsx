@@ -1,3 +1,4 @@
+import { locale } from '../../lib/locale';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '../../components/ui/button';
@@ -20,7 +21,7 @@ import {
 } from '../../features/calendar/model';
 import { calendarText as t } from '../../features/calendar/text';
 function clock(value: string) {
-  return new Date(value).toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' });
+  return new Date(value).toLocaleTimeString(locale, { hour: '2-digit', minute: '2-digit' });
 }
 export function CalendarPage() {
   const [day, setDay] = useState(localDate),

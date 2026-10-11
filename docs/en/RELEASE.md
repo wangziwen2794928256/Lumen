@@ -1,5 +1,7 @@
 # RELEASE
 
+Current edition: public source, detailed bilingual docs, editable 24-slide decks and English frontend. See [release notes](../distribution/PHASE18_RELEASE_NOTES.md). Earlier Phase17 statements below describe its historical private release.
+
 Phase17 adds a private distribution prerelease to the accepted Phase16 Windows0.1.0 candidate: unchanged installer/portable binary, experimental macOS ARM64/Intel DMGs and Linux x64 deb/AppImage, bilingual docs, editable Chinese PPT, source archive, CI evidence and SHA256 manifest. BUILD_MANIFEST.json records native producing commits separately from the final publication commit. See [build results](../distribution/BUILD_RESULTS.md). Original Windows reports remain local. Pending/failed checks are never labelled PASS.
 
 Future lifecycle: offline manifest/API/hash/signature-policy validation stages a package; install leaves it disabled; enable needs grants/runtime preflight; disable revokes/stops; update backs up isolated data and requires new permissions; rollback needs compatible snapshots and keeps the old package on failure; uninstall removes disabled code while retaining data by default. The pure state machine is testable; installer/runtime are absent.

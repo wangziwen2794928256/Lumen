@@ -1,3 +1,4 @@
+import { locale, translate } from '../../lib/locale';
 import { useEffect, useState } from 'react';
 import { Button } from '../../components/ui/button';
 import { codingApi } from '../../features/coding/api';
@@ -89,14 +90,14 @@ export function CodingPage() {
       const href = safeLink(value);
       return href ? (
         <a href={href} target="_blank" rel="noreferrer">
-          打开平台链接
+          {translate('打开平台链接')}
         </a>
       ) : null;
     };
   return (
     <div className="coding-page">
       <header className="journal-page-heading">
-        <p className="eyebrow">CODING / 编程练习</p>
+        <p className="eyebrow">{translate('CODING / 编程练习')}</p>
         <h1>{t.title}</h1>
         <p>{t.hint}</p>
       </header>
@@ -111,7 +112,7 @@ export function CodingPage() {
         >
           {t.newContest}
         </Button>
-        <span className="muted">仅本机 · 手动录入</span>
+        <span className="muted">{translate('仅本机 · 手动录入')}</span>
       </div>
       {error && <p role="alert">{error}</p>}
       {!editor && pending && (
@@ -135,7 +136,7 @@ export function CodingPage() {
         />
       ) : (
         <>
-          <div className="journal-toolbar" role="group" aria-label="Coding 视图">
+          <div className="journal-toolbar" role="group" aria-label={translate('Coding 视图')}>
             {[
               ['problems', t.problems],
               ['contests', t.contests],
@@ -151,7 +152,7 @@ export function CodingPage() {
               </Button>
             ))}
             <label className="roadmap-field">
-              <span>统计所在周</span>
+              <span>{translate('统计所在周')}</span>
               <input
                 type="date"
                 value={filter.week}
@@ -165,48 +166,48 @@ export function CodingPage() {
               <section className="ui-card">
                 <div className="roadmap-form-grid">
                   <label className="roadmap-field">
-                    <span>搜索名称或题号</span>
+                    <span>{translate('搜索名称或题号')}</span>
                     <input
                       value={filter.query}
                       onChange={(e) => update({ query: e.target.value })}
                     />
                   </label>
                   <label className="roadmap-field">
-                    <span>平台筛选</span>
+                    <span>{translate('平台筛选')}</span>
                     <select
                       value={filter.platform}
                       onChange={(e) => update({ platform: e.target.value })}
                     >
-                      <option value="">全部平台</option>
+                      <option value="">{translate('全部平台')}</option>
                       {platforms.map((p) => (
                         <option key={p}>{p}</option>
                       ))}
                     </select>
                   </label>
                   <label className="roadmap-field">
-                    <span>解题状态</span>
+                    <span>{translate('解题状态')}</span>
                     <select
                       value={filter.status}
                       onChange={(e) => update({ status: e.target.value })}
                     >
-                      <option value="">全部状态</option>
-                      <option value="unattempted">未尝试</option>
-                      <option value="unsolved">未解出</option>
-                      <option value="solved">已解出</option>
+                      <option value="">{translate('全部状态')}</option>
+                      <option value="unattempted">{translate('未尝试')}</option>
+                      <option value="unsolved">{translate('未解出')}</option>
+                      <option value="solved">{translate('已解出')}</option>
                     </select>
                   </label>
                   <label className="roadmap-field">
-                    <span>主题筛选</span>
+                    <span>{translate('主题筛选')}</span>
                     <input value={filter.tag} onChange={(e) => update({ tag: e.target.value })} />
                   </label>
                   <label className="roadmap-field">
-                    <span>题目范围</span>
+                    <span>{translate('题目范围')}</span>
                     <select
                       value={String(filter.trash)}
                       onChange={(e) => update({ trash: e.target.value === 'true' })}
                     >
-                      <option value="false">活动题目</option>
-                      <option value="true">回收站</option>
+                      <option value="false">{translate('活动题目')}</option>
+                      <option value="true">{translate('回收站')}</option>
                     </select>
                   </label>
                 </div>
@@ -219,24 +220,33 @@ export function CodingPage() {
                     </p>
                     <h2>{p.title}</h2>
                     <p>
-                      {p.solved ? '已解出' : p.attempt_count ? '未解出' : '未尝试'} ·{' '}
-                      {p.attempt_count} 次尝试 ·{' '}
+                      {p.solved
+                        ? translate('已解出')
+                        : p.attempt_count
+                          ? translate('未解出')
+                          : translate('未尝试')}{' '}
+                      · {p.attempt_count} {translate('次尝试 ·')}{' '}
                       {t.difficulty[p.difficulty as keyof typeof t.difficulty] ?? p.difficulty}
                     </p>
-                    <p>{p.tags.join(' · ') || '未标注主题'}</p>
+                    <p>{p.tags.join(' · ') || translate('未标注主题')}</p>
                     <p>
-                      首次尝试：
+                      {translate('首次尝试：')}
                       {p.first_attempt
-                        ? new Date(p.first_attempt).toLocaleString('zh-CN')
-                        : '暂无记录'}
+                        ? new Date(p.first_attempt).toLocaleString(locale)
+                        : translate('暂无记录')}
                       <br />
-                      首次通过：
-                      {p.solved_at ? new Date(p.solved_at).toLocaleString('zh-CN') : '尚未通过'}
+                      {translate('首次通过：')}
+                      {p.solved_at
+                        ? new Date(p.solved_at).toLocaleString(locale)
+                        : translate('尚未通过')}
                       <br />
-                      语言：{p.language ?? '未记录'}
+                      {translate('语言：')}
+                      {p.language ?? translate('未记录')}
                     </p>
                     <p>
-                      手工 {minutes(p.manual_seconds)} · 专注 {minutes(p.focus_seconds)}
+                      {translate('手工')}
+                      {minutes(p.manual_seconds)} {translate('· 专注')}
+                      {minutes(p.focus_seconds)}
                     </p>
                     {link(p.source_url)}
                     <p className="preserve-lines">{p.notes}</p>
@@ -280,17 +290,18 @@ export function CodingPage() {
                     disabled={!filter.page}
                     onClick={() => update({ page: filter.page - 1 })}
                   >
-                    上一页
+                    {translate('上一页')}
                   </Button>
                   <span>
-                    {filter.page + 1} / {Math.max(1, Math.ceil(data.total / 30))} · {data.total} 题
+                    {filter.page + 1} / {Math.max(1, Math.ceil(data.total / 30))} · {data.total}{' '}
+                    {translate('题')}
                   </span>
                   <Button
                     variant="secondary"
                     disabled={(filter.page + 1) * 30 >= data.total}
                     onClick={() => update({ page: filter.page + 1 })}
                   >
-                    下一页
+                    {translate('下一页')}
                   </Button>
                 </div>
               )}
@@ -305,12 +316,14 @@ export function CodingPage() {
                   {data.attempts.map((a) => (
                     <article className="coding-attempt" key={a.id}>
                       <h3>
-                        {a.attempted_on || '旧记录无尝试日期'} · {a.language} ·{' '}
+                        {a.attempted_on || translate('旧记录无尝试日期')} · {a.language} ·{' '}
                         {t.outcome[a.outcome as keyof typeof t.outcome] ?? a.outcome}
                       </h3>
                       <p>
-                        手工 {minutes(a.manual_seconds)} · 专注 {minutes(a.focus_seconds)}
-                        {a.deleted_at ? ' · 已移入回收站' : ''}
+                        {translate('手工')}
+                        {minutes(a.manual_seconds)} {translate('· 专注')}
+                        {minutes(a.focus_seconds)}
+                        {a.deleted_at ? translate('· 已移入回收站') : ''}
                       </p>
                       <p className="preserve-lines">{a.notes}</p>
                       <div className="journal-toolbar">
@@ -339,8 +352,10 @@ export function CodingPage() {
                       </div>
                     </article>
                   ))}
-                  {!data.attempts.length && <p>还没有尝试记录。</p>}
-                  <p className="muted">展示最近 200 条尝试，周统计包含全部有效尝试。</p>
+                  {!data.attempts.length && <p>{translate('还没有尝试记录。')}</p>}
+                  <p className="muted">
+                    {translate('展示最近 200 条尝试，周统计包含全部有效尝试。')}
+                  </p>
                 </section>
               )}
             </>
@@ -351,8 +366,9 @@ export function CodingPage() {
                 <article key={c.id} className="ui-card">
                   <h2>{c.title}</h2>
                   <p>
-                    {c.platform} · {c.event_date} · {c.participated ? '已参加' : '未参加'}
-                    {c.deleted_at ? ' · 回收站' : ''}
+                    {c.platform} · {c.event_date} ·{' '}
+                    {c.participated ? translate('已参加') : translate('未参加')}
+                    {c.deleted_at ? translate('· 回收站') : ''}
                   </p>
                   {link(c.source_url)}
                   <p className="preserve-lines">{c.notes}</p>
@@ -373,7 +389,7 @@ export function CodingPage() {
                   </div>
                 </article>
               ))}
-              {!data.contests.length && <p className="ui-card">还没有竞赛记录。</p>}
+              {!data.contests.length && <p className="ui-card">{translate('还没有竞赛记录。')}</p>}
             </div>
           )}
         </>

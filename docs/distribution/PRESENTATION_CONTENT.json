@@ -1,0 +1,910 @@
+{
+  "edition": "Documentation and localization",
+  "version": "0.1.0 candidate",
+  "slides": [
+    {
+      "kind": "cover",
+      "title": {
+        "zh-CN": "Lumen",
+        "en": "Lumen"
+      },
+      "body": {
+        "zh-CN": "为一段专心成长的时间\n建立自己的工作台",
+        "en": "Your own workspace\nfor focused growth"
+      },
+      "source": "README.md; docs/en/USER_GUIDE.md",
+      "dark": true
+    },
+    {
+      "kind": "rows",
+      "title": {
+        "zh-CN": "每一种认真成长，都值得留下",
+        "en": "A workspace for your next chapter"
+      },
+      "body": {
+        "zh-CN": [
+          [
+            "考研与考公",
+            "科目、专题、模考和复盘，围绕自己的节奏组织。"
+          ],
+          [
+            "语言与技能",
+            "记录练习过程，也记录真正理解的瞬间。"
+          ],
+          [
+            "科研与作品",
+            "把推导、实验、里程碑和真实成果连起来。"
+          ],
+          [
+            "职业与转型",
+            "用任务、证书与作品记录一次持续投入。"
+          ]
+        ],
+        "en": [
+          [
+            "Exams and certifications",
+            "Organize subjects, practice and reviews around your capacity."
+          ],
+          [
+            "Languages and skills",
+            "Keep practice records and the moments of understanding."
+          ],
+          [
+            "Research and projects",
+            "Connect reasoning, experiments, milestones and real outputs."
+          ],
+          [
+            "Career transitions",
+            "Document sustained effort through tasks and a portfolio."
+          ]
+        ]
+      },
+      "source": "docs/en/USER_GUIDE.md; docs/en/EXTENSION_IDEAS.md"
+    },
+    {
+      "kind": "statement",
+      "title": {
+        "zh-CN": "Everything is a Module",
+        "en": "Everything is a Module"
+      },
+      "body": {
+        "zh-CN": "想要什么组件，就从源码开始写。\n共享安全底座，保留自己的工作方式。",
+        "en": "Build the component you need.\nKeep the shared foundation and your own workflow."
+      },
+      "source": "src/kernel/modules; src/modules/official; docs/en/MODULE_TUTORIAL.md",
+      "dark": true,
+      "foot": {
+        "zh-CN": "官方源码模块现在可接入；社区执行仍关闭。",
+        "en": "Official source integration works today. Community execution stays closed."
+      }
+    },
+    {
+      "kind": "image",
+      "title": {
+        "zh-CN": "今天，先做好一件事",
+        "en": "One clear task for today"
+      },
+      "body": {
+        "zh-CN": "估时、容量、实际进展和随手记\n围绕今天展开。",
+        "en": "Estimates, capacity, actual progress\nand a note about today."
+      },
+      "source": "src/pages/today/TodayPage.tsx; synthetic launch fixture tests/e2e/launch-demo.spec.ts",
+      "asset": "today"
+    },
+    {
+      "kind": "image",
+      "title": {
+        "zh-CN": "专注可以暂停，成长不必惩罚休息",
+        "en": "Focus with room for a break"
+      },
+      "body": {
+        "zh-CN": "暂停、锁屏、休眠和离线时间不计入专注。\n回来后，由你决定继续还是结束。",
+        "en": "Paused, locked, sleeping and offline time do not count.\nYou decide when to resume or finish."
+      },
+      "source": "src/pages/focus/FocusPage.tsx; src-tauri/src/today; kernel/platform; Windows adapter only; synthetic fixture",
+      "asset": "focus"
+    },
+    {
+      "kind": "rows",
+      "title": {
+        "zh-CN": "计划由你确认",
+        "en": "Planning stays in your hands"
+      },
+      "body": {
+        "zh-CN": [
+          [
+            "01 目标与容量",
+            "输入真实可用时间，组织 Journey 和学科。"
+          ],
+          [
+            "02 生成建议",
+            "确定性规则给出可解释的日期与分钟分配。"
+          ],
+          [
+            "03 审阅与接受",
+            "查看原因，接受、修改或拒绝。"
+          ],
+          [
+            "04 真实反馈",
+            "比较计划和实际，保留调整历史。"
+          ]
+        ],
+        "en": [
+          [
+            "01 Goals and capacity",
+            "Enter available time and organize journeys and subjects."
+          ],
+          [
+            "02 A proposal",
+            "Deterministic rules allocate dates and minutes with reasons."
+          ],
+          [
+            "03 Your decision",
+            "Review, accept, modify or reject."
+          ],
+          [
+            "04 Actual feedback",
+            "Compare plans and records and retain adjustment history."
+          ]
+        ]
+      },
+      "source": "docs/data/ROADMAP_PLANNER.md; src/kernel/plan/exchange.ts; no AI calls"
+    },
+    {
+      "kind": "statement",
+      "title": {
+        "zh-CN": "记录思考，也保留未完成",
+        "en": "Keep the thinking behind the work"
+      },
+      "body": {
+        "zh-CN": "本机 Markdown 日记与快速捕获。\n草稿恢复、标签、关联和全文搜索。",
+        "en": "Local Markdown journals and quick capture.\nDraft recovery, tags, relationships and text search."
+      },
+      "source": "docs/data/JOURNAL_CAPTURE.md; src/features/journal; FTS5; 600ms autosave; raw HTML/remote images excluded",
+      "foot": {
+        "zh-CN": "冲突保留输入，恢复为新记录，不静默覆盖原文。",
+        "en": "Conflicts retain input. Restore a new entry without silently replacing the original."
+      }
+    },
+    {
+      "kind": "image",
+      "title": {
+        "zh-CN": "回顾真实记录",
+        "en": "Review what actually happened"
+      },
+      "body": {
+        "zh-CN": "实际专注、词语、热图与周回顾。\n活动量不代表道德分，也不预测成绩。",
+        "en": "Actual focus, words, heatmaps and reviews.\nActivity is not a moral score or a grade prediction."
+      },
+      "source": "docs/data/INSIGHTS.md; synthetic launch fixture. Coding and focus overlap and must not be summed.",
+      "asset": "insights"
+    },
+    {
+      "kind": "image",
+      "title": {
+        "zh-CN": "让成果成为自己的作品",
+        "en": "A place for your real work"
+      },
+      "body": {
+        "zh-CN": "项目、证书、研究与开源贡献。\n默认私密，公开范围由你选择。",
+        "en": "Projects, certificates, research and open-source contributions.\nPrivate by default. You choose what to share."
+      },
+      "source": "docs/data/VAULT.md; synthetic launch fixture, no personal data",
+      "asset": "vault"
+    },
+    {
+      "kind": "statement",
+      "title": {
+        "zh-CN": "你的任务，留在你的设备",
+        "en": "Your tasks stay on your device"
+      },
+      "body": {
+        "zh-CN": "Local-first\nManual First / AI Optional",
+        "en": "Local-first\nManual First / AI Optional"
+      },
+      "source": "src-tauri/tauri.conf.json CSP; Kernel storage/privacy; no actual AI/model/network invocation",
+      "dark": true,
+      "foot": {
+        "zh-CN": "当前无后台任务上传或模型调用；主动导出仍需自己妥善保管。",
+        "en": "No background task upload or model calls today. Protect files you deliberately export."
+      }
+    },
+    {
+      "kind": "table",
+      "title": {
+        "zh-CN": "分享前，先看清公开范围",
+        "en": "Deliberate sharing"
+      },
+      "body": {
+        "zh-CN": [
+          [
+            "内容",
+            "默认",
+            "公开网站"
+          ],
+          [
+            "任务 / 日记 / 专注 / 音乐",
+            "本机私有",
+            "不包含"
+          ],
+          [
+            "作品与档案",
+            "默认私密",
+            "明确公开且满足白名单"
+          ],
+          [
+            "附件与私有关联",
+            "本机受控",
+            "不包含"
+          ],
+          [
+            "网站快照",
+            "手工生成",
+            "不自动发布"
+          ]
+        ],
+        "en": [
+          [
+            "Content",
+            "Default",
+            "Public website"
+          ],
+          [
+            "Tasks / journals / focus / music",
+            "Local private",
+            "Excluded"
+          ],
+          [
+            "Works and profile",
+            "Private",
+            "Explicit allowlisted public fields"
+          ],
+          [
+            "Attachments / private links",
+            "Local managed",
+            "Excluded"
+          ],
+          [
+            "Website snapshot",
+            "Manual export",
+            "No automatic publishing"
+          ]
+        ]
+      },
+      "source": "src-tauri/src/kernel/public_export.rs; docs/en/PUBLIC_WEBSITE.md",
+      "widths": [
+        480,
+        270,
+        402
+      ]
+    },
+    {
+      "kind": "table",
+      "title": {
+        "zh-CN": "模块边界清楚，底座保持稳定",
+        "en": "Four layers with clear ownership"
+      },
+      "body": {
+        "zh-CN": [
+          [
+            "层级",
+            "职责",
+            "执行边界"
+          ],
+          [
+            "Kernel",
+            "安全、数据、迁移、备份与平台",
+            "安全不可卸载"
+          ],
+          [
+            "Official Modules",
+            "可信源码功能与渐进迁移",
+            "显式捆绑与 typed IPC"
+          ],
+          [
+            "Community Modules",
+            "Manifest、权限与未来 Host 契约",
+            "第三方运行时未开放"
+          ],
+          [
+            "Theme Packs",
+            "视觉 token 与受限资源",
+            "运行时加载待实现"
+          ]
+        ],
+        "en": [
+          [
+            "Layer",
+            "Responsibility",
+            "Execution boundary"
+          ],
+          [
+            "Kernel",
+            "Security, data, migrations, backup, platform",
+            "Non-removable security"
+          ],
+          [
+            "Official Modules",
+            "Trusted source features and gradual migration",
+            "Explicit bundles and typed IPC"
+          ],
+          [
+            "Community Modules",
+            "Manifest, grants and future host contracts",
+            "Execution unavailable"
+          ],
+          [
+            "Theme Packs",
+            "Visual tokens and bounded resources",
+            "Runtime loading deferred"
+          ]
+        ]
+      },
+      "source": "docs/en/ARCHITECTURE.md; src/kernel/modules; src-tauri/src/kernel",
+      "widths": [
+        260,
+        555,
+        337
+      ],
+      "dark": true
+    },
+    {
+      "kind": "rows",
+      "title": {
+        "zh-CN": "工作台的顺序，属于使用者",
+        "en": "Navigation belongs to the user"
+      },
+      "body": {
+        "zh-CN": [
+          [
+            "enabled",
+            "控制模块页面与入口，关闭保留记录。"
+          ],
+          [
+            "hidden",
+            "只改变侧栏显示。"
+          ],
+          [
+            "pinned",
+            "置顶分组优先显示。"
+          ],
+          [
+            "order",
+            "拖动或键盘上下移动，同组重排。"
+          ]
+        ],
+        "en": [
+          [
+            "enabled",
+            "Gates module routes and entrypoints, keeping records."
+          ],
+          [
+            "hidden",
+            "Changes sidebar visibility only."
+          ],
+          [
+            "pinned",
+            "Shows pinned groups first."
+          ],
+          [
+            "order",
+            "Drag or use keyboard move buttons within a group."
+          ]
+        ]
+      },
+      "source": "src/kernel/modules/registry.ts; ModuleSettings.tsx; tests/e2e/modules.spec.ts"
+    },
+    {
+      "kind": "table",
+      "title": {
+        "zh-CN": "官方模块先提供真实示例",
+        "en": "Official modules you can learn from"
+      },
+      "body": {
+        "zh-CN": [
+          [
+            "模块",
+            "独立入口",
+            "示例能力"
+          ],
+          [
+            "Insights",
+            "lumen.insights",
+            "统计与 Today 往年今日 widget"
+          ],
+          [
+            "Music",
+            "lumen.music",
+            "手动记录、可选 Windows 来源"
+          ],
+          [
+            "Vault",
+            "lumen.vault",
+            "作品、附件与可见性"
+          ],
+          [
+            "Profile",
+            "lumen.profile",
+            "档案、公开投影与静态导出"
+          ]
+        ],
+        "en": [
+          [
+            "Module",
+            "Dedicated entrypoint",
+            "Example capability"
+          ],
+          [
+            "Insights",
+            "lumen.insights",
+            "Facts and on-this-day widget"
+          ],
+          [
+            "Music",
+            "lumen.music",
+            "Manual records, optional Windows source"
+          ],
+          [
+            "Vault",
+            "lumen.vault",
+            "Works, attachments and visibility"
+          ],
+          [
+            "Profile",
+            "lumen.profile",
+            "Profile, projection and static export"
+          ]
+        ]
+      },
+      "source": "src/modules/official; catalogue.json. Other modules remain stable legacy bridges, not absent functionality.",
+      "widths": [
+        245,
+        330,
+        577
+      ],
+      "foot": {
+        "zh-CN": "其他稳定功能通过 legacy bridge 渐进迁移，无需推倒重写。",
+        "en": "Stable legacy bridges allow gradual migration without a rewrite."
+      }
+    },
+    {
+      "kind": "code",
+      "title": {
+        "zh-CN": "第一个模块，接入路径明确",
+        "en": "Your first module has a clear path"
+      },
+      "body": {
+        "zh-CN": "编写页面，声明 Manifest，注册可信路由。\nSidebar 随 Registry 出现，ModuleGate 控制停用。",
+        "en": "Write a page, declare a manifest and register its route.\nRegistry drives the sidebar. ModuleGate controls enablement."
+      },
+      "source": "docs/en/MODULE_TUTORIAL.md; actual bilingual snippets verified by scripts/distribution/check-module-tutorial.mjs",
+      "code": "id: \"lumen.study-lab\"\napi_version: \"1.0\"\nlayer: \"official\"\nroute: \"/study-lab\"\n\n<ModuleGate id=\"lumen.study-lab\">\n  <StudyLabRoute />\n</ModuleGate>",
+      "foot": {
+        "zh-CN": "示意摘录；完整可编译步骤见 MODULE_TUTORIAL.md。",
+        "en": "Excerpt only. MODULE_TUTORIAL.md contains the complete compilable steps."
+      }
+    },
+    {
+      "kind": "code",
+      "title": {
+        "zh-CN": "首页也可以贡献自己的组件",
+        "en": "A widget can extend Today"
+      },
+      "body": {
+        "zh-CN": "受信任的静态描述器贡献界面。\n启用过滤与错误边界保护首页。",
+        "en": "A trusted static descriptor contributes UI.\nEnablement checks and error boundaries protect Today."
+      },
+      "source": "src/modules/official/insights/index.tsx; src/kernel/modules/Extensions.tsx",
+      "code": "id: \"lumen.insights.on-this-day\"\nmoduleId: \"lumen.insights\"\nslot: \"today.after-summary\"\norder: 10\nComponent: Memories",
+      "foot": {
+        "zh-CN": "当前静态捆绑，不加载任意第三方 React 或 native 代码。",
+        "en": "Statically bundled today. No arbitrary third-party React or native loading."
+      }
+    },
+    {
+      "kind": "table",
+      "title": {
+        "zh-CN": "未来插件，只获得明确能力",
+        "en": "Future plugins need explicit capabilities"
+      },
+      "body": {
+        "zh-CN": [
+          [
+            "Capability",
+            "允许的方向",
+            "明确禁止"
+          ],
+          [
+            "storage.own",
+            "插件自己的有界 KV 空间",
+            "读取 core SQLite"
+          ],
+          [
+            "widget.contribute",
+            "Host 验证的声明式内容",
+            "HTML script / Tauri invoke"
+          ],
+          [
+            "plan.propose",
+            "人工审阅的数据建议",
+            "直接改任务 / 自动接受"
+          ]
+        ],
+        "en": [
+          [
+            "Capability",
+            "Intended access",
+            "Excluded"
+          ],
+          [
+            "storage.own",
+            "Bounded own-namespace KV",
+            "Core SQLite access"
+          ],
+          [
+            "widget.contribute",
+            "Host-validated declarative content",
+            "HTML scripts / Tauri invoke"
+          ],
+          [
+            "plan.propose",
+            "Manually reviewed data proposals",
+            "Direct task writes / auto-accept"
+          ]
+        ]
+      },
+      "source": "src-tauri/src/kernel/permissions.rs; docs/contracts/lumen-plugin.wit; no runtime authorization",
+      "widths": [
+        335,
+        450,
+        367
+      ],
+      "dark": true,
+      "foot": {
+        "zh-CN": "WASM / Wasmtime host 尚未实现，社区 enable 明确拒绝。",
+        "en": "The WASM / Wasmtime host is not implemented. Community enable fails closed."
+      }
+    },
+    {
+      "kind": "rows",
+      "title": {
+        "zh-CN": "插件从安装到回滚，都要可控",
+        "en": "A lifecycle designed for control"
+      },
+      "body": {
+        "zh-CN": [
+          [
+            "安装与启用",
+            "先校验身份、API 与内容 hash；当前 enable 拒绝。"
+          ],
+          [
+            "停用与撤销",
+            "未来先终止 worker、撤销句柄，再改变状态。"
+          ],
+          [
+            "更新与回滚",
+            "保留验证过的旧版本，权限扩张重新同意。"
+          ],
+          [
+            "卸载与数据",
+            "包与隔离数据分开处理，永不删除核心记录。"
+          ]
+        ],
+        "en": [
+          [
+            "Install and enable",
+            "Validate identity, API and hash. Enable is denied today."
+          ],
+          [
+            "Disable and revoke",
+            "Future execution must stop and revoke handles first."
+          ],
+          [
+            "Update and rollback",
+            "Keep a verified version. Expanded permissions need consent."
+          ],
+          [
+            "Uninstall and data",
+            "Separate package removal from isolated data, keeping core facts."
+          ]
+        ]
+      },
+      "source": "permissions.rs pure state transitions; docs/en/PLUGIN_SDK.md. File executor and worker termination are future design, not implemented."
+    },
+    {
+      "kind": "table",
+      "title": {
+        "zh-CN": "下一块组件，可以解决什么？",
+        "en": "What could your next module do?"
+      },
+      "body": {
+        "zh-CN": [
+          [
+            "方向",
+            "第一步",
+            "复用底座"
+          ],
+          [
+            "考研 / 考公",
+            "错题队列、专题训练",
+            "Tasks / Journal / Roadmap"
+          ],
+          [
+            "语言 / 阅读",
+            "书目、练习与复习提醒",
+            "Journal / Today widget"
+          ],
+          [
+            "科研 / 创作",
+            "实验日志、论文节点",
+            "Calendar / Vault"
+          ],
+          [
+            "职业 / 作品",
+            "面试题、技能与贡献",
+            "Coding / Profile"
+          ]
+        ],
+        "en": [
+          [
+            "Direction",
+            "A first increment",
+            "Foundation"
+          ],
+          [
+            "Exams",
+            "Mistake queue, topic practice",
+            "Tasks / Journal / Roadmap"
+          ],
+          [
+            "Language / reading",
+            "Reading and revision logs",
+            "Journal / Today widget"
+          ],
+          [
+            "Research / creation",
+            "Experiment logs, paper milestones",
+            "Calendar / Vault"
+          ],
+          [
+            "Career / portfolio",
+            "Interview practice and contributions",
+            "Coding / Profile"
+          ]
+        ]
+      },
+      "source": "docs/en/EXTENSION_IDEAS.md. Ideas, not released features.",
+      "widths": [
+        310,
+        425,
+        417
+      ],
+      "foot": {
+        "zh-CN": "以上是贡献方向；可从离线、手工、只读的小模块开始。",
+        "en": "Contribution ideas. Begin with a small offline, manual, read-only module."
+      }
+    },
+    {
+      "kind": "statement",
+      "title": {
+        "zh-CN": "代码、文档与演示，都可以继续改",
+        "en": "Source and materials you can adapt"
+      },
+      "body": {
+        "zh-CN": "MIT 源码与可编辑 Markdown / PowerPoint。\n保留许可署名，诚实说明自己的改动。",
+        "en": "MIT source and editable Markdown / PowerPoint.\nRetain attribution and describe your changes honestly."
+      },
+      "source": "LICENSE; CONTRIBUTING.md; docs/presentations/README.md",
+      "dark": true,
+      "foot": {
+        "zh-CN": "欢迎 fork 成自己的作品，也欢迎把改进贡献回来。",
+        "en": "Fork it into your own work and contribute improvements back."
+      }
+    },
+    {
+      "kind": "table",
+      "title": {
+        "zh-CN": "从源码开始，需要哪些环境",
+        "en": "A documented development environment"
+      },
+      "body": {
+        "zh-CN": [
+          [
+            "组件",
+            "固定版本 / 条件",
+            "用途"
+          ],
+          [
+            "Node / pnpm",
+            "24.15.0 / 11.19.0",
+            "前端与锁定依赖"
+          ],
+          [
+            "Rust",
+            "1.98.1 + Cargo.lock",
+            "原生核心"
+          ],
+          [
+            "Windows",
+            "MSVC / SDK / WebView2",
+            "主平台构建"
+          ],
+          [
+            "macOS / Linux",
+            "原生 SDK / WebKitGTK 等",
+            "实验构建"
+          ]
+        ],
+        "en": [
+          [
+            "Component",
+            "Pin / prerequisite",
+            "Purpose"
+          ],
+          [
+            "Node / pnpm",
+            "24.15.0 / 11.19.0",
+            "Frontend and locked dependencies"
+          ],
+          [
+            "Rust",
+            "1.98.1 + Cargo.lock",
+            "Native kernel"
+          ],
+          [
+            "Windows",
+            "MSVC / SDK / WebView2",
+            "Primary platform builds"
+          ],
+          [
+            "macOS / Linux",
+            "Native SDK / WebKitGTK, etc.",
+            "Experimental builds"
+          ]
+        ]
+      },
+      "source": "package.json; rust-toolchain.toml; docs/en/ENVIRONMENT_AND_CONFIGURATION.md; https://v2.tauri.app/start/prerequisites/",
+      "widths": [
+        285,
+        490,
+        377
+      ],
+      "foot": {
+        "zh-CN": "不需要 AI 账户或 API Key。开发启动必须隔离 AppData。",
+        "en": "No AI account or API key required. Isolate AppData for native development."
+      }
+    },
+    {
+      "kind": "table",
+      "title": {
+        "zh-CN": "跨平台，按实际能力说明",
+        "en": "Platform support with explicit limits"
+      },
+      "body": {
+        "zh-CN": [
+          [
+            "平台",
+            "产物",
+            "当前范围"
+          ],
+          [
+            "Windows x64",
+            "EXE / NSIS",
+            "主验收平台，未签名候选"
+          ],
+          [
+            "macOS ARM / Intel",
+            "DMG",
+            "实验包，Today/Focus 不可用"
+          ],
+          [
+            "Linux x64",
+            "deb / AppImage",
+            "实验包，Today/Focus 不可用"
+          ],
+          [
+            "Community / AI / Mobile",
+            "接口准备",
+            "完整实现不在本版"
+          ]
+        ],
+        "en": [
+          [
+            "Platform",
+            "Package",
+            "Current scope"
+          ],
+          [
+            "Windows x64",
+            "EXE / NSIS",
+            "Primary acceptance, unsigned candidate"
+          ],
+          [
+            "macOS ARM / Intel",
+            "DMG",
+            "Experimental, Today/Focus unavailable"
+          ],
+          [
+            "Linux x64",
+            "deb / AppImage",
+            "Experimental, Today/Focus unavailable"
+          ],
+          [
+            "Community / AI / Mobile",
+            "Prepared interfaces",
+            "Full implementation not included"
+          ]
+        ]
+      },
+      "source": "docs/en/CROSS_PLATFORM.md; kernel/platform; Phase17 native package verification. Compilation is not OS acceptance.",
+      "widths": [
+        330,
+        280,
+        542
+      ],
+      "foot": {
+        "zh-CN": "部分媒体/打开助手不支持；macOS/Linux 实机集成与签名仍待验收。",
+        "en": "Some media/opening helpers are unsupported. Real-device integration and signing remain pending."
+      }
+    },
+    {
+      "kind": "rows",
+      "title": {
+        "zh-CN": "开发资料直接给出切入口",
+        "en": "Documentation that gives you a starting point"
+      },
+      "body": {
+        "zh-CN": [
+          [
+            "逐模块参考",
+            "使用流程、技术原理、边界与扩展方向。"
+          ],
+          [
+            "可照做的教程",
+            "Manifest、路由和 widget 的真实接入位置。"
+          ],
+          [
+            "API 与配置",
+            "60 个 IPC 签名、12 组模型、依赖和故障排查。"
+          ],
+          [
+            "中英文与英化包",
+            "分语言文档和演示，905 条前端英语资源。"
+          ]
+        ],
+        "en": [
+          [
+            "Module reference",
+            "Workflows, mechanisms, boundaries and extension ideas."
+          ],
+          [
+            "Hands-on tutorial",
+            "Actual manifest, route and widget integration points."
+          ],
+          [
+            "API and configuration",
+            "60 IPC signatures, 12 model groups and troubleshooting."
+          ],
+          [
+            "Two languages",
+            "Separate docs/decks and 905 frontend English strings."
+          ]
+        ]
+      },
+      "source": "docs/en/README.md; API_REFERENCE.md; src/locales/en/messages.json. Native tray/notification localization remains partial."
+    },
+    {
+      "kind": "closing",
+      "title": {
+        "zh-CN": "把下一段成长，写成自己的作品",
+        "en": "Make the next chapter your own"
+      },
+      "body": {
+        "zh-CN": "使用 Lumen，修改 Lumen，分享你的模块。\n觉得好用，欢迎 Star 支持创作者。",
+        "en": "Use Lumen, adapt it and share your modules.\nIf it helps, a Star supports the creator."
+      },
+      "source": "https://github.com/wangziwen2794928256/Lumen; LICENSE; docs/en/CONTRIBUTING.md",
+      "dark": true
+    }
+  ]
+}
