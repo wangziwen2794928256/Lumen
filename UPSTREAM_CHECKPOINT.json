@@ -1,5 +1,5 @@
 {
-  "upstreamCommit": "7077c6499bfb08455d67e9b80b1d42bf018a80a3",
+  "upstreamCommit": "302b7e8361b25e7a2c156883ddf3541e6243ef51",
   "stablePhase16Commit": "bcee0483ae5c072e49307dada2bee479a830ef99",
   "historyPolicy": "Allowlisted source snapshot. Full phase history and local acceptance evidence stay on the owner workstation.",
   "workingTreeMayIncludeUncommittedChanges": true,
@@ -168,8 +168,93 @@
     },
     {
       "file": "docs/distribution/REPOSITORY_README.md",
-      "bytes": 12373,
-      "sha256": "2418160042a8612801b71cd8753983d713bd66c169326821592f5d5c50bc77d1"
+      "bytes": 14839,
+      "sha256": "e98da0c3007cff1603ccc2d50d9755833d63e3d80a237e135dea8bac1d7e3b24"
+    },
+    {
+      "file": "docs/distribution/assets/github/README.md",
+      "bytes": 806,
+      "sha256": "aadcbed72b7fd90adfeb0c37312635a01af2571fe5c35962e83d6c65b61918fc"
+    },
+    {
+      "file": "docs/distribution/assets/github/hero-en.png",
+      "bytes": 871879,
+      "sha256": "ebb419229c775ffc054e4c8e1ba53fbffe33a299581352814c592472df645997"
+    },
+    {
+      "file": "docs/distribution/assets/github/hero-zh-CN.png",
+      "bytes": 879073,
+      "sha256": "98f0d6550a70145c13d8b2af9ea465a416ec2bbc4a086873d07a23d8c48b6ac6"
+    },
+    {
+      "file": "docs/distribution/assets/github/modules-en.png",
+      "bytes": 1102810,
+      "sha256": "fcef52b210757a8f2f9c13de04a9fba72def28496f158299bdf73dbcf74b4921"
+    },
+    {
+      "file": "docs/distribution/assets/github/modules-zh-CN.png",
+      "bytes": 1105869,
+      "sha256": "d74fb1d4b87c0f53e11eb6dd1e00e0abbfd87c08f2d590ff78e4256feb939b5d"
+    },
+    {
+      "file": "docs/distribution/assets/github/source/focus-en.png",
+      "bytes": 49927,
+      "sha256": "1c4f9372ecb9cd78a3b74098bba35c9b4597659bbd3f8a1e04143e84bcf60f6a"
+    },
+    {
+      "file": "docs/distribution/assets/github/source/focus-zh-CN.png",
+      "bytes": 48250,
+      "sha256": "27d265c70086efbb503b2eff0109e21c717441bf57fc80a430fb84527db40462"
+    },
+    {
+      "file": "docs/distribution/assets/github/source/insights-en.png",
+      "bytes": 75178,
+      "sha256": "d2a134dae47a5adc11db6ad9c37cd91de7b707d521570f4fc296138ffe97173d"
+    },
+    {
+      "file": "docs/distribution/assets/github/source/insights-zh-CN.png",
+      "bytes": 76293,
+      "sha256": "9c439c0198119de4c9c6876d1c83376bad2fc3063f229d3734c922ef1f20de69"
+    },
+    {
+      "file": "docs/distribution/assets/github/source/modules-en.png",
+      "bytes": 72272,
+      "sha256": "8eb371e0595b88de07257655981e16a34f89cff242723e191086370567837411"
+    },
+    {
+      "file": "docs/distribution/assets/github/source/modules-zh-CN.png",
+      "bytes": 62887,
+      "sha256": "6be0109d3a5836c97bc399b8b4456fd3bd4449a361a9682d33883111be282ed3"
+    },
+    {
+      "file": "docs/distribution/assets/github/source/today-en.png",
+      "bytes": 106943,
+      "sha256": "03669900501ecabebd93490e274d5d7d32347fb7f9a39bfc751d109d94fc7049"
+    },
+    {
+      "file": "docs/distribution/assets/github/source/today-zh-CN.png",
+      "bytes": 99701,
+      "sha256": "0f29d65ef9e199b323dd8b170adb5808541007c6f54e47bf6f5754bd5d753925"
+    },
+    {
+      "file": "docs/distribution/assets/github/source/vault-en.png",
+      "bytes": 70855,
+      "sha256": "1143e374b468ab381583475acfd4c5a7e9913b0118b99d745acbdac9f4dde717"
+    },
+    {
+      "file": "docs/distribution/assets/github/source/vault-zh-CN.png",
+      "bytes": 70188,
+      "sha256": "257a75c21c89366fd5fcc9c4da012455b29e6e02ffb2c14481343b9b8108ac39"
+    },
+    {
+      "file": "docs/distribution/assets/github/workflow-en.png",
+      "bytes": 790517,
+      "sha256": "fb9df907b43b201da6c00940c2f3db90f156e84897a7a9e77c282860d208a117"
+    },
+    {
+      "file": "docs/distribution/assets/github/workflow-zh-CN.png",
+      "bytes": 801533,
+      "sha256": "8826b2ddbb2f85dd0bdd6143422b9bf82834c16407e81d9dc14b1d81c5ad267c"
     },
     {
       "file": "docs/distribution/presentation-assets/focus-en.png",
@@ -632,6 +717,11 @@
       "sha256": "f7f48c808fa472991c0cf57cb4ebc69fe28d85f52af35da914130a05e7371c8a"
     },
     {
+      "file": "scripts/distribution/build-github-visuals.mjs",
+      "bytes": 9707,
+      "sha256": "eb85ae1f0a7010092333cf0c359635143b406d8a99b371b12e57630a091f4b52"
+    },
+    {
       "file": "scripts/distribution/build-presentation-review.mjs",
       "bytes": 8363,
       "sha256": "1a5e041feab9748bdbd6a2567f3814b1c578b4eaf7cd21172458ad12e7c0df11"
@@ -640,6 +730,11 @@
       "file": "scripts/distribution/build-presentation.mjs",
       "bytes": 5591,
       "sha256": "39d39ecf4a50c49e3136f72c7bdf0535c1c6f746a2d457788e504c79ad0639d8"
+    },
+    {
+      "file": "scripts/distribution/capture-readme.spec.ts",
+      "bytes": 6798,
+      "sha256": "f985b134cc872ea1fbfd9c40a10334de464e65244d05e750470f6de91bdc8257"
     },
     {
       "file": "scripts/distribution/check-docs.py",
@@ -662,6 +757,11 @@
       "sha256": "3618e0e54101a3611b0098456640f99ecb541cfb8bd151a2656282c47179b490"
     },
     {
+      "file": "scripts/distribution/readme-capture.config.ts",
+      "bytes": 565,
+      "sha256": "f7f92beb37d9736dab850b4883613c8959ec32c7134a083e8392f9f5d5940b11"
+    },
+    {
       "file": "scripts/distribution/verify-native.py",
       "bytes": 4574,
       "sha256": "a12ca6de64cef7efab932f8f9c6162108d71123ea16d3d7e5cc78263eb6c542e"
@@ -675,6 +775,11 @@
       "file": "scripts/distribution/verify-vendor.py",
       "bytes": 1897,
       "sha256": "e22bc1323c99c75f1dd686b374d8de80677866e924858a95911282336aa32cc7"
+    },
+    {
+      "file": "scripts/distribution/work/phase23/capture-results.json",
+      "bytes": 4119,
+      "sha256": "cdc23789f3869afffd85987cdb00b51bcddbe6cc475431197e7b3e6bda58f099"
     },
     {
       "file": "scripts/environment.ps1",

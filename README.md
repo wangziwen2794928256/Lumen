@@ -1,11 +1,31 @@
 # Lumen
 
+[中文](#中文) · [English](#english)
+
+![Lumen：轻量、模块化、MIT 开源的本地成长工作台，展示真实 Today 页面](docs/distribution/assets/github/hero-zh-CN.png)
+
+**[下载 Windows 发行候选](https://github.com/wangziwen2794928256/Lumen/releases/latest) · [开始使用](docs/zh-CN/USER_GUIDE.md) · [自己写模块](docs/zh-CN/MODULE_TUTORIAL.md) · [可编辑 PPT](docs/presentations/README.md)**
+
+Lumen 是一个轻量的桌面成长记录工具。安排任务、记录专注、留下作品；需要什么模块就启用什么，缺少的也可以自己写。源码完全公开，采用 MIT 许可，日常记录保存在本机。
+
 **为一段专心成长的时间，建立属于自己的工作台。**  
 **A personal workspace for a season of focused growth.**
 
 [可编辑演示 / Editable decks](docs/presentations/README.md) · [中文技术文档](docs/zh-CN/README.md) · [English documentation](docs/en/README.md) · [模块开发教程 / Module tutorial](docs/zh-CN/MODULE_TUTORIAL.md) · [发行候选 / Releases](https://github.com/wangziwen2794928256/Lumen/releases)
 
 ## 中文
+
+![从安排今天、开始专注到留下作品的三步使用指引](docs/distribution/assets/github/workflow-zh-CN.png)
+
+| 第一步：安排今天 | 第二步：开始专注 | 第三步：留下作品 |
+| --- | --- | --- |
+| [新建任务、估计时间](docs/zh-CN/USER_GUIDE.md) | [本地计时与实际投入](docs/zh-CN/MODULE_REFERENCE.md) | [Vault 与手工作品导出](docs/zh-CN/USER_GUIDE.md) |
+
+![按需开关与排序模块，通过 Manifest、Registry 和 Widget 接入自己的组件](docs/distribution/assets/github/modules-zh-CN.png)
+
+[照着写第一个模块](docs/zh-CN/MODULE_TUTORIAL.md) · [官方模块原理](docs/zh-CN/MODULE_REFERENCE.md) · [插件接口与安全边界](docs/zh-CN/PLUGIN_SDK.md)
+
+> 图片取自当前源码的真实界面，使用合成示例数据；模块图与流程图展示页面局部。社区插件运行时尚未开放。
 
 ### 不限于一场考试，也不限于一张待办清单
 
@@ -66,6 +86,18 @@ Lumen 采用 Kernel、Official Modules、Community Modules、Theme Packs 四层�
 ---
 
 ## English
+
+![Lumen: a lightweight, modular, MIT open-source local workspace with the actual Today UI](docs/distribution/assets/github/hero-en.png)
+
+**[Download Windows candidate](https://github.com/wangziwen2794928256/Lumen/releases/latest) · [User guide](docs/en/USER_GUIDE.md) · [Build a module](docs/en/MODULE_TUTORIAL.md) · [Editable slides](docs/presentations/README.md)**
+
+![Three steps: plan today, focus on a task, keep your work](docs/distribution/assets/github/workflow-en.png)
+
+![Enable, hide, pin and reorder modules; build source modules using the documented extension points](docs/distribution/assets/github/modules-en.png)
+
+[Module tutorial](docs/en/MODULE_TUTORIAL.md) · [Official module reference](docs/en/MODULE_REFERENCE.md) · [Plugin SDK](docs/en/PLUGIN_SDK.md)
+
+> Actual source-rendered UI with synthetic demo data. Workflow and module panels show cropped views. The community plugin runtime is future work.
 
 ### For a focused period of growth
 
